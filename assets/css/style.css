@@ -143,3 +143,27 @@ footer {
     opacity: 1;
     transform: translateY(0);
 }
+/* Halo lumineux doux autour du bouton */
+.discover-button {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    background-color: #007acc;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, box-shadow 1.5s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 122, 204, 0.5);
+    animation: halo 3s infinite alternate;
+}
+
+@keyframes halo {
+    0% {
+        box-shadow: 0 0 10px rgba(0, 122, 204, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 25px rgba(0, 122, 204, 0.8);
+    }
+}
