@@ -7,6 +7,36 @@ body {
     background-size: cover;
     color: #333;
 }
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+    animation: moveLight 20s infinite alternate;
+    z-index: 0;
+}
+
+/* Animation de la lumière subtile */
+@keyframes moveLight {
+    0% {
+        background-position: 50% 50%;
+    }
+    50% {
+        background-position: 60% 40%;
+    }
+    100% {
+        background-position: 40% 60%;
+    }
+}
+
+/* Pour que le contenu soit au-dessus de la lumière */
+body > * {
+    position: relative;
+    z-index: 1;
+}
 
 /* Header */
 header {
