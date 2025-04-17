@@ -49,6 +49,21 @@
     </main>
     <footer>
         <p>« L'Unité respire à travers chacun de nos actes. »</p>
-    </footer>    
+    </footer>
+    <script>
+        const items = document.querySelectorAll('.news-item');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+    
+        items.forEach(item => {
+            observer.observe(item);
+        });
+    </script>
+         
 </body>
 </html>
