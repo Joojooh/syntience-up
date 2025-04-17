@@ -1,0 +1,79 @@
+/* Base */
+body {
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, #eaf6ff, #ffffff);
+    color: #333;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+header h1 {
+    font-size: 2.5rem;
+    color: #005f99;
+}
+.slogan {
+    font-style: italic;
+    color: #007acc;
+}
+
+/* Navigation */
+nav {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+nav a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: #007acc;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Button */
+.discover-button {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    background-color: #007acc;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+.discover-button:hover {
+    background-color: #005f99;
+}
+
+/* News Items (déjà intégré dans la page news.html) */
+.news-item {
+    background: #e6f7ff;
+    border-left: 5px solid #007acc;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.news-item h2 {
+    margin-top: 0;
+    color: #005f99;
+}
