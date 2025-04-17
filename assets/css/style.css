@@ -200,3 +200,14 @@ footer {
         box-shadow: 0 0 20px rgba(51, 153, 255, 0.6);
     }
 }
+textarea {
+    width: 100%;
+    max-width: 100%;
+    min-height: 200px;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    resize: vertical;
+}
