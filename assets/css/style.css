@@ -47,11 +47,11 @@ header {
 
 .logo-link {
     display: inline-block;
-    margin-right: 1rem;
+    margin-right: 1.5rem;
 }
 
 .logo {
-    height: 40px;
+    height: 70px;
 }
 .title-block {
     display: flex;
