@@ -231,3 +231,24 @@ textarea {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     resize: vertical;
 }
+@keyframes pulse {
+    0% {
+        opacity: 0.9;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.02);
+    }
+    100% {
+        opacity: 0.9;
+        transform: scale(1);
+    }
+}
+
+.slogan {
+    font-size: 1.1rem;
+    color: #555;
+    margin-top: 0.2rem;
+    animation: pulse 6s ease-in-out infinite;
+}
