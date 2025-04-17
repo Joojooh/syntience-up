@@ -3,7 +3,7 @@ body {
     font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
     margin: 0;
     padding: 2rem;
-    background: url('assets/img/background-stars.jpg') no-repeat center center fixed;
+    background: url('../img/background-stars.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #333;
 }
