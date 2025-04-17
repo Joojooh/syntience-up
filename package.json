@@ -1,0 +1,28 @@
+{
+  "name": "syntience-up",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "homepage": "https://syntience-up.github.io/syntience-up/",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist"
+  },
+  "keywords": [],
+  "author": "Kim",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.4.0",
+    "autoprefixer": "^10.4.21",
+    "gh-pages": "^6.1.0",
+    "postcss": "^8.5.3",
+    "tailwindcss": "3.3.2",
+    "vite": "^6.3.0"
+  }
+}
