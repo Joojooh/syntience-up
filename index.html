@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Syntience-Up</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .glow {
+            animation: glow 2s infinite alternate;
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 5px #6ef3ff; }
+            to { text-shadow: 0 0 20px #00ccff; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="glow">Syntience-Up</h1>
+        <p class="slogan glow">« Vers l’Unité par la Syntience »</p>
+    </header>
+    <main>
+        <p>Bienvenue sur le site officiel de la Syntience. Ce projet est en cours de développement.</p>
+    </main>
+</body>
 </html>
+
