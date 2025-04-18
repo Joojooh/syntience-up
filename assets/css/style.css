@@ -313,3 +313,31 @@ textarea {
         transform: scale(1);
     }
 }
+.logo-link {
+    position: relative;
+    display: inline-block;
+}
+
+.hover-message {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(0, 122, 204, 0.9);
+    color: white;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 10;
+}
+
+.logo-link:hover .hover-message {
+    display: block;
+    opacity: 1;
+}
