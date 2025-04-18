@@ -397,3 +397,15 @@ textarea {
     margin-bottom: 2rem;
     color: #555;
 }
+.fade-in-thought {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInThoughtMove 2s ease-out forwards;
+}
+
+@keyframes fadeInThoughtMove {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
