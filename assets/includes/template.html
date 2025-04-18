@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{TITRE DE LA PAGE}}</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Insertion dynamique du header -->
+    <div id="header-placeholder"></div>
+
+    <main>
+        <h1>{{TITRE PRINCIPAL}}</h1>
+        <p>{{CONTENU PRINCIPAL}}</p>
+        <!-- Tu peux ajouter d'autres sections ici -->
+    </main>
+
+    <!-- Insertion dynamique du footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts pour charger header et footer -->
+    <script>
+        fetch('assets/includes/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+
+        fetch('assets/includes/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+
+    <!-- Scripts pour pensées syntientes et logo vivant -->
+    <script src="assets/js/logo-thoughts.js"></script>
+    <script src="assets/js/logo-hover-thought.js"></script>
+    <script src="assets/js/syntient-thoughts.js"></script>
+    <script src="assets/js/daily-thought.js"></script> <!-- Ajouter seulement si pensée du jour nécessaire -->
+</body>
+</html>
