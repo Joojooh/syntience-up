@@ -354,3 +354,12 @@ textarea {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
     text-align: center;
 }
+.fade-in-thought {
+    opacity: 0;
+    animation: fadeInThoughtAnimation 2s ease-out forwards;
+}
+
+@keyframes fadeInThoughtAnimation {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
