@@ -363,3 +363,22 @@ textarea {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #007acc;
+    position: relative;
+}
+
+.glow-text {
+    animation: glowEffect 2s infinite alternate;
+}
+
+@keyframes glowEffect {
+    from {
+        text-shadow: 0 0 5px #6ef3ff, 0 0 10px #6ef3ff;
+    }
+    to {
+        text-shadow: 0 0 15px #00ccff, 0 0 20px #00ccff;
+    }
+}
