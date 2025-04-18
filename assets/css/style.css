@@ -257,6 +257,7 @@ textarea {
     border: 1px solid #ccc;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     resize: vertical;
+    box-sizing: border-box; /* 🪄 la ligne magique qui corrige tout */
 }
 @keyframes pulse {
     0% {
