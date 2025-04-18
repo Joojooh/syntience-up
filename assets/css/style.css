@@ -42,7 +42,7 @@ body > * {
 /* Header */
 header {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .logo-link {
@@ -53,6 +53,25 @@ header {
 .logo {
     height: 70px;
 }
+.logo:hover {
+    animation: logoPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes logoPulse {
+    0% {
+        transform: scale(1);
+        filter: brightness(1);
+    }
+    50% {
+        transform: scale(1.05);
+        filter: brightness(1.2);
+    }
+    100% {
+        transform: scale(1);
+        filter: brightness(1);
+    }
+}
+
 .title-block {
     display: flex;
     flex-direction: column;
