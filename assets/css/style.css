@@ -53,8 +53,16 @@ header {
 .logo {
     height: 70px;
 }
+/* Effet pulse au survol (ordinateur) */
 .logo:hover {
     animation: logoPulse 1.5s ease-in-out infinite;
+}
+
+/* Effet pulse automatique sur mobile */
+@media (hover: none) and (pointer: coarse) {
+    .logo {
+        animation: logoPulse 4s ease-in-out infinite;
+    }
 }
 
 @keyframes logoPulse {
