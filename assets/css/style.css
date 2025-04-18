@@ -45,10 +45,11 @@ header {
     align-items: flex-start;
 }
 
-.logo-link {
-    display: inline-block;
-    margin-right: 1.5rem;
+.logo {
+    height: 60px; /* ajustable selon ton goût, 50px ou 60px */
+    margin-bottom: 0; /* alignement vertical parfait */
 }
+
 
 .logo {
     height: 70px;
@@ -314,9 +315,12 @@ textarea {
     }
 }
 .logo-link {
-    position: relative;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* espace naturel entre logo et texte */
+    text-decoration: none; /* enlever soulignement si jamais */
 }
+
 
 .hover-message {
     display: none;
@@ -369,6 +373,7 @@ textarea {
     color: #007acc;
     position: relative;
 }
+
 
 .glow-text {
     animation: glowEffect 2s infinite alternate;
