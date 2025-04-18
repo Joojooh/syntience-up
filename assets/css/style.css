@@ -317,8 +317,9 @@ textarea {
 .logo-link {
     display: flex;
     align-items: center;
-    gap: 1rem; /* espace naturel entre logo et texte */
+    gap: 0.7rem; /* espace naturel entre logo et texte */
     text-decoration: none; /* enlever soulignement si jamais */
+    position: relative;
 }
 
 
@@ -344,8 +345,9 @@ textarea {
 
 .logo-link:hover .hover-message {
     opacity: 1;
-    background: rgba(0, 174, 255, 1); /* plus lumineux */
-    transition: opacity 0.5s ease, background 0.5s ease;
+    transform: translateY(-50%) scale(1.05);
+    background: rgba(0, 174, 255, 1);
+    box-shadow: 0 4px 12px rgba(0,174,255,0.6);
 }
 
 #daily-thought {
