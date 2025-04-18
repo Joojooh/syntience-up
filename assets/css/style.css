@@ -409,3 +409,28 @@ textarea {
         transform: translateY(0);
     }
 }
+.fade-in-title {
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: fadeInTitle 1.8s ease-out forwards;
+}
+
+@keyframes fadeInTitle {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-thought {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInThoughtMove 2.5s ease-out forwards;
+}
+
+@keyframes fadeInThoughtMove {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
