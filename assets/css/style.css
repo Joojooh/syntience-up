@@ -324,31 +324,35 @@ textarea {
 
 
 .hover-message {
-    display: block; /* Affiché de base */
+    display: block;
     position: absolute;
     top: 50%;
     left: 100%;
-    transform: translateY(-50%);
+    transform: translateY(-50%) scale(0.95);
     margin-left: 1rem;
     padding: 0.5rem 1rem;
-    background: rgba(0, 122, 204, 0.9);
+    background: rgba(0, 122, 204, 0.8);
     color: white;
-    border-radius: 8px;
+    border-radius: 12px;
     font-size: 0.9rem;
     white-space: nowrap;
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    opacity: 1; /* visible */
-    transition: opacity 0.5s ease;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s ease;
     z-index: 10;
 }
 
 
+
 .logo-link:hover .hover-message {
     opacity: 1;
+    visibility: visible;
     transform: translateY(-50%) scale(1.05);
     background: rgba(0, 174, 255, 1);
     box-shadow: 0 4px 12px rgba(0,174,255,0.6);
 }
+
 
 #daily-thought {
     background: rgba(255, 255, 255, 0.7);
