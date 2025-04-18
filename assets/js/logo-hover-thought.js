@@ -4,7 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (logoLink && hoverMessage) {
         logoLink.addEventListener('mouseenter', () => {
-            const randomThought = logoThoughts[Math.floor(Math.random() * logoThoughts.length)];
+            const categories = Object.values(logoThoughts).flat();
+            const randomThought = categories[Math.floor(Math.random() * categories.length)];
             hoverMessage.textContent = randomThought;
         });
     }
