@@ -323,7 +323,7 @@ textarea {
 
 
 .hover-message {
-    display: none;
+    display: block; /* Affiché de base */
     position: absolute;
     top: 50%;
     left: 100%;
@@ -336,15 +336,18 @@ textarea {
     font-size: 0.9rem;
     white-space: nowrap;
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    opacity: 0;
+    opacity: 1; /* visible */
     transition: opacity 0.5s ease;
     z-index: 10;
 }
 
+
 .logo-link:hover .hover-message {
-    display: block;
     opacity: 1;
+    background: rgba(0, 174, 255, 1); /* plus lumineux */
+    transition: opacity 0.5s ease, background 0.5s ease;
 }
+
 #daily-thought {
     background: rgba(255, 255, 255, 0.7);
     padding: 1rem 2rem;
