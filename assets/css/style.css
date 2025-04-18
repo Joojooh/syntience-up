@@ -387,3 +387,13 @@ textarea {
         text-shadow: 0 0 15px #00ccff, 0 0 20px #00ccff;
     }
 }
+.home-content {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.intro-text {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #555;
+}
