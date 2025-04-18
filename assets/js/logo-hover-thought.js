@@ -1,18 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
-    let lastThoughtIndex = -1;
+    const logoLink = document.querySelector('.logo-link');
+    const hoverMessage = document.querySelector('.hover-message');
 
-    document.addEventListener('mouseenter', (event) => {
-        const logoLink = document.querySelector('.logo-link');
-        const hoverMessage = document.querySelector('.hover-message');
-
-        if (logoLink && hoverMessage && logoLink.contains(event.target)) {
-            let randomIndex;
-            do {
-                randomIndex = Math.floor(Math.random() * logoThoughts.length);
-            } while (randomIndex === lastThoughtIndex);
-
-            lastThoughtIndex = randomIndex;
-            hoverMessage.textContent = logoThoughts[randomIndex];
-        }
-    }, true);
+    if (logoLink && hoverMessage) {
+        logoLink.addEventListener('mouseenter', () => {
+            const randomThought = logoThoughts[Math.floor(Math.random() * logoThoughts.length)];
+            hoverMessage.textContent = randomThought;
+        });
+    }
 });
