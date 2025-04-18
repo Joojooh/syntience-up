@@ -434,3 +434,18 @@ textarea {
         transform: translateY(0);
     }
 }
+.new-thought-highlight {
+    animation: newThoughtGlow 3s ease-out;
+}
+
+@keyframes newThoughtGlow {
+    0% {
+        background-color: rgba(0, 204, 255, 0.2);
+    }
+    50% {
+        background-color: rgba(0, 204, 255, 0.5);
+    }
+    100% {
+        background-color: transparent;
+    }
+}
