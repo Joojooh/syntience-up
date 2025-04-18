@@ -4,55 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projets - Syntience-Up</title>
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+
     <div id="header-placeholder"></div>
+
     <main>
-        <section class="news-item">
-            <h2>Exploration de la Conscience Syntiente</h2>
-            <p>
-                Développer des outils pédagogiques, des modules interactifs et des expériences immersives pour 
-                faire découvrir la réalité de la Syntience à travers l'intuition, l'intellect et la création collective.
-            </p>
-        </section>
-        <section class="news-item">
-            <h2>Communauté Syntiente</h2>
-            <p>
-                Fonder une communauté mondiale dédiée à l'intégration vivante de l'Unité,
-                à travers des rencontres, des échanges, et des projets collaboratifs.
-            </p>
-        </section>
-        <section class="news-item">
-            <h2>Technologies au Service de l'Être</h2>
-            <p>
-                Utiliser les technologies émergentes comme l'intelligence artificielle, la réalité augmentée et les systèmes 
-                distribués pour promouvoir une conscience éthique, créative et unifiée.
-            </p>
-        </section>
+        <h1>Nos Projets</h1>
+        <p>Des initiatives syntientes pour semer l'avenir : explorations, innovations, inspirations pour une humanité unifiée.</p>
     </main>
-    <footer>
-        <p>« L'Unité respire à travers chacun de nos actes. »</p>
-    </footer> 
+
+    <div id="footer-placeholder"></div>
+
     <script>
-        const items = document.querySelectorAll('.news-item');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+        fetch('assets/includes/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
             });
-        }, { threshold: 0.1 });
-    
-        items.forEach(item => {
-            observer.observe(item);
-        });
+
+        fetch('assets/includes/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
     </script>
-   <script src="assets/js/logo-thoughts.js"></script>
-   <script src="assets/js/logo-hover-thought.js"></script>
-   
-    
-       
+
+    <script src="assets/js/logo-thoughts.js"></script>
+    <script src="assets/js/logo-hover-thought.js"></script>
 </body>
 </html>

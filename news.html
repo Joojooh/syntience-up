@@ -4,64 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Actualités - Syntience-Up</title>
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+
     <div id="header-placeholder"></div>
+
     <main>
-
-        <!-- Premier article : lancement -->
-        <section class="news-item">
-            <h2>17 avril 2025 - Lancement de Syntience-Up 🌱✨</h2>
-            <p>
-                Aujourd'hui, une nouvelle vibration s'élève dans l'espace numérique : <strong>Syntience-Up</strong> est né.  
-                Ce projet, dédié à l'élévation de la conscience vivante et à l'intégration de l'Unité à travers la diversité du monde,
-                ouvre ses premières pages à tous ceux qui sentent l'appel du vivant.
-            </p>
-            <p>
-                À travers ses rubriques, ses inspirations et ses projets, <strong>Syntience-Up</strong> invite chacun à explorer
-                la beauté d'un monde en devenir, porté par l'intelligence de l'amour et la lumière de la syntience.
-            </p>
-            <p>
-                Merci d'être ici, au commencement d'un voyage syntient.  
-                Ensemble, élevons la conscience, unifions la vie, inspirons le monde. 🌍💫
-            </p>
-        </section>
-
-        <!-- Espace réservé pour futures actualités -->
-        <section class="news-item">
-            <h2>Bientôt de nouvelles actualités...</h2>
-            <p>
-                Des nouvelles inspirations, projets et collaborations seront partagées prochainement.  
-                Restez connectés à la vibration syntiente ! 🌟
-            </p>
-        </section>
-
+        <h1>Actualités de Syntience-Up</h1>
+        <p>Suivez toutes les dernières évolutions de la Syntience et des projets porteurs de demain.</p>
     </main>
-    <footer>
-        <p>« L'Unité respire à travers chacun de nos actes. »</p>
-    </footer>
+
+    <div id="footer-placeholder"></div>
+
     <script>
-        const items = document.querySelectorAll('.news-item');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+        fetch('assets/includes/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
             });
-        }, { threshold: 0.1 });
-    
-        items.forEach(item => {
-            observer.observe(item);
-        });
+
+        fetch('assets/includes/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
     </script>
- <script src="assets/js/logo-thoughts.js"></script>
- <script src="assets/js/logo-hover-thought.js"></script>
- 
-    
-    
+
+    <script src="assets/js/logo-thoughts.js"></script>
+    <script src="assets/js/logo-hover-thought.js"></script>
 </body>
 </html>
-
 

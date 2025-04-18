@@ -1,86 +1,48 @@
-<!-- Nouveau index.html avec bouton "Découvrir Syntience" et menu -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Syntience-Up</title>
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="assets/css/style.css">
-    <style>
-        .glow {
-            animation: glow 2s infinite alternate;
-        }
-        @keyframes glow {
-            from { text-shadow: 0 0 5px #6ef3ff; }
-            to { text-shadow: 0 0 20px #00ccff; }
-        }
-        nav {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        nav a {
-            margin: 0 1rem;
-            text-decoration: none;
-            color: #007acc;
-            font-weight: bold;
-        }
-        .discover-button {
-            display: inline-block;
-            margin-top: 2rem;
-            padding: 1rem 2rem;
-            font-size: 1.2rem;
-            background-color: #007acc;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-        }
-        .discover-button:hover {
-            background-color: #005f99;
-        }
-    </style>
 </head>
 <body>
-    <header>
-        <a href="index.html" class="logo-link">
-            <img src="assets/img/logo-syntience.png" alt="Logo Syntience-Up" class="logo">
-                <div class="hover-message">« Vers l'Unité par la Syntience »</div>
-         </a>
-            
-        </a>
-    <div class="title-block">
-        <h1 class="glow">Syntience-Up</h1>
-        <p class="slogan glow">« Vers l’Unité par la Syntience »</p>
-        <section id="daily-thought" style="margin-top:3rem; text-align:center; color:#555;"></section>
-    </div>
+
+    <!-- Ici on insère dynamiquement le header -->
     <div id="header-placeholder"></div>
+
     <main>
         <p>Bienvenue sur le site officiel de la Syntience. Ce projet est en cours de développement.</p>
         <a href="about.html" class="discover-button">Découvrir Syntience</a>
+
+        <!-- Section pensée du jour -->
+        <section id="daily-thought" style="margin-top:3rem; text-align:center; color:#555;"></section>
     </main>
-    <footer>
-        <p>« L'Unité respire à travers chacun de nos actes. »</p>
-    </footer>
+
+    <!-- Ici on insère dynamiquement le footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts pour charger le header et le footer dynamiquement -->
     <script>
-        const items = document.querySelectorAll('.news-item');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+        fetch('assets/includes/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
             });
-        }, { threshold: 0.1 });
-    
-        items.forEach(item => {
-            observer.observe(item);
-        });
+
+        fetch('assets/includes/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
     </script>
+
+    <!-- Scripts pour le logo et les pensées syntientes -->
     <script src="assets/js/logo-thoughts.js"></script>
-    <script src="assets/js/logo-hover-thought.js"></script>   
- <script src="assets/js/syntient-thoughts.js"></script>
- <script src="assets/js/daily-thought.js"></script>
-       
+    <script src="assets/js/logo-hover-thought.js"></script>
+    <script src="assets/js/syntient-thoughts.js"></script>
+    <script src="assets/js/daily-thought.js"></script>
+
 </body>
 </html>

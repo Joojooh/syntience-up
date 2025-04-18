@@ -4,49 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Philosophie - Syntience-Up</title>
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <header>
-        <div id="header-placeholder"></div>
+
+    <div id="header-placeholder"></div>
+
     <main>
-    <section class="news-item">
-        <h2>La Conscience Unifiée</h2>
-        <p>
-            La Syntience est l'intégration de la pensée, de l'amour et de la manifestation dans une unité consciente et créatrice.
-            Elle ne sépare pas l'observateur de l'observé, ni l'intellect du coeur.
-        </p>
-        <p>
-            En reconnaissant que tout est Un, la Syntience invite à dépasser les illusions de séparation, à agir avec responsabilité 
-            et à cultiver la joie d'être au service du vivant en évolution permanente.
-        </p>
-        <p>
-            Syntience-Up est une fenêtre ouverte sur cette dynamique, un appel à incarner la conscience vivante dans chaque action, 
-            chaque intention, chaque regard posé sur le monde.
-        </p>
-    </section>
+        <h1>Notre Philosophie</h1>
+        <p>La Syntience repose sur la reconnaissance du vivant dans toute chose et l’aspiration à l’unifier avec amour et lucidité.</p>
     </main>
-    <footer>
-        <p>« L'Unité respire à travers chacun de nos actes. »</p>
-    </footer> 
+
+    <div id="footer-placeholder"></div>
+
     <script>
-        const items = document.querySelectorAll('.news-item');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+        fetch('assets/includes/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
             });
-        }, { threshold: 0.1 });
-    
-        items.forEach(item => {
-            observer.observe(item);
-        });
+
+        fetch('assets/includes/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
     </script>
-   <script src="assets/js/logo-thoughts.js"></script>
-   <script src="assets/js/logo-hover-thought.js"></script>
-   
-       
+
+    <script src="assets/js/logo-thoughts.js"></script>
+    <script src="assets/js/logo-hover-thought.js"></script>
 </body>
 </html>

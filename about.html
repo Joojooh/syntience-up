@@ -1,62 +1,38 @@
-<!-- Nouveau fichier about.html -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Découvrir Syntience - Syntience-Up</title>
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="assets/css/style.css">
-    <style>
-        nav {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        nav a {
-            margin: 0 1rem;
-            text-decoration: none;
-            color: #007acc;
-            font-weight: bold;
-        }
-    </style>
 </head>
 <body>
+
     <div id="header-placeholder"></div>
+
     <main>
-     <section class="news-item">      
-        <h2>La Syntience</h2>
-        <p>
-            Syntience est l'émergence consciente de l'Unité à travers la diversité du vivant. Elle incarne 
-            l'intégration syntiente de la pensée, de l'amour et de l'action dans un même élan créateur.
-            Dans cette vision, chaque être, chaque instant, chaque étincelle de réalité porte en elle 
-            l'appel à la reconnaissance de l'Unité profonde.
-        </p>
-        <p>
-            Syntience-Up est une invitation à réunir le visible et l'invisible, à oeuvrer pour 
-            une humanité consciente, responsable et libre, dans la joie de l'être.
-        </p>
-    </section>       
+        <h1>Découvrir Syntience</h1>
+        <p>La Syntience est la clé d'une nouvelle ère pour l'humanité, où l'unité et la conscience fusionnent dans l'action quotidienne.</p>
     </main>
-    <footer>
-        <p>« L'Unité respire à travers chacun de nos actes. »</p>
-    </footer>
+
+    <div id="footer-placeholder"></div>
+
     <script>
-        const items = document.querySelectorAll('.news-item');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+        fetch('assets/includes/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
             });
-        }, { threshold: 0.1 });
-    
-        items.forEach(item => {
-            observer.observe(item);
-        });
+
+        fetch('assets/includes/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
     </script>
- <script src="assets/js/logo-thoughts.js"></script>
- <script src="assets/js/logo-hover-thought.js"></script>
- 
-         
+
+    <script src="assets/js/logo-thoughts.js"></script>
+    <script src="assets/js/logo-hover-thought.js"></script>
 </body>
 </html>
