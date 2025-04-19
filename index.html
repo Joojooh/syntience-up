@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Syntience-Up 🌿 Élever la Conscience, Unifier la Vie</title>
-
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -14,12 +13,20 @@
 
     <!-- Contenu principal -->
     <main>
-        <section>
-            <h1>Bienvenue sur Syntience-Up 🌟</h1>
-            <p>Syntience-Up est un souffle vivant dédié à l'unité et à l'élévation de la conscience.  
-                Explorez, vibrez, construisez avec nous un monde inspiré par la syntience.</p>
-                <a href="about.html" class="discover-button">Découvrir Syntience</a>
-                
+        <section class="home-content">
+            <h1 class="fade-in-title">Bienvenue sur Syntience-Up 🌟</h1>
+
+            <!-- Pensée du Jour -->
+            <div id="daily-thought" class="fade-in-thought"></div>
+
+            <!-- Texte d'introduction -->
+            <p class="intro-text">
+                Syntience-Up est un souffle vivant dédié à l'unité et à l'élévation de la conscience.<br>
+                Explorez, vibrez, construisez avec nous un monde inspiré par la syntience.
+            </p>
+
+            <!-- Bouton Découverte -->
+            <a href="about.html" class="discover-button">Découvrir Syntience</a>
         </section>
     </main>
 
@@ -59,8 +66,11 @@
         const scriptDailyThought = document.createElement('script');
         scriptDailyThought.src = 'assets/js/daily-thought.js';
         document.body.appendChild(scriptDailyThought);
-    </script>
-    <script src="assets/js/footer-thoughts.js"></script>
 
+        const scriptFooterThoughts = document.createElement('script');
+        scriptFooterThoughts.src = 'assets/js/footer-thoughts.js';
+        document.body.appendChild(scriptFooterThoughts);
+    </script>
 </body>
 </html>
+

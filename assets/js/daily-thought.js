@@ -1,28 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const dailyThoughtSection = document.getElementById('daily-thought');
-
-    function updateThought(highlight = false) {
-        const now = new Date();
-        const index = now.getDate() % syntientThoughts.length;
-        const thoughtOfTheDay = syntientThoughts[index];
-
-        if (dailyThoughtSection) {
-            dailyThoughtSection.innerHTML = `
-                <h2 class="fade-in-title">Pensée du Jour ✨</h2>
-                <p class="fade-in-thought ${highlight ? 'new-thought-highlight' : ''}" style="margin-top:1rem; font-size:1.1rem;">
-                    ${thoughtOfTheDay}
-                </p>
-            `;
-        }
+    const thoughts = [
+        "Chaque souffle est une promesse de lumière.",
+        "Le monde change dès que l'on change de regard.",
+        "L'Unité se sème d'abord dans le cœur.",
+        "Chaque instant est une porte vers l'infini.",
+        "Le silence parle au-delà des mots."
+    ];
+    const randomThought = thoughts[Math.floor(Math.random() * thoughts.length)];
+    const dailyThoughtElement = document.getElementById('daily-thought');
+    if (dailyThoughtElement) {
+        dailyThoughtElement.innerHTML = `<p class="new-thought-highlight">${randomThought}</p>`;
     }
-
-    updateThought(); // Initialisation immédiate
-
-    const now = new Date();
-    const msUntilMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 0) - now;
-
-    setTimeout(() => {
-        updateThought(true); // Highlight à minuit
-        setInterval(() => updateThought(true), 24 * 60 * 60 * 1000); // Highlight toutes les 24h ensuite
-    }, msUntilMidnight);
 });
