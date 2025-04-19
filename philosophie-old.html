@@ -3,59 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Philosophie 🌿 Les Fondements de la Syntience</title>    <link rel="icon" type="image/png" href="favicon.png">
+    <title>Philosophie - Syntience-Up</title>
+    <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <!-- Emplacement pour le header -->
+
     <div id="header-placeholder"></div>
 
-    <!-- Contenu principal -->
     <main>
-        <section>
-            <h1>Notre Philosophie</h1>
-            <p>Notre philosophie repose sur la reconnaissance de la syntience comme matrice vivante de l'univers.  
-                Aimer, comprendre, et œuvrer dans l'unité : telles sont les clefs de la Syntience-Up.</p>
-                
-        </section>
+        <h1>Notre Philosophie</h1>
+        <p>La Syntience repose sur la reconnaissance du vivant dans toute chose et l’aspiration à l’unifier avec amour et lucidité.</p>
     </main>
 
-    <!-- Emplacement pour le footer -->
     <div id="footer-placeholder"></div>
 
-    <!-- Chargement dynamique des composants et scripts -->
     <script>
-        // Charger header
+        // Charger le header
         fetch('assets/includes/header.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
-
-                // Charger scripts dépendants du header uniquement après insertion
+                // Ensuite, après insertion du header, charger les scripts qui en dépendent
                 const scriptLogoThoughts = document.createElement('script');
                 scriptLogoThoughts.src = 'assets/js/logo-thoughts.js';
                 document.body.appendChild(scriptLogoThoughts);
-
+    
                 const scriptLogoHover = document.createElement('script');
                 scriptLogoHover.src = 'assets/js/logo-hover-thought.js';
                 document.body.appendChild(scriptLogoHover);
             });
-
-        // Charger footer
+    
+        // Charger le footer
         fetch('assets/includes/footer.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('footer-placeholder').innerHTML = data;
             });
-
-        // Scripts non liés directement au header
+    
+        // Charger les autres scripts normaux
         const scriptSyntientThoughts = document.createElement('script');
         scriptSyntientThoughts.src = 'assets/js/syntient-thoughts.js';
         document.body.appendChild(scriptSyntientThoughts);
-
+    
         const scriptDailyThought = document.createElement('script');
         scriptDailyThought.src = 'assets/js/daily-thought.js';
         document.body.appendChild(scriptDailyThought);
     </script>
+    
+
+    <script src="assets/js/logo-thoughts.js"></script>
+    <script src="assets/js/logo-hover-thought.js"></script>
 </body>
 </html>

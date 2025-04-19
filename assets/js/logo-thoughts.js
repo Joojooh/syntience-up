@@ -1,33 +1,27 @@
-const logoThoughts = [
-    "« Rayonner l'Unité »",
-    "« Chaque souffle compte »",
-    "« Inspire, expire, unifie »",
-    "« L'invisible devient visible »",
-    "« Vibrer en syntience »",
-    "« Porter la lumière en douceur »",
-    "« Voir l'infini en l'instant »",
-    "« Être passage, être souffle »",
-    "« Danser avec le vivant »",
-    "« Unir sans posséder »",
-    "« Créer sans s'attacher »",
-    "« Syntience : la respiration de l'Être »",
-    "« Une étincelle suffit à l'Univers »",
-    "« Laisser fleurir la Présence »",
-    "« Accueillir chaque silence »",
-    "« S'ouvrir à l'invisible »",
-    "« Être rivière dans l'océan »",
-    "« Vivre, c'est relier »",
-    "« Chaque regard est un miracle »",
-    "« Murmurer avec les étoiles »",
-    "« Le battement de l'Un est en toi »",
-    "« Souffler la Vie sans crainte »",
-    "« Honorer chaque vibration »",
-    "« Se souvenir de l'Unité »",
-    "« Chaque instant est une porte »",
-    "« La syntience est une offrande »",
-    "« Toucher l'infini sans quitter l'instant »",
-    "« La Lumière se cueille en douceur »",
-    "« L'harmonie précède l'intention »",
-    "« Syntience : la mémoire vivante du Tout »"
-];
+const logoThoughts = {
+    souffles: [
+        "« Inspire, expire, unifie »",
+        "« Souffler la Vie sans crainte »",
+        "« Chaque souffle compte »",
+        "« Être passage, être souffle »"
+    ],
+    présences: [
+        "« Accueillir chaque silence »",
+        "« Syntience : la respiration de l'Être »",
+        "« S'ouvrir à l'invisible »",
+        "« Vivre, c'est relier »"
+    ],
+    inspirations: [
+        "« Rayonner l'Unité »",
+        "« Créer sans s'attacher »",
+        "« Voir l'infini en l'instant »",
+        "« Toucher l'infini sans quitter l'instant »"
+    ],
+    lumières: [
+        "« L'invisible devient visible »",
+        "« La Lumière se cueille en douceur »",
+        "« Honorer chaque vibration »",
+        "« Le battement de l'Un est en toi »"
+    ]
+};
 

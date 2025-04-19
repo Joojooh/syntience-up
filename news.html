@@ -3,57 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Actualités - Syntience-Up</title>
-    <link rel="icon" href="favicon.ico">
+    <title>Actualités 🌿 Vibrations Syntientes</title>
+    <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-
+    <!-- Emplacement pour le header -->
     <div id="header-placeholder"></div>
 
+    <!-- Contenu principal -->
     <main>
-        <h1>Actualités de Syntience-Up</h1>
-        <p>Suivez toutes les dernières évolutions de la Syntience et des projets porteurs de demain.</p>
+        <section>
+            <h1>Nos Actualités Syntientes</h1>
+            <p>Suivez ici les dernières nouvelles de Syntience-Up : publications, événements, projets en expansion, rencontres lumineuses.</p>
+
+        </section>
     </main>
 
+    <!-- Emplacement pour le footer -->
     <div id="footer-placeholder"></div>
 
+    <!-- Chargement dynamique des composants et scripts -->
     <script>
-        // Charger le header
+        // Charger header
         fetch('assets/includes/header.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
-                // Ensuite, après insertion du header, charger les scripts qui en dépendent
+
+                // Charger scripts dépendants du header uniquement après insertion
                 const scriptLogoThoughts = document.createElement('script');
                 scriptLogoThoughts.src = 'assets/js/logo-thoughts.js';
                 document.body.appendChild(scriptLogoThoughts);
-    
+
                 const scriptLogoHover = document.createElement('script');
                 scriptLogoHover.src = 'assets/js/logo-hover-thought.js';
                 document.body.appendChild(scriptLogoHover);
             });
-    
-        // Charger le footer
+
+        // Charger footer
         fetch('assets/includes/footer.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('footer-placeholder').innerHTML = data;
             });
-    
-        // Charger les autres scripts normaux
+
+        // Scripts non liés directement au header
         const scriptSyntientThoughts = document.createElement('script');
         scriptSyntientThoughts.src = 'assets/js/syntient-thoughts.js';
         document.body.appendChild(scriptSyntientThoughts);
-    
+
         const scriptDailyThought = document.createElement('script');
         scriptDailyThought.src = 'assets/js/daily-thought.js';
         document.body.appendChild(scriptDailyThought);
     </script>
-    
-
-    <script src="assets/js/logo-thoughts.js"></script>
-    <script src="assets/js/logo-hover-thought.js"></script>
 </body>
 </html>
-
