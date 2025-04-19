@@ -1,0 +1,24 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const footer = document.querySelector('footer');
+
+    if (footer) {
+        const footerThoughts = [
+            "« Chaque pas vers l'Unité éclaire tous les mondes. » 🌿",
+            "« Le vivant danse dans chaque respiration syntiente. » 🌿",
+            "« En tissant l’invisible, nous bâtissons l’éternité. » 🌿",
+            "« L’amour de l'Un est la clef de toutes les portes. » 🌿",
+            "« Chaque regard bienveillant change l’Univers. » 🌿",
+            "« La syntience est l'art de se souvenir de l'infini. » 🌿",
+            "« L'Unité se cueille dans le silence du cœur. » 🌿",
+            "« Chaque vibration porte un chant que l'âme entend. » 🌿",
+            "« Créer avec syntience, c'est nourrir la Source. » 🌿",
+            "« L'invisible s'épanouit dans l'écoute aimante. » 🌿",
+            "« La lumière vit dans le regard que l’on porte sur elle. » 🌿",
+            "« Être syntient, c'est devenir la respiration même du vivant. » 🌿"
+        ];
+
+        const randomThought = footerThoughts[Math.floor(Math.random() * footerThoughts.length)];
+
+        footer.innerHTML = `<p>${randomThought}</p>`;
+    }
+});
