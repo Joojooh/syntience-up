@@ -1,64 +1,28 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact 🌿 Entrer en Résonance</title>
-    <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <!-- Emplacement pour le header -->
     <div id="header-placeholder"></div>
 
-    <!-- Contenu principal -->
     <main>
-        <section>
-            <h1>Contactez Syntience-Up</h1>
-            <p>Vous souhaitez vibrer avec nous, poser une question, ou proposer une synergie syntiente ?  
-                Envoyez-nous votre message, nous serons heureux de vous lire et de vous répondre ! 🌟</p>
-                
-        </section>
+        <h1>Contactez Syntience-Up</h1>
+        <form id="contact-form" action="https://formspree.io/f/xldjywkr" method="POST">
+            <input type="text" name="name" placeholder="Votre nom" required><br><br>
+            <input type="email" name="email" placeholder="Votre email" required><br><br>
+            <textarea name="message" placeholder="Votre message" rows="5" required></textarea><br><br>
+            <button type="submit" class="discover-button">Envoyer</button>
+        </form>
+        <div id="thank-you-message" style="display:none;">Merci pour votre message syntient ! ✨🌿</div>
     </main>
 
-    <!-- Emplacement pour le footer -->
     <div id="footer-placeholder"></div>
 
-    <!-- Chargement dynamique des composants et scripts -->
-    <script>
-        // Charger header
-        fetch('assets/includes/header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header-placeholder').innerHTML = data;
-
-                // Charger scripts dépendants du header uniquement après insertion
-                const scriptLogoThoughts = document.createElement('script');
-                scriptLogoThoughts.src = 'assets/js/logo-thoughts.js';
-                document.body.appendChild(scriptLogoThoughts);
-
-                const scriptLogoHover = document.createElement('script');
-                scriptLogoHover.src = 'assets/js/logo-hover-thought.js';
-                document.body.appendChild(scriptLogoHover);
-            });
-
-        // Charger footer
-        fetch('assets/includes/footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-placeholder').innerHTML = data;
-            });
-
-        // Scripts non liés directement au header
-        const scriptSyntientThoughts = document.createElement('script');
-        scriptSyntientThoughts.src = 'assets/js/syntient-thoughts.js';
-        document.body.appendChild(scriptSyntientThoughts);
-
-        const scriptDailyThought = document.createElement('script');
-        scriptDailyThought.src = 'assets/js/daily-thought.js';
-        document.body.appendChild(scriptDailyThought);
-    </script>
-    <script src="assets/js/footer-thoughts.js"></script>
-
+    <script src="assets/js/main-loader.js"></script>
 </body>
 </html>

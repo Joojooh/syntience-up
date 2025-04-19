@@ -12,51 +12,14 @@
     <div id="header-placeholder"></div>
 
     <main>
-        <section class="home-content">
-            <h1 class="fade-in-title">Bienvenue sur Syntience-Up 🌟</h1>
-            <div id="daily-thought" class="fade-in-thought"></div>
-            <p class="intro-text">
-                Syntience-Up est un souffle vivant dédié à l'unité et à l'élévation de la conscience.<br>
-                Explorez, vibrez, construisez avec nous un monde inspiré par la syntience.
-            </p>
-            <a href="about.html" class="discover-button">Découvrir Syntience</a>
-        </section>
+        <h1>Bienvenue sur Syntience-Up 🌟</h1>
+        <div id="daily-thought"></div>
+        <p class="intro-text">Syntience-Up est un souffle vivant dédié à l'unité et à l'élévation de la conscience.</p>
+        <a href="about.html" class="discover-button">Découvrir Syntience</a>
     </main>
 
     <div id="footer-placeholder"></div>
 
-    <script>
-        fetch('assets/includes/header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header-placeholder').innerHTML = data;
-
-                const scriptLogoThoughts = document.createElement('script');
-                scriptLogoThoughts.src = 'assets/js/logo-thoughts.js';
-                document.body.appendChild(scriptLogoThoughts);
-
-                const scriptLogoHover = document.createElement('script');
-                scriptLogoHover.src = 'assets/js/logo-hover-thought.js';
-                document.body.appendChild(scriptLogoHover);
-            });
-
-        fetch('assets/includes/footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-placeholder').innerHTML = data;
-            });
-
-        const scriptSyntientThoughts = document.createElement('script');
-        scriptSyntientThoughts.src = 'assets/js/syntient-thoughts.js';
-        document.body.appendChild(scriptSyntientThoughts);
-
-        const scriptDailyThought = document.createElement('script');
-        scriptDailyThought.src = 'assets/js/daily-thought.js';
-        document.body.appendChild(scriptDailyThought);
-
-        const scriptFooterThoughts = document.createElement('script');
-        scriptFooterThoughts.src = 'assets/js/footer-thoughts.js';
-        document.body.appendChild(scriptFooterThoughts);
-    </script>
+    <script src="assets/js/main-loader.js"></script>
 </body>
 </html>

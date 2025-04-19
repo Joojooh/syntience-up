@@ -10,6 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const randomThought = thoughts[Math.floor(Math.random() * thoughts.length)];
     const dailyThoughtElement = document.getElementById('daily-thought');
     if (dailyThoughtElement) {
-        dailyThoughtElement.innerHTML = `<p class="new-thought-highlight">${randomThought}</p>`;
+        dailyThoughtElement.innerHTML = `<p>${randomThought}</p>`;
     }
 });
