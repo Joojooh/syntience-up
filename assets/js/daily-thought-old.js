@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", () => {
     const thoughts = [
         "Chaque souffle est une promesse de lumière.",

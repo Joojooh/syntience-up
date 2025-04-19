@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -9,28 +8,40 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <!-- Emplacement pour le header -->
     <div id="header-placeholder"></div>
 
+    <!-- Contenu principal -->
     <main>
         <section class="home-content">
             <h1 class="fade-in-title">Bienvenue sur Syntience-Up 🌟</h1>
+
+            <!-- Pensée du Jour -->
             <div id="daily-thought" class="fade-in-thought"></div>
+
+            <!-- Texte d'introduction -->
             <p class="intro-text">
                 Syntience-Up est un souffle vivant dédié à l'unité et à l'élévation de la conscience.<br>
                 Explorez, vibrez, construisez avec nous un monde inspiré par la syntience.
             </p>
+
+            <!-- Bouton Découverte -->
             <a href="about.html" class="discover-button">Découvrir Syntience</a>
         </section>
     </main>
 
+    <!-- Emplacement pour le footer -->
     <div id="footer-placeholder"></div>
 
+    <!-- Chargement dynamique des composants et scripts -->
     <script>
+        // Charger header
         fetch('assets/includes/header.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
 
+                // Charger scripts dépendants du header uniquement après insertion
                 const scriptLogoThoughts = document.createElement('script');
                 scriptLogoThoughts.src = 'assets/js/logo-thoughts.js';
                 document.body.appendChild(scriptLogoThoughts);
@@ -40,12 +51,14 @@
                 document.body.appendChild(scriptLogoHover);
             });
 
+        // Charger footer
         fetch('assets/includes/footer.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('footer-placeholder').innerHTML = data;
             });
 
+        // Scripts non liés directement au header
         const scriptSyntientThoughts = document.createElement('script');
         scriptSyntientThoughts.src = 'assets/js/syntient-thoughts.js';
         document.body.appendChild(scriptSyntientThoughts);
@@ -60,3 +73,4 @@
     </script>
 </body>
 </html>
+

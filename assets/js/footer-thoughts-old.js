@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", () => {
     const footer = document.querySelector('footer');
 
@@ -32,3 +31,4 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 100);
     }
 });
+
