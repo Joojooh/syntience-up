@@ -19,6 +19,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const randomThought = footerThoughts[Math.floor(Math.random() * footerThoughts.length)];
 
-        footer.innerHTML = `<p>${randomThought}</p>`;
+        footer.innerHTML = `<p class="footer-thought">${randomThought}</p>`;
+        
+        // Appliquer une légère animation
+        const thoughtElement = document.querySelector('.footer-thought');
+        thoughtElement.style.opacity = 0;
+        setTimeout(() => {
+            thoughtElement.style.transition = "opacity 1.5s ease-in-out";
+            thoughtElement.style.opacity = 1;
+        }, 100); // Petit délai pour enclencher en douceur
     }
 });
+

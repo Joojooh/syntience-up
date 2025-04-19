@@ -466,3 +466,10 @@ section {
     box-shadow: 0 4px 12px rgba(0, 174, 255, 0.4);
     max-width: 800px;
 }
+.footer-thought {
+    text-align: center;
+    font-size: 1rem;
+    color: #007acc;
+    margin-top: 2rem;
+    opacity: 0; /* Valeur initiale pour fade-in */
+}
