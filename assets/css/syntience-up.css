@@ -34,19 +34,25 @@ body {
   
   .button {
     display: inline-block;
-    padding: 1rem 2rem;
+    padding: 1.2rem 2.5rem;
     background-color: #006d77;
     color: white;
     text-decoration: none;
     border-radius: 30px;
-    font-size: 1.2rem;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 1.3rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 109, 119, 0.3);
+    animation: pulse 4s infinite ease-in-out;
   }
+ 
   
   .button:hover {
     background-color: #004d4f;
-    transform: scale(1.05);
+    transform: scale(1.08);
+    box-shadow: 0 6px 15px rgba(0, 109, 119, 0.5);
   }
+  
   
   /* === Section principale === */
   section {
@@ -113,5 +119,19 @@ body {
     font-style: italic;
     color: #666;
     padding: 2rem;
+  }
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 4px 10px rgba(0, 109, 119, 0.3);
+    }
+    50% {
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(0, 109, 119, 0.5);
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: 0 4px 10px rgba(0, 109, 119, 0.3);
+    }
   }
   
