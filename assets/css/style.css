@@ -109,7 +109,16 @@ footer {
     }
 }
 
-/* === Animation*
+/* === Animation fadeIn === */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 /* === Cadre Pensée du Jour === */
 .thought-container {
     background: #e6f7ff;
@@ -128,6 +137,7 @@ footer {
     margin-bottom: 1.5rem;
     font-size: 1.8rem;
 }
+
 /* === Thought Bubble personnalisé === */
 .thought-bubble {
     position: absolute;
