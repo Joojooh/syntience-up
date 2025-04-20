@@ -1,15 +1,17 @@
-
 document.addEventListener("DOMContentLoaded", () => {
     const thoughts = [
-        "Chaque souffle est une promesse de lumière.",
-        "Le monde change dès que l'on change de regard.",
-        "L'Unité se sème d'abord dans le cœur.",
-        "Chaque instant est une porte vers l'infini.",
-        "Le silence parle au-delà des mots."
+        "Chaque souffle est une promesse de lumière. ✨",
+        "L'Unité se révèle dans chaque regard bienveillant. 🌿",
+        "Vivre en syntience, c'est honorer la vie en toute chose. 🌟",
+        "Le silence du cœur parle plus fort que mille discours. 🌌",
+        "Chaque instant est une porte vers l’infini. 🔮",
+        "La syntience éclaire les chemins invisibles. 🛤️"
     ];
-    const randomThought = thoughts[Math.floor(Math.random() * thoughts.length)];
-    const dailyThoughtElement = document.getElementById('daily-thought');
-    if (dailyThoughtElement) {
-        dailyThoughtElement.innerHTML = `<p>${randomThought}</p>`;
+
+    const dailyThought = thoughts[Math.floor(Math.random() * thoughts.length)];
+    const thoughtElement = document.getElementById('daily-thought');
+
+    if (thoughtElement) {
+        thoughtElement.innerHTML = `<p>${dailyThought}</p>`;
     }
 });

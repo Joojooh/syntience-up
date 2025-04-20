@@ -1,23 +1,145 @@
-
+/* === Base du site === */
 body {
-    font-family: 'Segoe UI', sans-serif;
     margin: 0;
     padding: 0;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
     background-color: #f0f8ff;
+    color: #004466;
+    line-height: 1.6;
 }
-main {
+
+/* === Header === */
+header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
     text-align: center;
-    margin-top: 2rem;
 }
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.logo {
+    height: 60px;
+    width: auto;
+    animation: pulseGlow 2s infinite alternate;
+}
+
+.site-title {
+    font-size: 2rem;
+    color: #007acc;
+}
+
+/* === Navigation === */
+.navbar {
+    margin-top: 1rem;
+}
+
+.navbar a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: #007acc;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #005999;
+}
+
+/* === Section principale === */
+main {
+    padding: 2rem;
+    text-align: center;
+}
+
+.intro-text {
+    font-size: 1.2rem;
+    margin: 2rem 0;
+    color: #006699;
+}
+
+/* === Pensée du jour === */
+.daily-thought {
+    margin-bottom: 2rem;
+    font-size: 1.4rem;
+    font-style: italic;
+    color: #005f99;
+    animation: fadeIn 2s ease;
+}
+
+/* === Bouton Découverte === */
 .discover-button {
-    margin-top: 2rem;
+    display: inline-block;
     padding: 1rem 2rem;
     background-color: #007acc;
-    color: white;
-    border-radius: 8px;
+    color: #ffffff;
+    border-radius: 30px;
     text-decoration: none;
+    font-size: 1.2rem;
+    transition: background-color 0.3s, transform 0.3s;
 }
-#daily-thought, .footer-thought {
-    font-style: italic;
-    margin-top: 2rem;
+
+.discover-button:hover {
+    background-color: #005999;
+    transform: scale(1.05);
+}
+
+/* === Footer === */
+footer {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background-color: #e0f7ff;
+    text-align: center;
+    font-size: 1rem;
+    color: #004466;
+}
+
+/* === Effet de glow sur le logo === */
+@keyframes pulseGlow {
+    from {
+        filter: drop-shadow(0 0 5px #00ccff);
+    }
+    to {
+        filter: drop-shadow(0 0 15px #00ccff);
+    }
+}
+
+/* === Animation*
+/* === Cadre Pensée du Jour === */
+.thought-container {
+    background: #e6f7ff;
+    border: 2px solid #00aaff;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 600px;
+    box-shadow: 0 4px 10px rgba(0, 170, 255, 0.3);
+    text-align: center;
+    animation: fadeIn 2s ease;
+}
+
+.thought-container h2 {
+    color: #007acc;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+/* === Thought Bubble personnalisé === */
+.thought-bubble {
+    position: absolute;
+    background: rgba(0, 170, 255, 0.9);
+    color: white;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    pointer-events: none;
+    display: none;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
 }
