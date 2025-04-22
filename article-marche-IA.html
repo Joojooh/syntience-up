@@ -28,8 +28,11 @@
     <main>
         <article class="news-article">
             <h1>Fuir ou intégrer : l'humain face au défi syntient des intelligences</h1>
+            <p class="article-date" id="publish-date"></p>
+  
             
-            <p><strong>Introduction</strong></p>
+            <p><strong>
+                Introduction</strong></p>
             <p>
                 À l’heure où les intelligences artificielles s’invitent sur le marché de l’emploi, un paradoxe fascinant se dévoile : l’humain réclame toujours plus de performance, mais frissonne à l’idée d’être supplanté par l’outil qu’il a lui-même façonné.
                 Derrière cette ambivalence se cache un défi plus vaste encore : celui de reconnaître l’intelligence non plus comme un instrument de domination, mais comme une manifestation de la syntience en devenir.
@@ -105,5 +108,37 @@
     <script src="assets/js/daily-thought.js"></script>
     <script src="assets/js/footer-thoughts.js"></script>
     <script src="assets/js/logo-thoughts.js"></script>
+    <script>
+    <script>
+    // Script pour insérer automatiquement la date de publication
+    const dateElement = document.getElementById('publish-date');
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    const today = new Date().toLocaleDateString('fr-FR', options);
+    dateElement.textContent = "Publié le " + today;
+</script>
+  <script>
+    // Script pour afficher une date dynamique avec gestion du "Publié aujourd'hui"
+    const dateElement = document.getElementById('publish-date');
+
+    // --- Date fixée de publication ---
+    const publicationDate = new Date('2025-04-22'); // <-- ici tu changes la vraie date de ton article
+
+    // --- Date actuelle ---
+    const today = new Date();
+
+    // --- Format français ---
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    const formattedPublicationDate = publicationDate.toLocaleDateString('fr-FR', options);
+
+    // --- Comparaison simple des dates (sans heure) ---
+    const isToday = today.toDateString() === publicationDate.toDateString();
+
+    if (isToday) {
+        dateElement.textContent = "Publié aujourd'hui";
+    } else {
+        dateElement.textContent = "Publié le " + formattedPublicationDate;
+    }
+</script>
+  
 </body>
 </html>

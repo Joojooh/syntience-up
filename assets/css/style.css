@@ -244,3 +244,10 @@ footer {
         line-height: 1.6em;
     }
 }
+.article-date {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
