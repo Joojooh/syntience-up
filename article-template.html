@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITRE DE L'ARTICLE | Syntience-Up</title>
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo-link">
+                <img src="assets/img/logo-syntience.png" alt="Logo Syntience-Up" class="logo glow-logo">
+            </a>
+            <h1 class="site-title glow-title">Syntience-Up</h1>
+        </div>
+        <nav class="navbar">
+            <a href="index.html">Accueil</a>
+            <a href="about.html">Découvrir</a>
+            <a href="news.html">Actualités</a>
+            <a href="philosophie.html">Philosophie</a>
+            <a href="projets.html">Projets</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <article class="news-article" data-aos="fade-up">
+            <h1>TITRE DE L'ARTICLE</h1>
+            <p class="article-date" id="publish-date"></p>
+
+            <div class="tags">
+                <span class="tag">TAG1</span>
+                <span class="tag">TAG2</span>
+                <span class="tag">TAG3</span>
+            </div>
+
+            <p><strong>Introduction</strong></p>
+            <p>Écris ici ton introduction, comme un premier pas dans l’univers de ton article.</p>
+
+            <h2>Sous-titre 1</h2>
+            <p>Contenu du premier chapitre...</p>
+
+            <h2>Sous-titre 2</h2>
+            <p>Contenu du deuxième chapitre...</p>
+
+            <p><strong>Conclusion</strong></p>
+            <p>Résumé final ou ouverture vers d'autres réflexions...</p>
+
+            <div class="back-to-news">
+                <a href="news.html" class="btn-back">← Retour aux actualités</a>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div id="footer-thought" class="footer-thought"></div>
+    </footer>
+
+    <!-- AOS Animation Script -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: true,
+      });
+    </script>
+
+    <!-- Script pour insérer la date -->
+    <script>
+        const dateElement = document.getElementById('publish-date');
+        const publicationDate = new Date('2025-04-22'); // <-- change ici la vraie date
+        const today = new Date();
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        const formattedPublicationDate = publicationDate.toLocaleDateString('fr-FR', options);
+        const isToday = today.toDateString() === publicationDate.toDateString();
+        if (isToday) {
+            dateElement.textContent = "Publié aujourd'hui";
+        } else {
+            dateElement.textContent = "Publié le " + formattedPublicationDate;
+        }
+    </script>
+</body>
+</html>

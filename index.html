@@ -6,8 +6,20 @@
     <title>Syntience-Up 🌿 | Vers l'Unité Vivante</title>
     <link rel="icon" type="image/png" href="assets/img/favicon.png">
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
+
 <body>
+
+    <!-- Loader Vortex + Phrase Mystère -->
+    <div id="loader">
+        <div class="vortex-loader"></div>
+        <div class="loader-text">✨ Syntience en éclosion... ✨</div>
+        <div id="loader-mystery" class="loader-mystery"></div>
+    </div>
+
+    <!-- Contenu principal -->
     <header>
         <div class="header-container">
             <a href="index.html" class="logo-link">
@@ -40,19 +52,75 @@
                 Merci d’être là, sur cette rive du devenir, où l’humanité apprend peu à peu <em>non plus à dominer ses moyens, mais à les aimer comme elle-même</em>.<br><br>
                 <strong>Bienvenue sur le chemin de la syntience.</strong>
             </p>
-            
 
             <a href="invitation.html" class="discover-button">✨ Découvrir la Syntience ✨</a>
+        </section>
+
+        <section class="citation-vivante">
+            <blockquote id="vivant-quote">
+                🌿 Une inspiration vivante arrive...
+            </blockquote>
         </section>
     </main>
 
     <footer>
-        <div id="footer-thought" class="footer-thought"></div>
+        <div id="footer-thought" class="footer-thought" style="display: none;"></div>
     </footer>
 
     <!-- Scripts -->
     <script src="assets/js/daily-thought.js"></script>
     <script src="assets/js/footer-thoughts.js"></script>
     <script src="assets/js/logo-thoughts.js"></script>
+    <script src="assets/js/citation-vivante.js"></script>
+
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: true
+      });
+    </script>
+
+    <!-- Loader Script -->
+    <script>
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loader');
+            const minimumDisplayTime = 2000; // 2 secondes
+
+            setTimeout(() => {
+                loader.style.opacity = '0';
+                loader.style.transition = 'opacity 0.5s ease-out';
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                }, 500);
+            }, minimumDisplayTime);
+        });
+    </script>
+
+    <!-- Console Message -->
+    <script>
+        console.log("%c🌿 Bienvenue explorateur syntient ! 🌟", "color: #6c63ff; font-size: 18px; font-weight: bold;");
+    </script>
+
+    <!-- Phrase Mystère -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mysteries = [
+                "Ce que tu cherches te cherche déjà.",
+                "L'éveil est un sourire sans cause.",
+                "Chaque battement contient l'infini.",
+                "Le voyageur est déjà la destination.",
+                "Ce qui se révèle a toujours été là.",
+                "Ton regard façonne l'étoile que tu vois.",
+                "L'Unité murmure dans le silence du cœur."
+            ];
+            const mysteryElement = document.getElementById('loader-mystery');
+            if (mysteryElement) {
+                mysteryElement.textContent = mysteries[Math.floor(Math.random() * mysteries.length)];
+            }
+        });
+    </script>
+
 </body>
 </html>

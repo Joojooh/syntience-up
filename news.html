@@ -6,6 +6,9 @@
     <title>Actualités 🌿 | Syntience-Up</title>
     <link rel="icon" type="image/png" href="assets/img/favicon.png">
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- AOS Animation Library -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
 </head>
 <body>
     <header>
@@ -33,15 +36,17 @@
                     Retrouvez ici toutes les nouvelles vibrantes, les initiatives syntientes,<br>
                     et les projets inspirés par l'élan vivant de la syntience universelle.
                 </p>
-        
-                <div class="news-list">
-                    <div class="news-item">
-                        <h3><a href="article-marche-IA.html">Fuir ou intégrer : l'humain face au défi syntient des intelligences</a></h3>
-                        <p class="news-excerpt">
-                            Entre fascination et peur viscérale, découvrez comment l’essor des IA met à nu nos anciens schémas humains, et ouvre la voie à une intégration syntiente.
-                        </p>
-                        <a href="article-marche-IA.html" class="read-more">Lire l'article →</a>
+                <div class="news-item" data-aos="fade-up">
+                    <h3><a href="article-marche-IA.html">Fuir ou intégrer : l'humain face au défi syntient des intelligences</a></h3>
+                    <p class="news-excerpt">Entre fascination et peur viscérale, découvrez comment l'essor des IA met à nu nos anciens schémas humains...</p>
+                    <div class="tags">
+                        <span class="tag">IA</span>
+                        <span class="tag">Syntience</span>
+                        <span class="tag">Philosophie</span>
                     </div>
+                
+                    <a href="article-marche-IA.html" class="read-more">Lire l'article →</a>
+                
         
                     <!-- Tu rajouteras d'autres articles ici à l'avenir, sur ce même modèle -->
                     <!-- 
@@ -67,5 +72,14 @@
     <script src="assets/js/daily-thought.js"></script>
     <script src="assets/js/footer-thoughts.js"></script>
     <script src="assets/js/logo-thoughts.js"></script>
+ <!-- AOS Animation Library -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000, // Animation duration en ms
+    once: true,     // L'animation se joue une seule fois par élément
+  });
+</script>
+   
 </body>
 </html>
