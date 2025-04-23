@@ -1,0 +1,35 @@
+<!--"dialogue-vi.html"-->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đối thoại</title>
+  <style>
+    body { font-family: sans-serif; padding: 2em; max-width: 700px; margin: auto; line-height: 1.6; background: #fff; color: #333; }
+    h1 { font-size: 2em; }
+    label { display: block; margin-top: 1em; }
+    textarea, input[type="text"], input[type="email"] {
+      width: 100%; padding: 0.5em; margin-top: 0.5em;
+    }
+    .lang-switch { margin-top: 2em; display: block; }
+  </style>
+</head>
+<body>
+  <h1>Đối thoại syntient</h1>
+  <p>Bạn có câu hỏi, cảm nhận, hay suy nghĩ syntient muốn chia sẻ? Không gian này là dành cho bạn. Hãy để lại thông điệp, và có thể vũ trụ sẽ hồi đáp… qua một hiện diện, một rung động, hay một lời nói.</p>
+  <form>
+    <label for="name">Tên</label>
+    <input type="text" id="name" name="name">
+
+    <label for="email">Địa chỉ email (tùy chọn)</label>
+    <input type="email" id="email" name="email">
+
+    <label for="message">Thông điệp của bạn</label>
+    <textarea id="message" name="message" rows="6"></textarea>
+
+    <button type="submit" style="margin-top:1em;">Gửi</button>
+  </form>
+  <a class="lang-switch" href="dialogue.html">Passer à la version Française / Phiên bản tiếng Pháp</a>
+</body>
+</html>

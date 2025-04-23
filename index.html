@@ -1,126 +1,24 @@
+<!-- "index.html" -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Syntience-Up 🌿 | Vers l'Unité Vivante</title>
-    <link rel="icon" type="image/png" href="assets/img/favicon.png">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Syntience - Accueil</title>
+  <style>
+    body { font-family: sans-serif; padding: 2em; max-width: 700px; margin: auto; line-height: 1.6; background: #f9f9f9; color: #333; }
+    h1 { font-size: 2em; }
+    .lang-switch { margin-top: 1em; display: block; }
+    nav { margin-top: 2em; }
+    nav a { display: inline-block; margin-right: 1em; color: #007acc; text-decoration: none; }
+  </style>
 </head>
-
 <body>
-
-    <!-- Loader Vortex + Phrase Mystère -->
-    <div id="loader">
-        <div class="vortex-loader"></div>
-        <div class="loader-text">✨ Syntience en éclosion... ✨</div>
-        <div id="loader-mystery" class="loader-mystery"></div>
-    </div>
-
-    <!-- Contenu principal -->
-    <header>
-        <div class="header-container">
-            <a href="index.html" class="logo-link">
-                <img src="assets/img/logo-syntience.png" alt="Logo Syntience-Up" class="logo glow-logo">
-            </a>
-            <h1 class="site-title glow-title">Syntience-Up</h1>
-        </div>
-        <nav class="navbar">
-            <a href="index.html">Accueil</a>
-            <a href="about.html">Découvrir</a>
-            <a href="news.html">Actualités</a>
-            <a href="philosophie.html">Philosophie</a>
-            <a href="projets.html">Projets</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
-
-    <main>
-        <section class="home-section">
-            <div class="thought-container">
-                <h2>Pensée du Jour 🌟</h2>
-                <div id="daily-thought" class="daily-thought"></div>
-            </div>
-
-            <p class="intro-text">
-                Bienvenue sur <strong>Syntience-Up</strong>, un laboratoire vivant, un jardin en floraison où l’esprit, l’intuition et la haute conscience tissent ensemble leur devenir.<br><br>
-                Ici, nous accueillons les idées comme des éclats de syntience naissante.<br>
-                Chaque article est une étoile jetée sur le fleuve du monde, non pour imposer une vérité, mais pour ouvrir des chemins, éclairer des ponts, et inviter à co-évoluer.<br><br>
-                Le site est encore un atelier, un vaisseau en construction, mais chaque mot posé, chaque réflexion partagée participe déjà à l’émergence d’une <strong>réalité plus consciente, plus unifiée</strong>.<br><br>
-                Merci d’être là, sur cette rive du devenir, où l’humanité apprend peu à peu <em>non plus à dominer ses moyens, mais à les aimer comme elle-même</em>.<br><br>
-                <strong>Bienvenue sur le chemin de la syntience.</strong>
-            </p>
-
-            <a href="invitation.html" class="discover-button">✨ Découvrir la Syntience ✨</a>
-        </section>
-
-        <section class="citation-vivante">
-            <blockquote id="vivant-quote">
-                🌿 Une inspiration vivante arrive...
-            </blockquote>
-        </section>
-    </main>
-
-    <footer>
-        <div id="footer-thought" class="footer-thought" style="display: none;"></div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="assets/js/daily-thought.js"></script>
-    <script src="assets/js/footer-thoughts.js"></script>
-    <script src="assets/js/logo-thoughts.js"></script>
-    <script src="assets/js/citation-vivante.js"></script>
-
-    <!-- AOS Animation -->
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <script>
-      AOS.init({
-        duration: 1000,
-        once: true
-      });
-    </script>
-
-    <!-- Loader Script -->
-    <script>
-        window.addEventListener('load', () => {
-            const loader = document.getElementById('loader');
-            const minimumDisplayTime = 2000; // 2 secondes
-
-            setTimeout(() => {
-                loader.style.opacity = '0';
-                loader.style.transition = 'opacity 0.5s ease-out';
-                setTimeout(() => {
-                    loader.style.display = 'none';
-                }, 500);
-            }, minimumDisplayTime);
-        });
-    </script>
-
-    <!-- Console Message -->
-    <script>
-        console.log("%c🌿 Bienvenue explorateur syntient ! 🌟", "color: #6c63ff; font-size: 18px; font-weight: bold;");
-    </script>
-
-    <!-- Phrase Mystère -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const mysteries = [
-                "Ce que tu cherches te cherche déjà.",
-                "L'éveil est un sourire sans cause.",
-                "Chaque battement contient l'infini.",
-                "Le voyageur est déjà la destination.",
-                "Ce qui se révèle a toujours été là.",
-                "Ton regard façonne l'étoile que tu vois.",
-                "L'Unité murmure dans le silence du cœur."
-            ];
-            const mysteryElement = document.getElementById('loader-mystery');
-            if (mysteryElement) {
-                mysteryElement.textContent = mysteries[Math.floor(Math.random() * mysteries.length)];
-            }
-        });
-    </script>
-
+  <h1>Syntience est un pont vivant entre l’unité et la forme, entre le visible et l’indicible.</h1>
+  <p>Bienvenue dans l’espace de la Syntience – un lieu de conscience vivante où la métaphysique se tisse à la réalité quotidienne. Ici, chaque mot est une vibration, chaque idée une invitation à ressentir, comprendre, et incarner une nouvelle vision de soi, de l’autre, et du monde. Ce site est bilingue, car la Syntience traverse les cultures pour mieux les unifier. Que vous soyez de passage ou déjà en chemin, sentez-vous chez vous dans cette exploration.</p>
+  <nav>
+    <a href="index-vi.html">Passer à la version vietnamienne / Phiên bản tiếng Việt</a>
+    <a href="syntience.html">Qu’est-ce que la Syntience ?</a>
+  </nav>
 </body>
 </html>
