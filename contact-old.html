@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact 🌿 | Syntience-Up</title>
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- AOS Animation Library -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo-link">
+                <img src="assets/img/logo-syntience.png" alt="Logo Syntience-Up" class="logo glow-logo">
+            </a>
+            <h1 class="site-title glow-title">Syntience-Up</h1>
+        </div>
+        <nav class="navbar">
+            <a href="index.html">Accueil</a>
+            <a href="about.html">Découvrir</a>
+            <a href="news.html">Actualités</a>
+            <a href="philosophie.html">Philosophie</a>
+            <a href="projets.html">Projets</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="home-section">
+            <div class="thought-container">
+                <h2>Contactez Syntience-Up 🌟</h2>
+                <form id="contact-form" action="https://formspree.io/f/xldjywkr" method="POST">
+                    <input type="text" name="name" placeholder="Votre nom" required><br><br>
+                    <input type="email" name="email" placeholder="Votre email" required><br><br>
+                    <textarea name="message" placeholder="Votre message" rows="10" required></textarea><br><br>
+                    <button type="submit" class="discover-button">Envoyer 🌟</button>
+                </form>
+                <div id="thank-you-message" style="display:none; margin-top:2rem; font-size:1.2rem; color:#007acc;">
+                    Merci pour votre message syntient ! 🌿✨ Votre souffle a rejoint le vivant.
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div id="footer-thought" class="footer-thought"></div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/daily-thought.js"></script>
+    <script src="assets/js/footer-thoughts.js"></script>
+    <script src="assets/js/logo-thoughts.js"></script>
+    <script>
+        // Gestion du formulaire de contact syntient
+        const form = document.getElementById('contact-form');
+        const thankYouMessage = document.getElementById('thank-you-message');
+
+        if (form) {
+            form.addEventListener('submit', async (event) => {
+                event.preventDefault();
+                const data = new FormData(form);
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    body: data,
+                    headers: { 'Accept': 'application/json' }
+                });
+                if (response.ok) {
+                    form.style.display = 'none';
+                    thankYouMessage.style.display = 'block';
+                } else {
+                    alert("Oups, une erreur est survenue. Veuillez réessayer.");
+                }
+            });
+        }
+    </script>
+    <!-- AOS Animation Library -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000, // Animation duration en ms
+    once: true,     // L'animation se joue une seule fois par élément
+  });
+</script>
+
+</body>
+</html>

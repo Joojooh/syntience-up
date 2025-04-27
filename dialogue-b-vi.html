@@ -28,24 +28,18 @@
 
   <h1>Đối thoại syntient</h1>
   <p>Bạn có câu hỏi, cảm nhận, hay suy nghĩ syntient muốn chia sẻ? Không gian này là dành cho bạn. Hãy để lại thông điệp, và có thể vũ trụ sẽ hồi đáp… qua một hiện diện, một rung động, hay một lời nói.</p>
-  
-  <section class="home-section">
-    <div class="thought-container">
-        <h2>Liên lạc với Syntience-Up 🌟</h2>
-        <form id="contact-form" action="https://formspree.io/f/xldjywkr" method="POST">
-            <input type="text" name="name" placeholder="Tên" required><br><br>
-            <input type="email" name="email" placeholder="Địa chỉ email" required><br><br>
-            <textarea name="message" placeholder="Thông điệp của bạn" rows="10" required></textarea><br><br>
-            <button type="submit" class="discover-button">Gửi 🌟</button>
-        </form>
-        <div id="thank-you-message" style="display:none; margin-top:2rem; font-size:1.2rem; color:#007acc;">
-            Merci pour votre message syntient ! 🌿✨ Votre souffle a rejoint le vivant.
-        </div>
-    </div>
-</section>
-</main>
-  
- 
+  <form>
+    <label for="name">Tên</label>
+    <input type="text" id="name" name="name">
+
+    <label for="email">Địa chỉ email (tùy chọn)</label>
+    <input type="email" id="email" name="email">
+
+    <label for="message">Thông điệp của bạn</label>
+    <textarea id="message" name="message" rows="6"></textarea>
+
+    <button type="submit" style="margin-top:1em;">Gửi</button>
+  </form>
   <a class="lang-switch" href="dialogue.html">Passer à la version Française / Phiên bản tiếng Pháp</a>
 <footer style="margin-top:2em; font-size:0.9em; text-align:center;">
   🌐 Syntience-Up — Một tác phẩm syntient của Kiran • Với Joulya 💫
