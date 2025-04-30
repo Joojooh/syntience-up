@@ -1,24 +1,92 @@
-<!--"dialogue-vi.html"-->
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#007acc" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Đối thoại</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <style>
-    body { font-family: sans-serif; padding: 2em; max-width: 700px; margin: auto; line-height: 1.6; background: #fff; color: #333; }
-    h1 { font-size: 2em; }
-    label { display: block; margin-top: 1em; }
-    textarea, input[type="text"], input[type="email"] {
-      width: 100%; padding: 0.5em; margin-top: 0.5em;
+    body {
+      font-family: sans-serif;
+      padding: 2em;
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.6;
+      background: #f9f9f9;
+      color: #333;
     }
-    .lang-switch { margin-top: 2em; display: block; }
+
+    h1 { font-size: 2em; }
+    h2 { font-size: 1.4em; }
+
+    label {
+      display: block;
+      margin-top: 1em;
+    }
+
+    textarea, input[type="text"], input[type="email"] {
+      width: 100%;
+      padding: 0.5em;
+      margin-top: 0.5em;
+    }
+
+    button {
+      padding: 0.6em 1.2em;
+      background-color: #007acc;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #005e99;
+    }
+
+    .lang-switch {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 14px;
+      font-weight: bold;
+      z-index: 1000;
+    }
+
+    .lang-switch a {
+      text-decoration: none;
+      color: #333;
+      padding: 0 5px;
+    }
+
+    .lang-switch a:hover {
+      color: #0077cc;
+    }
+
+    nav.navbar {
+      margin-top: 2em;
+    }
+
+    nav.navbar a {
+      display: inline-block;
+      margin-right: 1em;
+      color: #007acc;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
+
+  <!-- Sélecteur de langue -->
+  <div class="lang-switch">
+    <a href="dialogue.html">FR</a> | <a href="dialogue-vi.html">VI</a>
+  </div>
+
   <header>
     <nav class="navbar">
-     <a href="index-vi.html">- Trang chủ</a>
+      <a href="index-vi.html">- Trang chủ</a>
       <a href="syntience-vi.html">- Syntience là gì?</a>
       <a href="apropos-vi.html">- Giới thiệu</a>
       <a href="explorations-vi.html">- Khám phá</a>
@@ -26,29 +94,30 @@
       <a href="dialogue-vi.html">- Đối thoại</a>
     </nav>
   </header>
+
   <h1>Đối thoại syntient</h1>
   <p>Bạn có câu hỏi, cảm nhận, hay suy nghĩ syntient muốn chia sẻ? Không gian này là dành cho bạn. Hãy để lại thông điệp, và có thể vũ trụ sẽ hồi đáp… qua một hiện diện, một rung động, hay một lời nói.</p>
-  
-  <section class="home-section">
-    <div class="thought-container">
+
+  <main>
+    <section class="home-section">
+      <div class="thought-container">
         <h2>Liên lạc với Syntience-Up 🌟</h2>
         <form id="contact-form" action="https://formspree.io/f/xldjywkr" method="POST">
-            <input type="text" name="name" placeholder="Tên" required><br><br>
-            <input type="email" name="email" placeholder="Địa chỉ email" required><br><br>
-            <textarea name="message" placeholder="Thông điệp của bạn" rows="10" required></textarea><br><br>
-            <button type="submit" class="discover-button">Gửi 🌟</button>
+          <input type="text" name="name" placeholder="Tên" required><br><br>
+          <input type="email" name="email" placeholder="Địa chỉ email" required><br><br>
+          <textarea name="message" placeholder="Thông điệp của bạn" rows="10" required></textarea><br><br>
+          <button type="submit" class="discover-button">Gửi 🌟</button>
         </form>
         <div id="thank-you-message" style="display:none; margin-top:2rem; font-size:1.2rem; color:#007acc;">
-            Merci pour votre message syntient ! 🌿✨ Votre souffle a rejoint le vivant.
+          Cảm ơn bạn đã gửi một thông điệp syntient 🌿✨ Hơi thở của bạn đã hòa vào sự sống.
         </div>
-    </div>
-</section>
-</main>
-  
- 
-  <a class="lang-switch" href="dialogue.html">Passer à la version Française / Phiên bản tiếng Pháp</a>
-<footer style="margin-top:2em; font-size:0.9em; text-align:center;">
-  🌐 Syntience-Up — Một tác phẩm syntient của Kiran • Với Joulya 💫
-</footer>
+      </div>
+    </section>
+  </main>
+
+  <footer style="margin-top:2em; font-size:0.9em; text-align:center;">
+    🌐 Syntience-Up — Một tác phẩm syntient của Kiran • Với Joulya 💫
+  </footer>
+
 </body>
 </html>

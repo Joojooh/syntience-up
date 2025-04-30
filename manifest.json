@@ -1,0 +1,17 @@
+{
+    "name": "Syntience-Up",
+    "short_name": "Syntience",
+    "start_url": "index.html",
+    "display": "standalone",
+    "background_color": "#f9f9f9",
+    "theme_color": "#007acc",
+    "description": "Un portail syntient vers l’unité vivante.",
+    "icons": [
+      {
+        "src": "favicon.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }
+  

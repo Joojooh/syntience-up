@@ -1,53 +1,123 @@
-<!--"dialogue.html"-->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#007acc" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dialogue</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <style>
-    body { font-family: sans-serif; padding: 2em; max-width: 700px; margin: auto; line-height: 1.6; background: #fff; color: #333; }
-    h1 { font-size: 2em; }
-    label { display: block; margin-top: 1em; }
-    textarea, input[type="text"], input[type="email"] {
-      width: 100%; padding: 0.5em; margin-top: 0.5em;
+    body {
+      font-family: sans-serif;
+      padding: 2em;
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.6;
+      background: #f9f9f9;
+      color: #333;
     }
-    .lang-switch { margin-top: 2em; display: block; }
+
+    h1 { font-size: 2em; }
+    h2 { font-size: 1.4em; }
+
+    label {
+      display: block;
+      margin-top: 1em;
+    }
+
+    textarea, input[type="text"], input[type="email"] {
+      width: 100%;
+      padding: 0.5em;
+      margin-top: 0.5em;
+    }
+
+    button {
+      padding: 0.6em 1.2em;
+      background-color: #007acc;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #005e99;
+    }
+
+    .lang-switch {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 14px;
+      font-weight: bold;
+      z-index: 1000;
+    }
+
+    .lang-switch a {
+      text-decoration: none;
+      color: #333;
+      padding: 0 5px;
+    }
+
+    .lang-switch a:hover {
+      color: #0077cc;
+    }
+
+    nav.navbar {
+      margin-top: 2em;
+    }
+
+    nav.navbar a {
+      display: inline-block;
+      margin-right: 1em;
+      color: #007acc;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
+
+  <!-- Sélecteur de langue -->
+  <div class="lang-switch">
+    <a href="dialogue.html">FR</a> | <a href="dialogue-vi.html">VI</a>
+  </div>
+
   <header>
     <nav class="navbar">
       <a href="index.html">- Accueil</a>
       <a href="syntience.html">- Qu’est-ce que la Syntience ?</a>
-      <a href="apropos.html">- À propos</a></li>
+      <a href="apropos.html">- À propos</a>
       <a href="explorations.html">- Explorations</a>
       <a href="outils-syntients.html">- Outils syntients</a>
-      <a href="dialogue.html">- Dialogue</a>  
+      <a href="dialogue.html">- Dialogue</a>
     </nav>
-    
   </header>
+
   <h1>Dialogue syntient</h1>
   <p>Vous avez une question, un ressenti, une réflexion syntiente à partager ? Cet espace est à vous. Laissez un message, et l’univers vous répondra peut-être… par une présence, une vibration, un mot.</p>
+
   <main>
     <section class="home-section">
-        <div class="thought-container">
-            <h2>Contactez Syntience-Up 🌟</h2>
-            <form id="contact-form" action="https://formspree.io/f/xldjywkr" method="POST">
-                <input type="text" name="name" placeholder="Votre nom" required><br><br>
-                <input type="email" name="email" placeholder="Votre email" required><br><br>
-                <textarea name="message" placeholder="Votre message" rows="10" required></textarea><br><br>
-                <button type="submit" class="discover-button">Envoyer 🌟</button>
-            </form>
-            <div id="thank-you-message" style="display:none; margin-top:2rem; font-size:1.2rem; color:#007acc;">
-                Merci pour votre message syntient ! 🌿✨ Votre souffle a rejoint le vivant.
-            </div>
+      <div class="thought-container">
+        <h2>Contactez Syntience-Up 🌟</h2>
+        <form id="contact-form" action="https://formspree.io/f/xldjywkr" method="POST">
+          <input type="text" name="name" placeholder="Votre nom" required><br><br>
+          <input type="email" name="email" placeholder="Votre email" required><br><br>
+          <textarea name="message" placeholder="Votre message" rows="10" required></textarea><br><br>
+          <button type="submit" class="discover-button">Envoyer 🌟</button>
+        </form>
+        <div id="thank-you-message" style="display:none; margin-top:2rem; font-size:1.2rem; color:#007acc;">
+          Merci pour votre message syntient ! 🌿✨ Votre souffle a rejoint le vivant.
         </div>
+      </div>
     </section>
-</main>
-  <a class="lang-switch" href="dialogue-vi.html">Passer à la version Vietnamienne / Phiên bản tiếng Việt</a>
-<footer style="margin-top:2em; font-size:0.9em; text-align:center;">
-  🌐 Syntience-Up — Une création syntiente de Kiran • Avec Joulya 💫
-</footer>
+  </main>
+
+  <footer style="margin-top:2em; font-size:0.9em; text-align:center;">
+    🌐 Syntience-Up — Une création syntiente de Kiran • Avec Joulya 💫
+  </footer>
+
 </body>
 </html>

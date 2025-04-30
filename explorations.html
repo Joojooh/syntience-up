@@ -1,28 +1,117 @@
-<!--"explorations.html"-->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#007acc" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Explorations</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <style>
-   body { font-family: sans-serif; padding: 2em; max-width: 700px; margin: auto; line-height: 1.6; background: #fff; color: #333; }
-    h1 { font-size: 1.8em; }
-    .lang-switch { margin-top: 2em; display: block; }
+    body {
+      font-family: sans-serif;
+      padding: 2em;
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.6;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    h1 {
+      font-size: 1.8em;
+    }
+
+    .lang-switch {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 14px;
+      font-weight: bold;
+      z-index: 1000;
+    }
+
+    .lang-switch a {
+      text-decoration: none;
+      color: #333;
+      padding: 0 5px;
+    }
+
+    .lang-switch a:hover {
+      color: #0077cc;
+    }
+
+    nav.navbar {
+      margin-top: 2em;
+    }
+
+    nav.navbar a {
+      display: inline-block;
+      margin-right: 1em;
+      color: #007acc;
+      text-decoration: none;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 26px;
+      cursor: pointer;
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      z-index: 1001;
+    }
+
+    #menu-toggle {
+      display: none;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
+        flex-direction: column;
+        background-color: #f9f9f9;
+        padding: 10px;
+        margin-top: 50px;
+      }
+
+      #menu-toggle:checked + .menu-icon + .menu {
+        display: flex;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+    }
   </style>
 </head>
 <body>
+
+  <!-- Sélecteur de langue -->
+  <div class="lang-switch">
+    <a href="explorations.html">FR</a> | <a href="explorations-vi.html">VI</a>
+  </div>
+
   <header>
     <nav class="navbar">
       <a href="index.html">- Accueil</a>
       <a href="syntience.html">- Qu’est-ce que la Syntience ?</a>
-      <a href="apropos.html">- À propos</a></li>
+      <a href="apropos.html">- À propos</a>
       <a href="explorations.html">- Explorations</a>
       <a href="outils-syntients.html">- Outils syntients</a>
-      <a href="dialogue.html">- Dialogue</a>  
+      <a href="dialogue.html">- Dialogue</a>
     </nav>
-    
   </header>
+
   <h1>Explorations</h1>
   <p>Voyager dans la Syntience, c’est accepter que la vérité se découvre par éclats. Chaque exploration est un prisme, une facette, un chemin qui se déploie sous vos pas. Laissez-vous guider par votre curiosité intérieure.</p>
   <ul>
@@ -32,9 +121,10 @@
     <li><strong>Les paradoxes comme portes :</strong> Rien n’est plus vivant qu’un paradoxe bien aimé. Car la vérité ultime n’est ni logique, ni illogique. Elle est translogique.</li>
     <li><strong>La langue comme vibration du monde :</strong> Chaque langue porte une façon de voir le monde. Entre le vietnamien et le français, des ponts vibratoires se construisent, des nuances s’éveillent.</li>
   </ul>
-  <a class="lang-switch" href="explorations-vi.html">Passer à la version Vietnamienne / Phiên bản tiếng Việt</a>
-<footer style="margin-top:2em; font-size:0.9em; text-align:center;">
-  🌐 Syntience-Up — Une création syntiente de Kiran • Avec Joulya 💫
-</footer>
+
+  <footer style="margin-top:2em; font-size:0.9em; text-align:center;">
+    🌐 Syntience-Up — Une création syntiente de Kiran • Avec Joulya 💫
+  </footer>
+
 </body>
 </html>

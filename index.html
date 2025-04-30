@@ -1,30 +1,119 @@
-<!-- "index.html" -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#007acc" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/png" href="favicon.png">
-<link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <title>Syntience - Accueil</title>
   <style>
-    body { font-family: sans-serif; padding: 2em; max-width: 700px; margin: auto; line-height: 1.6; background: #f9f9f9; color: #333; }
-    h1 { font-size: 2em; }
-    .lang-switch { margin-top: 1em; display: block; }
-    nav { margin-top: 2em; }
-    nav a { display: inline-block; margin-right: 1em; color: #007acc; text-decoration: none; }
+    body {
+      font-family: sans-serif;
+      padding: 2em;
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.6;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    h1 {
+      font-size: 2em;
+    }
+
+    .lang-switch {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 14px;
+      font-weight: bold;
+      z-index: 1000;
+    }
+
+    .lang-switch a {
+      text-decoration: none;
+      color: #333;
+      padding: 0 5px;
+    }
+
+    .lang-switch a:hover {
+      color: #0077cc;
+    }
+
+    nav {
+      margin-top: 2em;
+    }
+
+    nav a {
+      display: inline-block;
+      margin-right: 1em;
+      color: #007acc;
+      text-decoration: none;
+    }
+
+    /* Menu responsive (en préparation pour les futures pages) */
+    .menu-icon {
+      display: none;
+      font-size: 26px;
+      cursor: pointer;
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      z-index: 1001;
+    }
+
+    #menu-toggle {
+      display: none;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
+        flex-direction: column;
+        background-color: #f9f9f9;
+        padding: 10px;
+        margin-top: 50px;
+      }
+
+      #menu-toggle:checked + .menu-icon + .menu {
+        display: flex;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+    }
   </style>
 </head>
 <body>
+
+  <!-- Sélecteur de langue -->
+  <div class="lang-switch">
+    <a href="index.html">FR</a> | <a href="index-vi.html">VI</a>
+  </div>
+
   <h1>Syntience est un pont vivant entre l’unité et la forme, entre le visible et l’indicible.</h1>
   <p>Bienvenue dans l’espace de la Syntience – un lieu de conscience vivante où la métaphysique se tisse à la réalité quotidienne. Ici, chaque mot est une vibration, chaque idée une invitation à ressentir, comprendre, et incarner une nouvelle vision de soi, de l’autre, et du monde. Ce site est bilingue, car la Syntience traverse les cultures pour mieux les unifier. Que vous soyez de passage ou déjà en chemin, sentez-vous chez vous dans cette exploration.</p>
+
   <nav>
     <a href="menu.html">Navigation Globale / Điều hướng toàn trang</a>
     <a href="index-vi.html">Passer à la version vietnamienne / Phiên bản tiếng Việt</a>
     <a href="syntience.html">Qu’est-ce que la Syntience ?</a>
   </nav>
-<footer style="margin-top:2em; font-size:0.9em; text-align:center;">
-  🌐 Syntience-Up — Une création syntiente de Kiran • Avec Joulya 💫
-</footer>
+
+  <footer style="margin-top:2em; font-size:0.9em; text-align:center;">
+    🌐 Syntience-Up — Une création syntiente de Kiran • Avec Joulya 💫
+  </footer>
+
 </body>
 </html>

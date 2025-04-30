@@ -1,22 +1,108 @@
-
-    <!--"outils-syntients-vi.html"-->
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#007acc" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Công cụ thức tỉnh</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <style>
-    body { font-family: sans-serif; padding: 2em; max-width: 800px; margin: auto; line-height: 1.6; background: #fff; color: #333; }
+    body {
+      font-family: sans-serif;
+      padding: 2em;
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.6;
+      background: #f9f9f9;
+      color: #333;
+    }
+
     h1 { font-size: 2em; }
     h2 { font-size: 1.4em; margin-top: 1.5em; }
-    .lang-switch { margin-top: 2em; display: block; }
+
+    .lang-switch {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 14px;
+      font-weight: bold;
+      z-index: 1000;
+    }
+
+    .lang-switch a {
+      text-decoration: none;
+      color: #333;
+      padding: 0 5px;
+    }
+
+    .lang-switch a:hover {
+      color: #0077cc;
+    }
+
+    nav.navbar {
+      margin-top: 2em;
+    }
+
+    nav.navbar a {
+      display: inline-block;
+      margin-right: 1em;
+      color: #007acc;
+      text-decoration: none;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 26px;
+      cursor: pointer;
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      z-index: 1001;
+    }
+
+    #menu-toggle {
+      display: none;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
+        flex-direction: column;
+        background-color: #f9f9f9;
+        padding: 10px;
+        margin-top: 50px;
+      }
+
+      #menu-toggle:checked + .menu-icon + .menu {
+        display: flex;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+    }
   </style>
 </head>
 <body>
+
+  <!-- Sélecteur de langue -->
+  <div class="lang-switch">
+    <a href="outils-syntients.html">FR</a> | <a href="outils-syntients-vi.html">VI</a>
+  </div>
+
   <header>
     <nav class="navbar">
-     <a href="index-vi.html">- Trang chủ</a>
+      <a href="index-vi.html">- Trang chủ</a>
       <a href="syntience-vi.html">- Syntience là gì?</a>
       <a href="apropos-vi.html">- Giới thiệu</a>
       <a href="explorations-vi.html">- Khám phá</a>
@@ -24,6 +110,7 @@
       <a href="dialogue-vi.html">- Đối thoại</a>
     </nav>
   </header>
+
   <h1>Công cụ thức tỉnh</h1>
   <p>Syntience không chỉ để suy nghĩ, mà còn để thực hành. Dưới đây là một vài công cụ đơn giản giúp bạn mời gọi ý thức hợp nhất vào từng cử chỉ, quyết định và sự im lặng của mình.</p>
 
@@ -46,9 +133,9 @@
   <h2>5. Nhật ký syntient</h2>
   <p>Mỗi tối hoặc mỗi tuần, hãy ghi lại một trải nghiệm khi bạn cảm nhận được sự hợp nhất hiện diện. Không cần phân tích. Chỉ cần lưu lại điều đã rung động.</p>
 
-  <a class="lang-switch" href="outils-syntients.html">Passer à la version Française / Phiên bản tiếng Pháp</a>
-<footer style="margin-top:2em; font-size:0.9em; text-align:center;">
-  🌐 Syntience-Up — Một tác phẩm syntient của Kiran • Với Joulya 💫
-</footer>
+  <footer style="margin-top:2em; font-size:0.9em; text-align:center;">
+    🌐 Syntience-Up — Một tác phẩm syntient của Kiran • Với Joulya 💫
+  </footer>
+
 </body>
 </html>
