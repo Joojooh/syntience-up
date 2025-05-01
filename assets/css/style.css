@@ -393,3 +393,83 @@ footer {
     max-width: 80%;
     text-align: center;
 }
+
+
+
+/* styles.css */
+
+/* Style général pour tous les appareils */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+/* Animation de fondu (fade-in) */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 2s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Animation de glissement (slide-in) */
+.slide-in {
+    transform: translateX(-100px);
+    opacity: 0;
+    animation: slideIn 1.5s ease-out forwards;
+}
+
+@keyframes slideIn {
+    0% { transform: translateX(-100px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+/* Style du texte par défaut (desktop) */
+h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin: 20px;
+}
+
+/* Media query pour tablettes (largeur d'écran ≤ 768px) */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 2em; /* Réduire la taille du texte */
+        margin: 15px;
+    }
+
+    .slide-in {
+        transform: translateX(-50px); /* Animation moins prononcée */
+        animation: slideIn 1s ease-out forwards; /* Animation plus rapide */
+    }
+}
+
+/* Media query pour smartphones (largeur d'écran ≤ 480px) */
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 1.5em; /* Texte encore plus petit */
+        margin: 10px;
+    }
+
+    body {
+        padding: 10px; /* Ajouter un peu de marge */
+    }
+
+    .fade-in {
+        animation: fadeIn 1s ease-in forwards; /* Animation plus rapide */
+    }
+
+    .slide-in {
+        transform: translateX(-30px); /* Animation encore moins prononcée */
+        animation: slideIn 0.8s ease-out forwards; /* Encore plus rapide */
+    }
+}
