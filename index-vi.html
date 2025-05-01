@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" href="assets/css/style.css"/>
+ 
   <title>Syntience - Trang chủ</title>
   <style>
     body {
@@ -23,6 +23,30 @@
     h1 {
       font-size: 2em;
     }
+
+    /* Animation de fondu (fade-in) */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 2s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Animation de glissement (slide-in) */
+.slide-in {
+    transform: translateX(-100px);
+    opacity: 0;
+    animation: slideIn 1.5s ease-out forwards;
+}
+
+@keyframes slideIn {
+    0% { transform: translateX(-100px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
 
     .lang-switch {
       position: absolute;
