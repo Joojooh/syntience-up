@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Texte</title>
+    <style>
+        /* Style général */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        /* Animation de fondu (fade-in) */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 2s ease-in forwards;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Animation de glissement (slide-in) */
+        .slide-in {
+            transform: translateX(-100px);
+            opacity: 0;
+            animation: slideIn 1.5s ease-out forwards;
+        }
+
+        @keyframes slideIn {
+            0% { transform: translateX(-100px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        /* Style du texte */
+        h1 {
+            font-size: 2.5em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="fade-in">Texte avec effet de fondu</h1>
+    <h1 class="slide-in">Texte avec effet de glissement</h1>
+</body>
+</html>

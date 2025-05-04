@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Trình tạo bài viết syntient</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2em;
+      background: #f9f9f9;
+      max-width: 700px;
+      margin: auto;
+    }
+    h1 {
+      font-size: 1.5em;
+      color: #007acc;
+    }
+    label {
+      display: block;
+      margin-top: 1em;
+      font-weight: bold;
+    }
+    textarea, input[type="text"], input[type="date"] {
+      width: 100%;
+      padding: 0.5em;
+      margin-top: 0.2em;
+    }
+    button {
+      margin-top: 1.5em;
+      padding: 0.6em 1.2em;
+      background: #007acc;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    pre {
+      background: #eee;
+      padding: 1em;
+      white-space: pre-wrap;
+      margin-top: 2em;
+      border-left: 4px solid #007acc;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌀 Trình tạo bài viết cho “Dòng chảy syntient”</h1>
+
+  <label for="titre">Tiêu đề bài viết</label>
+  <input type="text" id="titre" placeholder="VD: Cho đi để xác nhận sự sung túc">
+
+  <label for="date">Ngày</label>
+  <input type="date" id="date">
+
+  <label for="texte">Nội dung (bạn có thể dùng <br> để xuống dòng)</label>
+  <textarea id="texte" rows="8" placeholder="Viết suy tưởng syntient của bạn..."></textarea>
+
+  <button onclick="generer()">Tạo đoạn mã HTML</button>
+
+  <pre id="sortie"></pre>
+
+  <script>
+    function generer() {
+      const titre = document.getElementById('titre').value;
+      const date = document.getElementById('date').value;
+      const texte = document.getElementById('texte').value.replace(/\n/g, "<br>");
+
+      const bloc = `<div class="entry">
+  <h2>💫 ${titre}</h2>
+  <time>${date}</time>
+  <p>${texte}</p>
+</div>`;
+
+      document.getElementById('sortie').textContent = bloc;
+    }
+  </script>
+</body>
+</html>
