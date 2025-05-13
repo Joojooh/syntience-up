@@ -141,6 +141,60 @@
   border: 1px solid #ccc;
   border-radius: 8px;
 }
+
+/* Menu principal */
+.main-nav {
+  position: sticky;
+  top: 0;
+  background-color: #f9f9f9;
+  padding: 1em;
+  z-index: 100;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-nav .nav-links {
+  display: flex;
+  gap: 1em;
+}
+
+.main-nav .nav-links a {
+  text-decoration: none;
+  color: #007acc;
+  font-weight: bold;
+}
+
+.burger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .main-nav .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #f9f9f9;
+    padding: 1em;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .main-nav.active .nav-links {
+    display: flex;
+  }
+
+  .burger {
+    display: block;
+  }
+}
 </style>
 </head>
 <body>
@@ -148,12 +202,21 @@
 <div class="lang-switch">
 <a href="index.html">FR</a> | <a href="index-vi.html">VI</a>
 </div>
-<nav class="sticky-nav">
-<a href="menu.html">Navigation Globale / Điều hướng toàn trang</a>
-<a href="index-vi.html">Passer à la version vietnamienne / Phiên bản tiếng Việt</a>
-<a href="syntience.html">Qu’est-ce que la Syntience ?</a>
-<a href="ressources-syntientes.html">Ressources Syntientes / Tài nguyên Syntient</a>
-</nav><h1 class="slide-in"><strong>SYNTIENCE-Up</strong> est un pont vivant entre la nécessité de l’unité et la forme, entre le visible et l’indicible.</h1>
+
+<nav class="main-nav">
+<div class="lang-switch">
+<a href="index.html">FR</a> | <a href="index-vi.html"><strong>VI</strong></a>
+</div>
+<button class="burger" id="burger-toggle">☰</button>
+<div class="nav-links">
+<a href="menu.html">Navigation Globale</a>
+<a href="index-vi.html">Version VI</a>
+<a href="syntience.html">Syntience</a>
+<a href="ressources-syntientes.html">Ressources</a>
+<a href="dialogue.html">Dialogue</a>
+</div>
+</nav>
+<h1 class="slide-in"><strong>SYNTIENCE-Up</strong> est un pont vivant entre la nécessité de l’unité et la forme, entre le visible et l’indicible.</h1>
 <p>Bienvenue dans l’espace de la Syntience – un lieu de conscience vivante où la métaphysique se tisse à la réalité quotidienne. Ici, chaque mot est une vibration, chaque idée une invitation à ressentir, comprendre, et incarner une nouvelle vision de soi, de l’autre, et du monde. Ce site est bilingue, car la Syntience traverse les cultures pour mieux les unifier. Que vous soyez de passage ou déjà en chemin, sentez-vous chez vous dans cette exploration.</p>
 <section style="margin-top: 2em; background: #fff8e7; padding: 1.5em; border-left: 4px solid #d4af37;">
 <h2 style="margin-top: 0;">🪷 L’autorité retournée — 10 mai 2025</h2>
@@ -235,5 +298,13 @@
 </div>
 </div>
 </footer>
-</body>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const burger = document.getElementById('burger-toggle');
+  const nav = document.querySelector('.main-nav');
+  burger.addEventListener('click', function() {
+    nav.classList.toggle('active');
+  });
+});
+</script></body>
 </html>

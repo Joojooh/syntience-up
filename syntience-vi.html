@@ -87,13 +87,74 @@
     margin-bottom: 2rem;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
   }
+
+/* Menu principal */
+.main-nav {
+  top: 0;
+  background-color: #f9f9f9;
+  padding: 1em;
+  z-index: 100;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-nav .nav-links {
+  display: flex;
+  gap: 1em;
+}
+
+.main-nav .nav-links a {
+  text-decoration: none;
+  color: #007acc;
+  font-weight: bold;
+}
+
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .main-nav .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #f9f9f9;
+    padding: 1em;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .main-nav.active .nav-links {
+    display: flex;
+  }
+
+    display: block;
+  }
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  background-color: #f9f9f9;
+  z-index: 99;
+  border-bottom: 1px solid #ddd;
+  padding: 1em 0;
+}
 </style>
 </head>
 <body>
 <div class="container">
 <img alt="Minh họa Syntience bằng tiếng Việt" class="top-image" src="assets/img/syntience-header-vi.webp"/>
 <header>
-<div style="position:absolute;top:10px;right:20px;"><a href="syntience.html">FR</a> | <a href="syntience-vi.html"><strong>VI</strong></a></div><nav class="navbar">
+<div style="position:absolute;top:10px;right:20px;"><a href="syntience.html">FR</a> | <a href="syntience-vi.html"><strong>VI</strong></a></div>
+<nav class="navbar">
 <a href="index.html">Accueil</a>
 <a href="syntience.html">Syntience</a>
 <a href="apropos.html">À propos</a>
