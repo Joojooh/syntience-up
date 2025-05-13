@@ -19,6 +19,15 @@
       background: #f9f9f9;
       color: #333;
     }
+    .sticky-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #f9f9f9;
+  padding: 1em 0;
+  border-bottom: 1px solid #ddd;
+}
+
 
     h1 {
       font-size: 2em;
@@ -118,29 +127,7 @@
         display: block;
       }
     }
-  
-.sticky-nav {
-  position: sticky;
-  top: 0;
-  z-index: 99;
-  background-color: #f9f9f9;
-  padding: 1em 0;
-  border-bottom: 1px solid #ddd;
-}
-
-.lang-switch {
-  position: fixed;
-  top: 0.5rem;
-  right: 1rem;
-  font-size: 14px;
-  font-weight: bold;
-  z-index: 100;
-  background-color: #f9f9f9;
-  padding: 0.4em 0.8em;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-}
-</style>
+  </style>
 </head>
 <body>
 <!-- Sélecteur de langue -->
@@ -148,11 +135,13 @@
 <a href="index.html">FR</a> | <a href="index-vi.html">VI</a>
 </div>
 <nav class="sticky-nav">
-<a href="menu.html">Navigation Globale / Điều hướng toàn trang</a>
-<a href="index-vi.html">Passer à la version vietnamienne / Phiên bản tiếng Việt</a>
-<a href="syntience.html">Qu’est-ce que la Syntience ?</a>
-<a href="ressources-syntientes.html">Ressources Syntientes / Tài nguyên Syntient</a>
-</nav><h1 class="slide-in"><strong>SYNTIENCE-Up</strong> est un pont vivant entre la nécessité de l’unité et la forme, entre le visible et l’indicible.</h1>
+  <a href="menu.html">Navigation Globale / Điều hướng toàn trang</a>
+  <a href="index-vi.html">Passer à la version vietnamienne / Phiên bản tiếng Việt</a>
+  <a href="syntience.html">Qu’est-ce que la Syntience ?</a>
+  <a href="ressources-syntientes.html">Ressources Syntientes / Tài nguyên Syntient</a>
+</nav>
+
+<h1 class="slide-in"><strong>SYNTIENCE-Up</strong> est un pont vivant entre la nécessité de l’unité et la forme, entre le visible et l’indicible.</h1>
 <p>Bienvenue dans l’espace de la Syntience – un lieu de conscience vivante où la métaphysique se tisse à la réalité quotidienne. Ici, chaque mot est une vibration, chaque idée une invitation à ressentir, comprendre, et incarner une nouvelle vision de soi, de l’autre, et du monde. Ce site est bilingue, car la Syntience traverse les cultures pour mieux les unifier. Que vous soyez de passage ou déjà en chemin, sentez-vous chez vous dans cette exploration.</p>
 <section style="margin-top: 2em; background: #fff8e7; padding: 1.5em; border-left: 4px solid #d4af37;">
 <h2 style="margin-top: 0;">🪷 L’autorité retournée — 10 mai 2025</h2>
@@ -217,6 +206,7 @@
       </a>
 </p>
 </section>
+
 <footer style="background-color: #0a0a0a; color: #ffae00b7; padding: 0.5rem 0.5rem;">
 <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; font-family: 'Segoe UI', sans-serif;">
 <!-- Texte à gauche -->
