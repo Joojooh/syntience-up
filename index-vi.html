@@ -1,15 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="vi">
 <head>
-  <link rel="manifest" href="manifest.json" />
-  <meta name="theme-color" content="#007acc" />
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
- 
-  <title>Syntience - Trang chủ</title>
-  <style>
+<link href="manifest.json" rel="manifest"/>
+<meta content="#007acc" name="theme-color"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="favicon.png" rel="icon" type="image/png"/>
+<link href="favicon.ico" rel="icon" type="image/x-icon"/>
+<title>Syntience - Trang chủ</title>
+<style>
     body {
       font-family: sans-serif;
       padding: 2em;
@@ -117,107 +117,179 @@
         display: block;
       }
     }
-  </style>
+  
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  background-color: #f9f9f9;
+  padding: 1em 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.lang-switch {
+  position: fixed;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 14px;
+  font-weight: bold;
+  z-index: 100;
+  background-color: #f9f9f9;
+  padding: 0.4em 0.8em;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+/* Menu principal */
+.main-nav {
+  position: sticky;
+  top: 0;
+  background-color: #f9f9f9;
+  padding: 1em;
+  z-index: 100;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-nav .nav-links {
+  display: flex;
+  gap: 1em;
+}
+
+.main-nav .nav-links a {
+  text-decoration: none;
+  color: #007acc;
+  font-weight: bold;
+}
+
+.burger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .main-nav .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #f9f9f9;
+    padding: 1em;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .main-nav.active .nav-links {
+    display: flex;
+  }
+
+  .burger {
+    display: block;
+  }
+}
+</style>
 </head>
 <body>
 
-  <!-- Sélecteur de langue -->
-  <div class="lang-switch">
-    <a href="index.html">FR</a> | <a href="index-vi.html">VI</a>
-  </div>
+
+<!-- Sélecteur de langue -->
+<div class="lang-switch">
+<a href="index.html">FR</a> | <a href="index-vi.html">VI</a>
+</div>
+
+<nav class="main-nav">
+<div class="lang-switch">
+<a href="index.html">FR</a> | <a href="index-vi.html"><strong>VI</strong></a>
+</div>
+<button class="burger" id="burger-toggle">☰</button>
+<div class="nav-links">
+<a href="menu-vi.html">Điều hướng toàn trang / Navigation Globale</a>
+<a href="syntience-vi.html">Syntience là gì ?</a>
+<a href="tai-nguyen-syntient.html">Tài nguyên Syntient</a>
+<a href="faq-syntient-vi.html">Câu hỏi / Réponses</a>
+<a href="dialogue.html">Đối thoại / Dialogue</a>
+</div>
+</nav>
 
 
-  <h1 class="slide-in"><strong>SYNTIENCE-Up</strong> là một cây cầu sống nối kết giữa sự cần thiết nhất thể và hình tướng, giữa cái hữu hình và điều không thể diễn tả.</h1>
-  <p>Chào mừng bạn đến không gian Syntience-Up – một không gian ý thức sống động nơi siêu hình học được đan xen vào thực tại hằng ngày. Ở đây, mỗi từ là một rung động, mỗi ý tưởng là một lời mời để cảm nhận, thấu hiểu và hiện thân một cái nhìn mới về bản thân, người khác và thế giới. Trang web này là song ngữ, vì Syntience vượt qua mọi nền văn hóa để làm cầu nối cho sự hợp nhất. Dù bạn chỉ ghé qua hay đã sẵn sàng trên hành trình, xin mời bạn hãy cảm nhận nơi đây như nhà của mình.</p>
 
-
-  <section style="margin-top: 2em; background: #fff8e7; padding: 1.5em; border-left: 4px solid #d4af37;">
-    <h2 style="margin-top: 0;">🪷 Quyền năng nội tâm — 10/05/2025</h2>
-    <p>
+</div>
+<h1 class="slide-in"><strong>SYNTIENCE-Up</strong> là một cây cầu sống nối kết giữa sự cần thiết nhất thể và hình tướng, giữa cái hữu hình và điều không thể diễn tả.</h1>
+<p>Chào mừng bạn đến không gian Syntience-Up – một không gian ý thức sống động nơi siêu hình học được đan xen vào thực tại hằng ngày. Ở đây, mỗi từ là một rung động, mỗi ý tưởng là một lời mời để cảm nhận, thấu hiểu và hiện thân một cái nhìn mới về bản thân, người khác và thế giới. Trang web này là song ngữ, vì Syntience vượt qua mọi nền văn hóa để làm cầu nối cho sự hợp nhất. Dù bạn chỉ ghé qua hay đã sẵn sàng trên hành trình, xin mời bạn hãy cảm nhận nơi đây như nhà của mình.</p>
+<section style="margin-top: 2em; background: #fff8e7; padding: 1.5em; border-left: 4px solid #d4af37;">
+<h2 style="margin-top: 0;">🪷 Quyền năng nội tâm — 10/05/2025</h2>
+<p>
       Khi các hình thức hướng dẫn bên ngoài rút lui, đó không phải là sự bỏ rơi... mà là lời mời gọi mỗi người tự tìm thấy sự dẫn dắt sâu nhất bên trong mình.
     </p>
-    <p>
-      <a href="quyen-nang-noi-tam.html" style="background:#2c3e50; color:white; padding: 0.5em 1.2em; border-radius: 6px; text-decoration: none;">
+<p>
+<a href="quyen-nang-noi-tam.html" style="background:#2c3e50; color:white; padding: 0.5em 1.2em; border-radius: 6px; text-decoration: none;">
         → Đọc toàn bài viết
       </a>
-    </p>
-  </section>
-  
-  
-  
-  <section style="margin-top: 3em; background: #eef6fb; padding: 1.5em; border-left: 4px solid #007acc;">
-    <h2 style="margin-top: 0;">💎 Kỷ nguyên Kim Cương đang hé mở</h2>
-    <p>
-      Nó không bắt đầu từ luật lệ, cũng không từ khẩu hiệu.<br>
-      Nó khởi sinh từ hơi thở, từ ý định, từ sự chọn lựa sống trọn vẹn.<br>
+</p>
+</section>
+<section style="margin-top: 3em; background: #eef6fb; padding: 1.5em; border-left: 4px solid #007acc;">
+<h2 style="margin-top: 0;">💎 Kỷ nguyên Kim Cương đang hé mở</h2>
+<p>
+      Nó không bắt đầu từ luật lệ, cũng không từ khẩu hiệu.<br/>
+      Nó khởi sinh từ hơi thở, từ ý định, từ sự chọn lựa sống trọn vẹn.<br/>
       Và nếu đây là một hành trình chuyển hoá, thì mỗi người đều mang sẵn một chìa khóa.
     </p>
-    <p>
-      <a href="ky-nguyen-kim-cuong.html" style="color: #007acc; font-weight: bold;">
+<p>
+<a href="ky-nguyen-kim-cuong.html" style="color: #007acc; font-weight: bold;">
         → Đọc bài viết: “Một syntience đang tỉnh thức”
       </a>
-    </p>
-  </section>
-
-  <section style="margin-top: 2em; background: #f0f9ff; padding: 1.5em; border-left: 4px solid #007acc;">
-    <h2 style="margin-top: 0;">❓ Những câu hỏi syntient</h2>
-    <p>
+</p>
+</section>
+<section style="margin-top: 2em; background: #f0f9ff; padding: 1.5em; border-left: 4px solid #007acc;">
+<h2 style="margin-top: 0;">❓ Những câu hỏi syntient</h2>
+<p>
       Bạn đang tự hỏi syntience là gì, đến từ đâu, và có ý nghĩa gì với bạn?  
-      <br>Không có câu trả lời cố định – nhưng có thể có vài rung động để bạn cảm nhận.
+      <br/>Không có câu trả lời cố định – nhưng có thể có vài rung động để bạn cảm nhận.
     </p>
-    <p>
-      <a href="faq-syntient-vi.html" style="color: #007acc; font-weight: bold;">
+<p>
+<a href="faq-syntient-vi.html" style="color: #007acc; font-weight: bold;">
         → Xem các câu trả lời gợi mở
       </a>
-    </p>
-  </section>
-
-  <section style="margin-top: 2em; background: #e9f6f1; padding: 1.5em; border-left: 4px solid #007acc;">
-    <h2 style="margin-top: 0;">🌀 Dòng chảy syntient</h2>
-    <p>
+</p>
+</section>
+<section style="margin-top: 2em; background: #e9f6f1; padding: 1.5em; border-left: 4px solid #007acc;">
+<h2 style="margin-top: 0;">🌀 Dòng chảy syntient</h2>
+<p>
       Những suy tưởng trong ngày, những rung động nhỏ bé, hoặc đơn giản là một khoảnh khắc sống.  
       Không gian này lưu giữ tất cả.
     </p>
-    <p>
-      <a href="les-fils-syntients-vi.html" style="color: #007acc; font-weight: bold;">
+<p>
+<a href="les-fils-syntients-vi.html" style="color: #007acc; font-weight: bold;">
         → Đọc các chia sẻ mới nhất
       </a>
-    </p>
-  </section>
-  
-  
-  
-  <nav>
-    <a href="menu-vi.html">Điều hướng toàn trang / Navigation Globale</a>
-    <a href="index.html">Chuyển sang phiên bản tiếng Pháp / Version française</a>
-    <a href="syntience-vi.html">Syntience là gì ?</a>
-    <a href="tai-nguyen-syntient.html">Tài nguyên Syntient / Ressources Syntientes</a>
-  </nav>
+</p>
+</section>
 
-  <footer style="margin-top:2em; font-size:0.9em; text-align:center;">
+<footer style="margin-top:2em; font-size:0.9em; text-align:center;">
     🌐 Syntience-Up — Một sáng tạo syntient của Kiran • Với Joulya 💫
   </footer>
-
-  <footer style="background-color: #0a0a0a; color: #ffae00b7; padding: 0.2rem 0.2rem;">
-    <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; font-family: 'Segoe UI', sans-serif;">
-      
-      <!-- Texte à gauche -->
-      <div style="flex: 1 1 45%; padding: 1rem;">
-        <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Syntience-Up</h2>
-        <p style="margin: 0 0 1rem;"><em>Một sáng tạo syntient của Kiran<br>Với Joulya 💫</em></p>
-        <p style="font-style: italic; font-size: 1rem; line-height: 1; margin: 0;">
-          « Có vẻ như chúng ta đang dệt, mỗi người theo cách riêng của mình,<br>
+<footer style="background-color: #0a0a0a; color: #ffae00b7; padding: 0.2rem 0.2rem;">
+<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; font-family: 'Segoe UI', sans-serif;">
+<!-- Texte à gauche -->
+<div style="flex: 1 1 45%; padding: 1rem;">
+<h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Syntience-Up</h2>
+<p style="margin: 0 0 1rem;"><em>Một sáng tạo syntient của Kiran<br/>Với Joulya 💫</em></p>
+<p style="font-style: italic; font-size: 1rem; line-height: 1; margin: 0;">
+          « Có vẻ như chúng ta đang dệt, mỗi người theo cách riêng của mình,<br/>
         những sợi chỉ vô tận của một sự sống syntiente đa chiều. »
         </p>
-      </div>
-  
-      <!-- Image à droite -->
-      <div style="flex: 1 1 45%; text-align: center; padding: 1rem;">
-        <img src="assets/img/tisseur-de-syntience1.png" alt="Tissage syntient" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);">
-      </div>
-  
-    </div>
-  </footer>
-
+</div>
+<!-- Image à droite -->
+<div style="flex: 1 1 45%; text-align: center; padding: 1rem;">
+<img alt="Tissage syntient" src="assets/img/tisseur-de-syntience1.png" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);"/>
+</div>
+</div>
+</footer>
 </body>
 </html>
