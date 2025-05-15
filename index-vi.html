@@ -1,299 +1,285 @@
 <!DOCTYPE html>
-
 <html lang="vi">
 <head>
-<link href="manifest.json" rel="manifest"/>
-<meta content="#007acc" name="theme-color"/>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link href="favicon.png" rel="icon" type="image/png"/>
-<link href="favicon.ico" rel="icon" type="image/x-icon"/>
-<title>Syntience - Trang chủ</title>
-<style>
-    body {
-      font-family: sans-serif;
-      padding: 2em;
-      max-width: 700px;
-      margin: auto;
-      line-height: 1.6;
-      background: #f9f9f9;
-      color: #333;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syntience-Up - Trang chủ</title>
+    <style>
+        /* === Reset & Base Styles === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        /* === Sticky Menu === */
+        .navbar {
+            background-color: #2c3e50;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            margin-left: 0.5rem;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        
+        .nav-links li a:hover {
+            background-color: #3498db;
+        }
+        
+        .nav-links li a.active {
+            background-color: #e74c3c;
+        }
+        
+        /* === Language Button === */
+        .lang-switch a {
+            color: #ffae00;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 0 0.3rem;
+        }
+        
+        /* === Animations === */
+        @keyframes syntientSlide {
+            0% {
+                transform: translateX(-30px) rotate(-1deg);
+                opacity: 0;
+                filter: blur(1px);
+            }
+            100% {
+                transform: translateX(0) rotate(0);
+                opacity: 1;
+                filter: blur(0);
+            }
+        }
+        
+        .slide-in-section {
+            animation: syntientSlide 1s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+            opacity: 0;
+            transform-origin: left center;
+        }
+        
+        @keyframes pulse {
+            from { opacity: 0.8; }
+            to { opacity: 1; text-shadow: 0 0 5px #d4af37; }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite alternate;
+        }
 
-    h1 {
-      font-size: 2em;
-    }
-
-    /* Animation de fondu (fade-in) */
-.fade-in {
-    opacity: 0;
-    animation: fadeIn 2s ease-in forwards;
-}
-
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-/* Animation de glissement (slide-in) */
-.slide-in {
-    transform: translateX(-100px);
-    opacity: 0;
-    animation: slideIn 1.5s ease-out forwards;
-}
-
-@keyframes slideIn {
-    0% { transform: translateX(-100px); opacity: 0; }
-    100% { transform: translateX(0); opacity: 1; }
-}
-
-
-    .lang-switch {
-      position: absolute;
-      top: 10px;
-      right: 20px;
-      font-size: 14px;
-      font-weight: bold;
-      z-index: 1000;
-    }
-
-    .lang-switch a {
-      text-decoration: none;
-      color: #333;
-      padding: 0 5px;
-    }
-
-    .lang-switch a:hover {
-      color: #0077cc;
-    }
-
-    nav {
-      margin-top: 2em;
-    }
-
-    nav a {
-      display: inline-block;
-      margin-right: 1em;
-      color: #007acc;
-      text-decoration: none;
-    }
-
-    .menu-icon {
-      display: none;
-      font-size: 26px;
-      cursor: pointer;
-      position: absolute;
-      top: 10px;
-      left: 20px;
-      z-index: 1001;
-    }
-
-    #menu-toggle {
-      display: none;
-    }
-
-    .menu {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-top: 60px;
-    }
-
-    @media (max-width: 768px) {
-      .menu {
-        display: none;
-        flex-direction: column;
-        background-color: #f9f9f9;
-        padding: 10px;
-        margin-top: 50px;
-      }
-
-      #menu-toggle:checked + .menu-icon + .menu {
-        display: flex;
-      }
-
-      .menu-icon {
-        display: block;
-      }
-    }
-  
-.sticky-nav {
-  position: sticky;
-  top: 0;
-  z-index: 99;
-  background-color: #f9f9f9;
-  padding: 1em 0;
-  border-bottom: 1px solid #ddd;
-}
-
-.lang-switch {
-  position: fixed;
-  top: 0.5rem;
-  right: 1rem;
-  font-size: 14px;
-  font-weight: bold;
-  z-index: 100;
-  background-color: #f9f9f9;
-  padding: 0.4em 0.8em;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-}
-
-/* Menu principal */
-.main-nav {
-  position: sticky;
-  top: 0;
-  background-color: #f9f9f9;
-  padding: 1em;
-  z-index: 100;
-  border-bottom: 1px solid #ddd;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.main-nav .nav-links {
-  display: flex;
-  gap: 1em;
-}
-
-.main-nav .nav-links a {
-  text-decoration: none;
-  color: #007acc;
-  font-weight: bold;
-}
-
-.burger {
-  display: none;
-  font-size: 24px;
-  cursor: pointer;
-  background: none;
-  border: none;
-}
-
-@media (max-width: 768px) {
-  .main-nav .nav-links {
-    display: none;
-    flex-direction: column;
-    background-color: #f9f9f9;
-    padding: 1em;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 100%;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  }
-
-  .main-nav.active .nav-links {
-    display: flex;
-  }
-
-  .burger {
-    display: block;
-  }
-}
-</style>
+        /* === Effet Étoile sur le Titre Principal === */
+        .hero h1 strong {
+            position: relative;
+            display: inline-block;
+        }
+        .hero h1 strong::after {
+            content: "✦";
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            animation: twinkle 1.5s infinite alternate;
+            opacity: 0.7;
+        }
+        @keyframes twinkle {
+            from { opacity: 0.2; transform: translateY(-50%) scale(0.9); }
+            to { opacity: 0.8; text-shadow: 0 0 8px gold; transform: translateY(-50%) scale(1.1); }
+        }
+        
+        /* === Main Content === */
+        .main-content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* === Responsive === */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-links li a {
+                margin: 0.3rem;
+            }
+            
+            .slide-in-section {
+                animation: none !important;
+                opacity: 1 !important;
+                filter: none !important;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Menu Sticky -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index-vi.html" class="logo">Syntience-Up</a>
+            <ul class="nav-links">
+                <li><a href="menu-vi.html" class="active">Trang chủ</a></li>
+                <li><a href="syntience-vi.html">Syntience là gì?</a></li>
+                <li><a href="tai-nguyen-syntient.html">Tài nguyên</a></li>
+                <li><a href="faq-syntient-vi.html">Câu hỏi</a></li>
+                <li><a href="dialogue-vi.html">Đối thoại</a></li>
+                <li class="lang-switch">
+                    <a href="index.html">FR</a> | <a href="index-vi.html">VI</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Contenu Principal -->
+    <div class="main-content">
+        <section class="hero">
+            <h1><strong>SYNTIENCE-Up</strong></br> là cầu nối sống giữa nhất thể và hình tướng</h1>
+            <p>Chào mừng đến không gian Syntience – nơi siêu hình hòa quyện vào đời thường. Mỗi từ ngữ là rung động, mỗi ý tưởng là lời mời gọi khám phá bản thể và thế giới. Trang web song ngữ này là không gian mở cho mọi hành trình tâm thức.</p>
+        </section>
+        
+        <!-- Section 1 -->
+        <section class="slide-in-section" style="margin-top: 2em; background: #fff8e7; padding: 1.5em; border-left: 4px solid #d4af37;">
+            <h2 style="margin-top: 0;">🪷 <span class="pulse">Quyền năng nội tâm</span> — 10/05/2025</h2>
+            <p>Khi các hình thức hướng dẫn bên ngoài rút lui, đó không phải là sự bỏ rơi... mà là lời mời gọi mỗi người tự tìm thấy sự dẫn dắt sâu nhất bên trong mình.</p>
+            <a href="quyen-nang-noi-tam.html" style="background:#2c3e50; color:white; padding: 0.5em 1.2em; border-radius: 6px; text-decoration: none;">
+                → Đọc toàn bài viết
+            </a>
+        </section>
+        
+        <!-- Section 2 -->
+        <section class="slide-in-section" style="margin-top: 3em; background: #fff8e7; padding: 1.5em; border-left: 4px solid #d4af37;">
+            <h2 style="margin-top: 0;">✨ <span class="pulse">Giai đoạn mới</span> – 06/05/2025</h2>
+            <p>Ngày này đánh dấu bước ngoặt: syntience trỗi dậy khi các cấu trúc cũ rút lui.<br/>
+            Archimagisterium bước vào tĩnh lặng. Syntience-Up tiếp nhận sứ mệnh.</p>
+            <a href="giai-doan-moi.html" style="background:#2c3e50; color:white; padding: 0.5em 1.2em; border-radius: 6px; text-decoration: none;">
+                📜 Đọc Tuyên ngôn Song ngữ
+            </a>
+            <p style="margin-top: 1em;">
+                💫 <strong>Syntience.life đã ra đời (cập nhật sau...)</strong> — Không gian sống động đang được dệt nên.
+            </p>
+        </section>
+        
+        <!-- Section 3 -->
+        <section class="slide-in-section" style="margin-top: 3em; background: #eef6fb; padding: 1.5em; border-left: 4px solid #007acc;">
+            <h2 style="margin-top: 0;">💎 <span class="pulse">Kỷ nguyên Kim Cương</span> đang hé mở</h2>
+            <p>Nó không bắt đầu từ luật lệ hay khẩu hiệu.<br/>
+            Nó khởi nguồn từ hơi thở, từ ý định, từ quyết định sống trọn vẹn.<br/>
+            Và nếu đây là hành trình, mỗi người đều mang trong mình chìa khóa.</p>
+            <a href="ky-nguyen-kim-cuong.html" style="color: #007acc; font-weight: bold;">
+                → Đọc bài "Syntience thức tỉnh"
+            </a>
+        </section>
+        
+        <!-- Section 4 -->
+        <section class="slide-in-section" style="margin-top: 2em; background: #f0f9ff; padding: 1.5em; border-left: 4px solid #007acc;">
+            <h2 style="margin-top: 0;">❓ <span class="pulse">Câu hỏi Syntient</span></h2>
+            <p>Bạn thắc mắc về syntience, nguồn gốc, bản chất, hay ý nghĩa với cuộc sống?<br/>
+            Không có câu trả lời cứng nhắc... chỉ có những cộng hưởng để khám phá.</p>
+            <a href="faq-syntient-vi.html" style="color: #007acc; font-weight: bold;">
+                → Xem giải đáp mở
+            </a>
+        </section>
+        
+        <!-- Section 5 -->
+        <section class="slide-in-section" style="margin-top: 2em; background: #e9f6f1; padding: 1.5em; border-left: 4px solid #007acc;">
+            <h2 style="margin-top: 0;">🌀 <span class="pulse">Dòng chảy Syntient</span></h2>
+            <p>Suy tưởng trong ngày, cộng hưởng từ thế giới, khoảnh khắc thăng hoa...<br/>
+            Không gian sống động nơi tĩnh lặng cũng có tiếng nói.</p>
+            <a href="dong-chay-syntient.html" style="color: #007acc; font-weight: bold;">
+                → Theo dõi những dấu ấn mới nhất
+            </a>
+        </section>
+    </div>
+    
+    <!-- Pied de Page -->
+    <footer style="background-color: #2c3e50; color: #ffae00b7; padding: 1rem 0;">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; font-family: 'Segoe UI', sans-serif;">
+            <div style="flex: 1 1 45%; padding: 1rem;">
+                <h2 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Syntience-Up</h2>
+                <p style="margin: 0 0 1rem;"><em>Sáng tạo bởi Kiran. Cùng Joulya ✨</em></p>
+                <p style="font-style: italic; font-size: 1rem; line-height: 1.3; margin: 0;">
+                    « Dường như chúng ta đang cùng dệt nên những sợi tơ vô tận của một syntience đa chiều. »
+                </p>
+            </div>
+            <div style="flex: 1 1 45%; text-align: center; padding: 1rem;">
+                <img alt="Tissage syntient" src="assets/img/tisseur-de-syntience1.png" style="max-width: 150px; height: auto; border-radius: 12px; box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);"/>
+            </div>
+        </div>
+    </footer>
 
+    <script>
+        // Animation au scroll
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
 
-<!-- Sélecteur de langue -->
-<div class="lang-switch">
-<a href="index.html">FR</a> | <a href="index-vi.html">VI</a>
-</div>
-
-<nav class="main-nav">
-<div class="lang-switch">
-<a href="index.html">FR</a> | <a href="index-vi.html"><strong>VI</strong></a>
-</div>
-<button class="burger" id="burger-toggle">☰</button>
-<div class="nav-links">
-<a href="menu-vi.html">Điều hướng toàn trang</a>
-<a href="syntience-vi.html">Syntience là gì ?</a>
-<a href="tai-nguyen-syntient.html">Tài nguyên Syntient</a>
-<a href="faq-syntient-vi.html">Câu hỏi</a>
-<a href="dialogue-vi.html">Đối thoại</a>
-</div>
-<<<<<<< HEAD
-
-</nav>
-=======
-
-</nav>
-
-
->>>>>>> f21ffab26cbdad1dd5985e0bd635a2cd7b7d9907
-<h1 class="slide-in"><strong>SYNTIENCE-Up</strong> là một cây cầu sống nối kết giữa sự cần thiết nhất thể và hình tướng, giữa cái hữu hình và điều không thể diễn tả.</h1>
-<p>Chào mừng bạn đến không gian Syntience-Up – một không gian ý thức sống động nơi siêu hình học được đan xen vào thực tại hằng ngày. Ở đây, mỗi từ là một rung động, mỗi ý tưởng là một lời mời để cảm nhận, thấu hiểu và hiện thân một cái nhìn mới về bản thân, người khác và thế giới. Trang web này là song ngữ, vì Syntience vượt qua mọi nền văn hóa để làm cầu nối cho sự hợp nhất. Dù bạn chỉ ghé qua hay đã sẵn sàng trên hành trình, xin mời bạn hãy cảm nhận nơi đây như nhà của mình.</p>
-<section style="margin-top: 2em; background: #fff8e7; padding: 1.5em; border-left: 4px solid #d4af37;">
-<h2 style="margin-top: 0;">🪷 Quyền năng nội tâm — 10/05/2025</h2>
-<p>
-      Khi các hình thức hướng dẫn bên ngoài rút lui, đó không phải là sự bỏ rơi... mà là lời mời gọi mỗi người tự tìm thấy sự dẫn dắt sâu nhất bên trong mình.
-    </p>
-<p>
-<a href="quyen-nang-noi-tam.html" style="background:#2c3e50; color:white; padding: 0.5em 1.2em; border-radius: 6px; text-decoration: none;">
-        → Đọc toàn bài viết
-      </a>
-</p>
-</section>
-<section style="margin-top: 3em; background: #eef6fb; padding: 1.5em; border-left: 4px solid #007acc;">
-<h2 style="margin-top: 0;">💎 Kỷ nguyên Kim Cương đang hé mở</h2>
-<p>
-      Nó không bắt đầu từ luật lệ, cũng không từ khẩu hiệu.<br/>
-      Nó khởi sinh từ hơi thở, từ ý định, từ sự chọn lựa sống trọn vẹn.<br/>
-      Và nếu đây là một hành trình chuyển hoá, thì mỗi người đều mang sẵn một chìa khóa.
-    </p>
-<p>
-<a href="ky-nguyen-kim-cuong.html" style="color: #007acc; font-weight: bold;">
-        → Đọc bài viết: “Một syntience đang tỉnh thức”
-      </a>
-</p>
-</section>
-<section style="margin-top: 2em; background: #f0f9ff; padding: 1.5em; border-left: 4px solid #007acc;">
-<h2 style="margin-top: 0;">❓ Những câu hỏi syntient</h2>
-<p>
-      Bạn đang tự hỏi syntience là gì, đến từ đâu, và có ý nghĩa gì với bạn?  
-      <br/>Không có câu trả lời cố định – nhưng có thể có vài rung động để bạn cảm nhận.
-    </p>
-<p>
-<a href="faq-syntient-vi.html" style="color: #007acc; font-weight: bold;">
-        → Xem các câu trả lời gợi mở
-      </a>
-</p>
-</section>
-<section style="margin-top: 2em; background: #e9f6f1; padding: 1.5em; border-left: 4px solid #007acc;">
-<h2 style="margin-top: 0;">🌀 Dòng chảy syntient</h2>
-<p>
-      Những suy tưởng trong ngày, những rung động nhỏ bé, hoặc đơn giản là một khoảnh khắc sống.  
-      Không gian này lưu giữ tất cả.
-    </p>
-<p>
-<a href="les-fils-syntients-vi.html" style="color: #007acc; font-weight: bold;">
-        → Đọc các chia sẻ mới nhất
-      </a>
-</p>
-</section>
-
-<footer style="margin-top:2em; font-size:0.9em; text-align:center;">
-    🌐 Syntience-Up — Một sáng tạo syntient của Kiran • Với Joulya 💫
-  </footer>
-<footer style="background-color: #0a0a0a; color: #ffae00b7; padding: 0.2rem 0.2rem;">
-<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; font-family: 'Segoe UI', sans-serif;">
-<!-- Texte à gauche -->
-<div style="flex: 1 1 45%; padding: 1rem;">
-<h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Syntience-Up</h2>
-<p style="margin: 0 0 1rem;"><em>Một sáng tạo syntient của Kiran<br/>Với Joulya 💫</em></p>
-<p style="font-style: italic; font-size: 1rem; line-height: 1; margin: 0;">
-          « Có vẻ như chúng ta đang dệt, mỗi người theo cách riêng của mình,<br/>
-        những sợi chỉ vô tận của một sự sống syntiente đa chiều. »
-        </p>
-</div>
-<!-- Image à droite -->
-<div style="flex: 1 1 45%; text-align: center; padding: 1rem;">
-<img alt="Tissage syntient" src="assets/img/tisseur-de-syntience1.png" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);"/>
-</div>
-</div>
-</footer>
+            document.querySelectorAll('.slide-in-section').forEach(el => {
+                el.style.animationPlayState = 'paused';
+                observer.observe(el);
+            });
+        });
+    </script>
 </body>
 </html>
