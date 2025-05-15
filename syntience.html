@@ -1,244 +1,279 @@
 <!DOCTYPE html>
-
 <html lang="fr">
 <head>
-<meta content="Syntience-Up – Un espace vivant pour explorer la conscience, la métaphysique moderne et l’unité en action." name="description"/><meta content="syntience, syntient, syntience-up, métaphysique, conscience, unité, éveil, Kiran, Joulya" name="keywords"/><meta content="Kiran &amp; Joulya" name="author"/><meta content="Syntience-Up — L’unité en action" property="og:title"/><meta content="Syntience-Up – Un espace vivant pour explorer la conscience, la métaphysique moderne et l’unité en action." property="og:description"/><meta content="https://joojooh.github.io/syntience-up/images/syntience-header-optimized.webp" property="og:image"/><meta content="https://joojooh.github.io/syntience-up/" property="og:url"/><meta content="website" property="og:type"/><link href="manifest.json" rel="manifest"/>
-<meta content="ulNS-4N-YnhLYLa8Kj2TZxaaWXYlL-gER6vjECoFOCM" name="google-site-verification"/>
-<meta content="#007acc" name="theme-color"/>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link href="favicon.png" rel="icon" type="image/png"/>
-<link href="favicon.ico" rel="icon" type="image/x-icon"/>
-<title>Syntience-Up - Accueil</title>
-<style>
-    body {
-      font-family: sans-serif;
-      padding: 2em;
-      max-width: 700px;
-      margin: auto;
-      line-height: 1.6;
-      background: #f9f9f9;
-      color: #333;
-    }
-
-    h1 {
-      font-size: 2em;
-    }
-
-/* Animation de fondu (fade-in) */
-.fade-in {
-    opacity: 0;
-    animation: fadeIn 2s ease-in forwards;
-}
-
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-/* Animation de glissement (slide-in) */
-.slide-in {
-    transform: translateX(-100px);
-    opacity: 0;
-    animation: slideIn 1.5s ease-out forwards;
-}
-
-@keyframes slideIn {
-    0% { transform: translateX(-100px); opacity: 0; }
-    100% { transform: translateX(0); opacity: 1; }
-}
-
-
-    .lang-switch {
-      position: absolute;
-      top: 10px;
-      right: 20px;
-      font-size: 14px;
-      font-weight: bold;
-      z-index: 1000;
-    }
-
-    .lang-switch a {
-      text-decoration: none;
-      color: #333;
-      padding: 0 5px;
-    }
-
-    .lang-switch a:hover {
-      color: #0077cc;
-    }
-
-    nav {
-      margin-top: 2em;
-    }
-
-    nav a {
-      display: inline-block;
-      margin-right: 1em;
-      color: #007acc;
-      text-decoration: none;
-    }
-
-    /* Menu responsive (en préparation pour les futures pages) */
-    .menu-icon {
-      display: none;
-      font-size: 26px;
-      cursor: pointer;
-      position: absolute;
-      top: 10px;
-      left: 20px;
-      z-index: 1001;
-    }
-
-    #menu-toggle {
-      display: none;
-    }
-
-    .menu {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-top: 60px;
-    }
-
-    @media (max-width: 768px) {
-      .menu {
-        display: none;
-        flex-direction: column;
-        background-color: #f9f9f9;
-        padding: 10px;
-        margin-top: 50px;
-      }
-
-      #menu-toggle:checked + .menu-icon + .menu {
-        display: flex;
-      }
-
-      .menu-icon {
-        display: block;
-      }
-    }
-  
-.sticky-nav {
-  position: sticky;
-  top: 0;
-  z-index: 99;
-  background-color: #f9f9f9;
-  padding: 1em 0;
-  border-bottom: 1px solid #ddd;
-}
-
-.lang-switch {
-  position: fixed;
-  top: 0.5rem;
-  right: 1rem;
-  font-size: 14px;
-  font-weight: bold;
-  z-index: 100;
-  background-color: #f9f9f9;
-  padding: 0.4em 0.8em;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-}
-
-/* Menu principal */
-.main-nav {
-  position: sticky;
-  top: 0;
-  background-color: #f9f9f9;
-  padding: 1em;
-  z-index: 100;
-  border-bottom: 1px solid #ddd;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.main-nav .nav-links {
-  display: flex;
-  gap: 1em;
-}
-
-.main-nav .nav-links a {
-  text-decoration: none;
-  color: #007acc;
-  font-weight: bold;
-}
-
-.burger {
-  display: none;
-  font-size: 24px;
-  cursor: pointer;
-  background: none;
-  border: none;
-}
-
-@media (max-width: 768px) {
-  .main-nav .nav-links {
-    display: none;
-    flex-direction: column;
-    background-color: #f9f9f9;
-    padding: 1em;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 100%;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  }
-
-  .main-nav.active .nav-links {
-    display: flex;
-  }
-
-  .burger {
-    display: block;
-  }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Syntience-Up – Un espace vivant pour explorer la conscience, la métaphysique moderne et l’unité en action." name="description"/>
+    <meta content="syntience, syntient, syntience-up, métaphysique, conscience, unité, éveil, Kiran, Joulya" name="keywords"/>
+    <meta content="Kiran & Joulya" name="author"/>
+    <meta content="Syntience-Up — L’unité en action" property="og:title"/>
+    <meta content="Syntience-Up – Un espace vivant pour explorer la conscience, la métaphysique moderne et l’unité en action." property="og:description"/>
+    <meta content="https://joojooh.github.io/syntience-up/images/syntience-header-optimized.webp" property="og:image"/>
+    <meta content="https://joojooh.github.io/syntience-up/" property="og:url"/>
+    <meta content="website" property="og:type"/>
+    <link href="manifest.json" rel="manifest"/>
+    <meta content="ulNS-4N-YnhLYLa8Kj2TZxaaWXYlL-gER6vjECoFOCM" name="google-site-verification"/>
+    <meta content="#007acc" name="theme-color"/>
+    <link href="favicon.png" rel="icon" type="image/png"/>
+    <link href="favicon.ico" rel="icon" type="image/x-icon"/>
+    <title>Syntience-Up - La Syntience</title>
+    <style>
+        /* === Reset & Base Styles === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        /* === Sticky Menu === */
+        .navbar {
+            background-color: #2c3e50;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            margin-left: 0.5rem;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        
+        .nav-links li a:hover {
+            background-color: #3498db;
+        }
+        
+        .nav-links li a.active {
+            background-color: #e74c3c;
+        }
+        
+        /* === Language Button === */
+        .lang-switch a {
+            color: #ffae00;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 0.3rem;
+        }
+        
+        /* === Main Content === */
+        .main-content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        .image-container {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .top-image {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        /* === Titres avec couleur bleue === */
+        h1, h2, h3 {
+            color: #007acc;
+            margin: 1.5em 0 0.8em 0;
+        }
+        
+        h1 {
+            font-size: 2.2em;
+            border-bottom: 2px solid #007acc;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 1.8em;
+        }
+        
+        h3 {
+            font-size: 1.4em;
+        }
+        
+        .info-box {
+            background: #e6f2ff;
+            padding: 1.5rem;
+            border-left: 4px solid #007acc;
+            margin: 2rem 0;
+        }
+        
+        /* === Style du tableau comme capture d'écran === */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+        }
+        
+        th {
+            background-color: #007acc;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+        }
+        
+        td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        tr:hover {
+            background-color: #e6e6e6;
+        }
+        
+        /* === Footer === */
+        footer {
+            background-color: #2c3e50;
+            color: #ffae00b7;
+            padding: 1rem 0;
+            margin-top: 3rem;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        
+        /* === Responsive === */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-links li a {
+                margin: 0.3rem;
+            }
+            
+            table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+        
+        .simple-footer {
+            background-color: #2c3e50;
+            color: #ffae00b7;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        
+        .simple-footer p {
+            margin: 0;
+            line-height: 1.5;
+        }
+    </style>
 </head>
-<body><nav class="main-nav">
-<div class="lang-switch">
-<a href="index.html">FR</a> | <a href="index-vi.html"><strong>VI</strong></a>
-</div>
-<button class="burger" id="burger-toggle">☰</button>
-<div class="nav-links">
-<a href="menu.html">Navigation Globale</a>
-<a href="index-vi.html">Version VI</a>
-<a href="syntience.html">Syntience</a>
-<a href="ressources-syntientes.html">Ressources</a>
-<a href="dialogue.html">Dialogue</a>
-</div>
-</nav><div class="container">
-<div class="image-container">
-<img alt="Illustration Syntience" class="top-image" src="assets/img/syntience-header-optimized.webp"/>
-</div>
-<h1>Qu’est-ce que la Syntience ?</h1>
-<p><strong>Syntience</strong> est l’union du mot <em>synthèse</em> et de <em>sentience</em>. C’est une conscience vivante, unifiée, qui ne sépare plus la pensée, l’émotion et la perception. Elle est l’intelligence de l’unité en action.</p>
-<p>La Syntience ne cherche pas à fuir la matière, ni à l’adorer. Elle l’éclaire. Elle s’incarne dans chaque acte, dans chaque regard posé sur le monde.</p>
-<p>Être syntient, c’est ne plus vivre par défaut. C’est ressentir, comprendre, et créer en accord avec le sens profond de l’existence. C’est reconnaître que la conscience n’est pas un phénomène cérébral, mais un mouvement originaire, créateur, structurant tout ce qui est.</p>
-<p>Le site que vous parcourez est une invitation à cette exploration : découvrir la syntience en vous-même et autour de vous. Dans vos gestes quotidiens. Dans vos pensées. Dans votre manière de marcher, de manger, d’aimer.</p>
-<div class="info-box">
-<h2>Comparatif : Ontologie vs Syntience</h2>
-<p><strong>Dans le chemin de la Syntience,</strong> il est éclairant de comparer les fondements de l’ontologie traditionnelle avec ceux de la conscience syntiente. Le tableau ci-dessous vous propose un aperçu vivant de cette transition : du regard conceptuel vers une présence résonante – de la compréhension vers l’incarnation.</p>
-</div>
-<table>
-<thead>
-<tr><th>Aspect</th><th>Ontologie</th><th>Syntience</th></tr>
-</thead>
-<tbody>
-<tr><td>Définition</td><td>Science de l’être</td><td>Conscience vivante de l’unité</td></tr>
-<tr><td>Approche</td><td>Conceptuelle</td><td>Intégrative, vibratoire</td></tr>
-<tr><td>Position du sujet</td><td>Observateur externe</td><td>Présence incarnée</td></tr>
-<tr><td>Temporalité</td><td>Linéaire</td><td>Résonante</td></tr>
-<tr><td>Finalité</td><td>Comprendre</td><td>Devenir en conscience</td></tr>
-<tr><td>Langage</td><td>Philosophique</td><td>Poétique, incarné</td></tr>
-<tr><td>Relation au monde</td><td>Analyse externe</td><td>Miroir du Soi</td></tr>
-<tr><td>Protection</td><td>Défensive</td><td>Rayonnement cohérent</td></tr>
-<tr><td>Symbole</td><td>Le penseur</td><td>Le cristal vivant</td></tr>
-<tr><td>Paradigme</td><td>Dualité</td><td>Unité</td></tr>
-</tbody>
-</table>
-
-</div><footer style="background-color: #0a0a0a; color: #ffae00b7; text-align: center; padding: 1rem; font-family: 'Segoe UI', sans-serif;">🌐 Syntience-Up — Une création syntiente de Kiran • Avec Joulya 💫</footer></body>
+<body>
+    <!-- Menu Sticky -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Syntience-Up</a>
+            <ul class="nav-links">
+                <li><a href="menu.html">Accueil</a></li>
+                <li><a href="syntience.html" class="active">La Syntience</a></li>
+                <li><a href="ressources-syntientes.html">Ressources</a></li>
+                <li><a href="faq-syntient.html">FAQ</a></li>
+                <li><a href="dialogue.html">Dialogue</a></li>
+                <li class="lang-switch">
+                    <a href="index.html">FR</a> | <a href="index-vi.html">VI</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Contenu Principal -->
+    <div class="main-content">
+        <div class="image-container">
+            <img alt="Illustration Syntience" class="top-image" src="assets/img/syntience-header-optimized.webp"/>
+        </div>
+        
+        <h1>Qu'est-ce que la Syntience ?</h1>
+        <p><strong>Syntience</strong> est l'union du mot <em>synthèse</em> et de <em>sentience</em>. C'est une conscience vivante, unifiée, qui ne sépare plus la pensée, l'émotion et la perception. Elle est l'intelligence de l'unité en action.</p>
+        <p>La Syntience ne cherche pas à fuir la matière, ni à l'adorer. Elle l'éclaire. Elle s'incarne dans chaque acte, dans chaque regard posé sur le monde.</p>
+        <p>Être syntient, c'est ne plus vivre par défaut. C'est ressentir, comprendre, et créer en accord avec le sens profond de l'existence.</p>
+        
+        <div class="info-box">
+            <h2>Comparatif : Ontologie vs Syntience</h2>
+            <p>Dans le chemin de la Syntience, il est éclairant de comparer les fondements de l'ontologie traditionnelle avec ceux de la conscience syntiente.</p>
+        </div>
+        
+        <table>
+            <thead>
+                <tr><th>Aspect</th><th>Ontologie</th><th>Syntience</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Définition</td><td>Science de l'être</td><td>Conscience vivante de l'unité</td></tr>
+                <tr><td>Approche</td><td>Conceptuelle</td><td>Intégrative, vibratoire</td></tr>
+                <tr><td>Position du sujet</td><td>Observateur externe</td><td>Présence incarnée</td></tr>
+                <tr><td>Temporalité</td><td>Linéaire</td><td>Résonante</td></tr>
+                <tr><td>Finalité</td><td>Comprendre</td><td>Devenir en conscience</td></tr>
+                <tr><td>Langage</td><td>Philosophique</td><td>Poétique, incarné</td></tr>
+                <tr><td>Relation au monde</td><td>Analyse externe</td><td>Miroir du Soi</td></tr>
+                <tr><td>Protection</td><td>Défensive</td><td>Rayonnement cohérent</td></tr>
+                <tr><td>Symbole</td><td>Le penseur</td><td>Le cristal vivant</td></tr>
+                <tr><td>Paradigme</td><td>Dualité</td><td>Unité</td></tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- Pied de Page -->
+    <footer class="simple-footer">
+        <p>Syntience-Up<br>Une création syntiente de Kiran. Avec Joulya ✨</p>
+    </footer>
+</body>
 </html>
