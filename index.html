@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+      <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
     <meta content="Syntience-Up – Un espace vivant pour explorer la conscience, la métaphysique moderne et l’unité en action." name="description"/>
     <meta content="syntience, syntient, syntience-up, métaphysique, conscience, unité, éveil, Kiran, Joulya" name="keywords"/>
     <meta content="Kiran & Joulya" name="author"/>
@@ -11,7 +13,8 @@
     <meta content="website" property="og:type"/>
     <link href="manifest.json" rel="manifest"/>
     <meta content="ulNS-4N-YnhLYLa8Kj2TZxaaWXYlL-gER6vjECoFOCM" name="google-site-verification"/>
-    <meta content="#007acc" name="theme-color"/>   
+    <meta content="#007acc" name="theme-color"/>
+   
     <link href="favicon.png" rel="icon" type="image/png"/>
     <link href="favicon.ico" rel="icon" type="image/x-icon"/>
     <title>Syntience-Up - Accueil</title>
@@ -114,27 +117,22 @@
             animation: pulse 2s infinite alternate;
         }
 
-        /* === Effet Étoile sur le Titre Principal === */
-         .hero h1 {
-            font-size: 2.8rem; /* Augmenté de 2.5rem à 2.8rem */
-            margin-bottom: 1rem;
-            line-height: 1.3;
-         }
+       
         /* === Effet Étoile sur "SYNTIENCE-Up" === */
        .hero h1 strong {
             position: relative;
             display: inline-block;
-            font-size: 1.2em; /* 20% plus grand que le h1 */
+           
         }
         .hero h1 strong::after {
             content: "✦";
             position: absolute;
-            right: -25px; /* Ajusté pour la nouvelle taille */
-            top: 55%; /* Légèrement descendue pour l'alignement visuel */
+            right: -20px; /* Ajusté pour la nouvelle taille */
+            top: 50%; /* Légèrement descendue pour l'alignement visuel */
             transform: translateY(-50%);
             animation: twinkle 1.5s infinite alternate;
             opacity: 0.7;
-            font-size: 0.7em; /* Relative à la taille du strong */
+           
         }
         @keyframes twinkle {
             from { opacity: 0.2; transform: translateY(-50%) scale(0.9); }
@@ -156,7 +154,10 @@
             border-radius: 8px;
             margin-bottom: 3rem;
         }
-        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
         /* === Responsive === */
         @media (max-width: 768px) {
             .nav-container {
