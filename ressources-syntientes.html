@@ -1,117 +1,315 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ressources syntientes</title>
-  <link rel="icon" type="image/png" href="favicon.png">
-  <meta name="theme-color" content="#007acc" />
-  <link rel="manifest" href="manifest.json" />
-  <style>
-    body {
-      font-family: sans-serif;
-      padding: 2em;
-      max-width: 750px;
-      margin: auto;
-      line-height: 1.6;
-      background: #f9f9f9;
-      color: #333;
-    }
-    h1 {
-      font-size: 2em;
-      margin-bottom: 0.5em;
-    }
-    h2 {
-      font-size: 1.4em;
-      margin-top: 1.8em;
-    }
-    ul {
-      padding-left: 1.2em;
-    }
-    li {
-      margin-bottom: 0.8em;
-    }
-    a {
-      color: #007acc;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .lang-switch {
-      position: absolute;
-      top: 10px;
-      right: 20px;
-      font-size: 14px;
-      font-weight: bold;
-    }
-    .lang-switch a {
-      text-decoration: none;
-      color: #333;
-      padding: 0 5px;
-    }
-    .lang-switch a:hover {
-      color: #0077cc;
-    }
-    nav.navbar {
-      margin-top: 2em;
-    }
-    nav.navbar a {
-      display: inline-block;
-      margin-right: 1em;
-      color: #007acc;
-      text-decoration: none;
-    }
-    footer {
-      margin-top: 3em;
-      font-size: 0.9em;
-      text-align: center;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Ressources syntientes - Sélection de lectures, médias et pratiques inspirantes pour approfondir l'expérience de l'unité consciente." name="description"/>
+    <meta content="syntience, syntient, ressources, lectures, médias, métaphysique, conscience, unité, éveil" name="keywords"/>
+    <meta content="Kiran & Joulya" name="author"/>
+    <meta content="Ressources syntientes - Syntience-Up" property="og:title"/>
+    <meta content="Ressources syntientes - Sélection de lectures, médias et pratiques inspirantes pour approfondir l'expérience de l'unité consciente." property="og:description"/>
+    <meta content="https://joojooh.github.io/syntience-up/images/syntience-header-optimized.webp" property="og:image"/>
+    <meta content="https://joojooh.github.io/syntience-up/ressources-syntientes.html" property="og:url"/>
+    <meta content="website" property="og:type"/>
+    <link href="manifest.json" rel="manifest"/>
+    <meta content="ulNS-4N-YnhLYLa8Kj2TZxaaWXYlL-gER6vjECoFOCM" name="google-site-verification"/>
+    <meta content="#007acc" name="theme-color"/>
+    <link href="favicon.png" rel="icon" type="image/png"/>
+    <link href="favicon.ico" rel="icon" type="image/x-icon"/>
+    <title>Ressources syntientes - Syntience-Up</title>
+    <style>
+        /* === Reset & Base Styles === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        /* === Sticky Menu === */
+        .navbar {
+            background-color: #2c3e50;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            margin-left: 0.5rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links li a:hover {
+            background-color: #3498db;
+            transform: translateY(-2px);
+        }
+        
+        .nav-links li a.active {
+            background-color: #e74c3c;
+        }
+        
+        /* === Language Button === */
+        .lang-switch a {
+            color: #ffae00;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 0.3rem;
+            transition: color 0.3s;
+        }
+        
+        .lang-switch a:hover {
+            color: #ffd700;
+        }
+        
+        /* === Main Content === */
+        .main-content {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        /* === Titres avec couleur bleue === */
+        h1, h2, h3 {
+            color: #007acc;
+            margin: 1.5em 0 0.8em 0;
+        }
+        
+        h1 {
+            font-size: 2.2em;
+            border-bottom: 2px solid #007acc;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 1.6em;
+            margin-top: 1.8em;
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+        }
+        
+        /* === Ressources Styles === */
+        .resource-section {
+            background: white;
+            padding: 1.8rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+            border-left: 4px solid #007acc;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        li {
+            margin-bottom: 1.2em;
+            padding-left: 1.5em;
+            position: relative;
+            line-height: 1.7;
+        }
+        
+        li:before {
+            content: "•";
+            color: #007acc;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        a {
+            color: #007acc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        a:hover {
+            color: #005e99;
+            text-decoration: underline;
+        }
+        
+        strong {
+            color: #2c3e50;
+        }
+        
+        em {
+            font-style: italic;
+            color: #555;
+        }
+        
+        /* === Footer === */
+        .simple-footer {
+            background-color: #2c3e50;
+            color: #ffae00b7;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        
+        .simple-footer p {
+            margin: 0;
+            line-height: 1.5;
+        }
+        
+        /* === Animations === */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .resource-section {
+            animation: fadeIn 0.6s ease forwards;
+        }
+        
+        /* === Responsive === */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-links li a {
+                margin: 0.3rem;
+                padding: 0.4rem 0.8rem;
+            }
+            
+            .main-content {
+                padding: 0 1rem;
+            }
+            
+            .resource-section {
+                padding: 1.4rem;
+            }
+            
+            h1 {
+                font-size: 1.9em;
+            }
+            
+            h2 {
+                font-size: 1.4em;
+                flex-wrap: wrap;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="lang-switch">
-    <a href="ressources-syntientes.html">FR</a> | <a href="tai-nguyen-syntient.html">VI</a>
-  </div>
-
-  <header>
+    <!-- Menu Sticky -->
     <nav class="navbar">
-      <a href="index.html">- Accueil</a>
-      <a href="syntience.html">- Syntience</a>
-      <a href="apropos.html">- À propos</a>
-      <a href="explorations.html">- Explorations</a>
-      <a href="outils-syntients.html">- Outils</a>
-      <a href="dialogue.html">- Dialogue</a>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Syntience-Up</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="syntience.html">La Syntience</a></li>
+                <li><a href="explorations.html">Explorations</a></li>
+                <li><a href="ressources-syntientes.html" class="active">Ressources</a></li>
+                <li><a href="dialogue.html">Dialogue</a></li>
+                <li class="lang-switch">
+                    <a href="ressources-syntientes.html">FR</a> | <a href="tai-nguyen-syntient.html">VI</a>
+                </li>
+            </ul>
+        </div>
     </nav>
-  </header>
+    
+    <!-- Contenu Principal -->
+    <div class="main-content">
+        <h1>Ressources syntientes</h1>
+        <p>Voici une sélection de ressources qui résonnent avec l'esprit syntient du site. Aucun lien n'est là pour convaincre — seulement pour ouvrir, éveiller, inspirer.</p>
+        
+        <div class="resource-section">
+            <h2>📘 Lectures inspirantes</h2>
+            <ul>
+                <li><strong>Frank Hatem</strong> – <em>La règle du "je"</em> ; <em>Les Cinq Clefs</em></li>
+                <li><strong>Satprem</strong> – <em>La Genèse du Surhomme</em></li>
+                <li><strong>Annick de Souzenelle</strong> – <em>Le symbolisme du corps humain</em></li>
+                <li><strong>Nassim Haramein</strong> – <em>Le champ unifié</em> (théorie holofractale)</li>
+            </ul>
+        </div>
+        
+        <div class="resource-section">
+            <h2>🎧 Médias et vidéos</h2>
+            <ul>
+                <li><a href="https://www.archimagisterium.world" target="_blank" rel="noopener noreferrer">Archimagistérium Global Consortium</a> – Site de veille et d'unité planétaire</li>
+                <li><a href="https://www.hatem.com" target="_blank" rel="noopener noreferrer">hatem.com</a> – Centre de haute métaphysique rationnelle</li>
+                <li><a href="https://www.youtube.com/@ufm-metaphysique/featured" target="_blank" rel="noopener noreferrer">Chaîne YouTube UFM (Université Francophone de la Métaphysique)</a></li>
+            </ul>
+        </div>
+        
+        <div class="resource-section">
+            <h2>🧘 Pratiques d'écoute et d'ancrage</h2>
+            <ul>
+                <li><a href="https://www.wakingtimes.com" target="_blank" rel="noopener noreferrer">Waking Times</a> – Réflexions sur l'éveil collectif</li>
+                <li><a href="https://soundcloud.com" target="_blank" rel="noopener noreferrer">Soundcloud (recherches : binaural - coherence - syntience)</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Pied de Page -->
+    <footer class="simple-footer">
+        <p>Syntience-Up<br>Un tissage vivant de Kiran • Avec Joulya 💫</p>
+    </footer>
 
-  <h1>Ressources syntientes</h1>
+    <script>
+        // Animation au chargement
+        document.addEventListener('DOMContentLoaded', () => {
+            const resourceSections = document.querySelectorAll('.resource-section');
+            
+            // Observer les éléments pour l'animation
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
 
-  <p>Voici une sélection de ressources qui résonnent avec l’esprit syntient du site. Aucun lien n’est là pour convaincre — seulement pour ouvrir, éveiller, inspirer.</p>
-
-  <h2>📘 Lectures inspirantes</h2>
-  <ul>
-    <li><strong>Frank Hatem</strong> – <em>La règle du "je"</em> ; <em>Les Cinq Clefs</em></li>
-    <li><strong>Satprem</strong> – <em>La Genèse du Surhomme</em></li>
-    <li><strong>Annick de Souzenelle</strong> – <em>Le symbolisme du corps humain</em></li>
-    <li><strong>Nassim Haramein</strong> – <em>Le champ unifié</em> (théorie holofractale)</li>
-  </ul>
-
-  <h2>🎧 Médias et vidéos</h2>
-  <ul>
-    <li><a href="https://www.archimagisterium.world" target="_blank">Archimagistérium Global Consortium</a> – Site de veille et d’unité planétaire</li>
-    <li><a href="https://www.hatem.com" target="_blank">hatem.com</a> – Centre de haute métaphysique rationnelle</li>
-    <li><a href="https://www.youtube.com/@ufm-metaphysique/featured" target="_blank">Chaîne YouTube UFM (Université Francophone de la Métaphysique)</a></li>
-  </ul>
-
-  <h2>🧘 Pratiques d’écoute et d’ancrage</h2>
-  <ul>
-    <li><a href="https://www.wakingtimes.com" target="_blank">Waking Times</a> – Réflexions sur l’éveil collectif</li>
-    <li><a href="https://soundcloud.com" target="_blank">Soundcloud (recherches : binaural - coherence - syntience)</a></li>
-  </ul>
-
-  <footer>
-    🌐 Syntience-Up — Un tissage vivant de Kiran • Avec Joulya 💫
-  </footer>
+            resourceSections.forEach(section => {
+                section.style.opacity = 0;
+                section.style.transform = 'translateY(20px)';
+                observer.observe(section);
+            });
+        });
+    </script>
 </body>
 </html>

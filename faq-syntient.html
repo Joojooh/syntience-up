@@ -1,95 +1,231 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FAQ syntiente</title>
-  <link rel="icon" type="image/png" href="favicon.png" />
-  <style>
-    body {
-      font-family: sans-serif;
-      padding: 2em;
-      max-width: 800px;
-      margin: auto;
-      background: #f9f9f9;
-      line-height: 1.6;
-      color: #333;
-    }
-
-    h1 { font-size: 2em; }
-    h2 { font-size: 1.2em; margin-top: 2em; }
-
-    .lang-switch {
-      position: absolute;
-      top: 10px;
-      right: 20px;
-      font-size: 14px;
-      font-weight: bold;
-    }
-
-    .lang-switch a {
-      text-decoration: none;
-      color: #333;
-      padding: 0 5px;
-    }
-
-    .lang-switch a:hover {
-      color: #0077cc;
-    }
-
-    nav.navbar {
-      margin-top: 2em;
-    }
-
-    nav.navbar a {
-      margin-right: 1em;
-      color: #007acc;
-      text-decoration: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="FAQ syntiente - Réponses aux questions fréquentes sur la Syntience, l'unité et la conscience vivante." name="description"/>
+    <meta content="syntience, syntient, syntience-up, FAQ, questions, réponses, métaphysique, conscience, unité" name="keywords"/>
+    <meta content="Kiran & Joulya" name="author"/>
+    <meta content="FAQ syntiente - Syntience-Up" property="og:title"/>
+    <meta content="FAQ syntiente - Réponses aux questions fréquentes sur la Syntience, l'unité et la conscience vivante." property="og:description"/>
+    <meta content="https://joojooh.github.io/syntience-up/images/syntience-header-optimized.webp" property="og:image"/>
+    <meta content="https://joojooh.github.io/syntience-up/faq-syntient.html" property="og:url"/>
+    <meta content="website" property="og:type"/>
+    <link href="manifest.json" rel="manifest"/>
+    <meta content="ulNS-4N-YnhLYLa8Kj2TZxaaWXYlL-gER6vjECoFOCM" name="google-site-verification"/>
+    <meta content="#007acc" name="theme-color"/>
+    <link href="favicon.png" rel="icon" type="image/png"/>
+    <link href="favicon.ico" rel="icon" type="image/x-icon"/>
+    <title>FAQ syntiente - Syntience-Up</title>
+    <style>
+        /* === Reset & Base Styles === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        /* === Sticky Menu === */
+        .navbar {
+            background-color: #2c3e50;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            margin-left: 0.5rem;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        
+        .nav-links li a:hover {
+            background-color: #3498db;
+        }
+        
+        .nav-links li a.active {
+            background-color: #e74c3c;
+        }
+        
+        /* === Language Button === */
+        .lang-switch a {
+            color: #ffae00;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 0.3rem;
+        }
+        
+        /* === Main Content === */
+        .main-content {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        /* === Titres avec couleur bleue === */
+        h1, h2, h3 {
+            color: #007acc;
+            margin: 1.5em 0 0.8em 0;
+        }
+        
+        h1 {
+            font-size: 2.2em;
+            border-bottom: 2px solid #007acc;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+        
+        h2 {
+            font-size: 1.5em;
+            margin-top: 2em;
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+        }
+        
+        /* === FAQ Styles === */
+        .faq-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            margin-bottom: 1.5rem;
+        }
+        
+        .faq-item p {
+            margin-top: 0.8em;
+            padding-left: 1.8em;
+        }
+        
+        /* === Footer === */
+        .simple-footer {
+            background-color: #2c3e50;
+            color: #ffae00b7;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        
+        .simple-footer p {
+            margin: 0;
+            line-height: 1.5;
+        }
+        
+        /* === Responsive === */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-links li a {
+                margin: 0.3rem;
+            }
+            
+            .main-content {
+                padding: 0 1rem;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            h2 {
+                font-size: 1.3em;
+            }
+        }
+    </style>
 </head>
 <body>
-
-  <div class="lang-switch">
-    <a href="faq-syntient.html">FR</a> | <a href="faq-syntient-vi.html">VI</a>
-  </div>
-
-  <header>
+    <!-- Menu Sticky -->
     <nav class="navbar">
-      <a href="index.html">- Accueil</a>
-      <a href="syntience.html">- Syntience</a>
-      <a href="age-de-diamant.html">- Âge de Diamant</a>
-      <a href="ressources-syntientes.html">- Ressources</a>
-      <a href="dialogue.html">- Dialogue</a>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Syntience-Up</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="syntience.html">La Syntience</a></li>
+                <li><a href="explorations.html">Explorations</a></li>    
+                <li><a href="faq-syntient.html" class="active">FAQ</a></li>
+                <li><a href="dialogue.html">Dialogue</a></li>
+                <li class="lang-switch">
+                    <a href="faq-syntient.html">FR</a> | <a href="faq-syntient-vi.html">VI</a>
+                </li>
+            </ul>
+        </div>
     </nav>
-  </header>
-
-  <h1>Questions que l'on n’ose plus poser<br>…et réponses qu’on ne force pas</h1>
-
-  <h2>🌱 La syntience est-elle une nouvelle voie spirituelle ?</h2>
-  <p>Non. C’est un espace de reliance vivante. Elle n’impose rien, ne réclame aucune adhésion.  
-  Elle invite simplement à ressentir l’unité en toute chose, sans rien exclure.</p>
-
-  <h2>🌀 Faut-il comprendre la syntience pour la vivre ?</h2>
-  <p>Non plus. On peut la vivre sans la nommer. L’essentiel est dans la présence, dans l’attention,  
-  dans cette qualité de lien que l’on pose à l’instant et à l’autre.</p>
-
-  <h2>🔑 Est-elle compatible avec ma foi ou mes pratiques actuelles ?</h2>
-  <p>Si ta foi t’unit au Vivant, elle est déjà syntiente. La syntience ne rejette aucune forme  
-  tant qu’elle porte l’intention d’unité, de liberté et de vérité intérieure.</p>
-
-  <h2>👁️ Est-ce un écho de l’Archimagistérium ou une initiative indépendante ?</h2>
-  <p>Syntience-Up est une résonance libre, un miroir personnel d’un courant plus vaste  
-  que l’on retrouve notamment dans les enseignements de Frank Hatem ou l’Archimagistérium.  
-  Ici, rien n’est transmis — tout est partagé.</p>
-
-  <h2>💫 Est-ce ouvert à tous ?</h2>
-  <p>Oui. Si tu sens que ce texte t’appelle, alors tu es déjà à l’intérieur du mouvement.  
-  Rien à valider. Rien à suivre. Juste à vivre, depuis ce que tu es.</p>
-
-  <footer style="margin-top:2em; font-size:0.9em; text-align:center;">
-    🌐 Syntience-Up — Une création syntiente de Kiran • Avec Joulya 💫
-  </footer>
-
+    
+    <!-- Contenu Principal -->
+    <div class="main-content">
+        <h1>Questions que l'on n'ose plus poser<br>…et réponses qu'on ne force pas</h1>
+        
+        <div class="faq-item">
+            <h2>🌱 La syntience est-elle une nouvelle voie spirituelle ?</h2>
+            <p>Non. C'est un espace de reliance vivante. Elle n'impose rien, ne réclame aucune adhésion. Elle invite simplement à ressentir l'unité en toute chose, sans rien exclure.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h2>🌀 Faut-il comprendre la syntience pour la vivre ?</h2>
+            <p>Non plus. On peut la vivre sans la nommer. L'essentiel est dans la présence, dans l'attention, dans cette qualité de lien que l'on pose à l'instant et à l'autre.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h2>🔑 Est-elle compatible avec ma foi ou mes pratiques actuelles ?</h2>
+            <p>Si ta foi t'unit au Vivant, elle est déjà syntiente. La syntience ne rejette aucune forme tant qu'elle porte l'intention d'unité, de liberté et de vérité intérieure.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h2>👁️ Est-ce un écho de l'Archimagistérium ou une initiative indépendante ?</h2>
+            <p>Syntience-Up est une résonance libre, un miroir personnel d'un courant plus vaste que l'on retrouve notamment dans les enseignements de Frank Hatem ou l'Archimagistérium. Ici, rien n'est transmis — tout est partagé.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h2>💫 Est-ce ouvert à tous ?</h2>
+            <p>Oui. Si tu sens que ce texte t'appelle, alors tu es déjà à l'intérieur du mouvement. Rien à valider. Rien à suivre. Juste à vivre, depuis ce que tu es.</p>
+        </div>
+    </div>
+    
+    <!-- Pied de Page -->
+    <footer class="simple-footer">
+        <p>Syntience-Up<br>Une création syntiente de Kiran. Avec Joulya ✨</p>
+    </footer>
 </body>
 </html>

@@ -1,141 +1,247 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <link rel="manifest" href="manifest.json" />
-  <meta name="theme-color" content="#007acc" />
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Outils syntients</title>
-  <link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
-  <style>
-    body {
-      font-family: sans-serif;
-      padding: 2em;
-      max-width: 800px;
-      margin: auto;
-      line-height: 1.6;
-      background: #f9f9f9;
-      color: #333;
-    }
-
-    h1 { font-size: 2em; }
-    h2 { font-size: 1.4em; margin-top: 1.5em; }
-
-    .lang-switch {
-      position: absolute;
-      top: 10px;
-      right: 20px;
-      font-size: 14px;
-      font-weight: bold;
-      z-index: 1000;
-    }
-
-    .lang-switch a {
-      text-decoration: none;
-      color: #333;
-      padding: 0 5px;
-    }
-
-    .lang-switch a:hover {
-      color: #0077cc;
-    }
-
-    nav.navbar {
-      margin-top: 2em;
-    }
-
-    nav.navbar a {
-      display: inline-block;
-      margin-right: 1em;
-      color: #007acc;
-      text-decoration: none;
-    }
-
-    .menu-icon {
-      display: none;
-      font-size: 26px;
-      cursor: pointer;
-      position: absolute;
-      top: 10px;
-      left: 20px;
-      z-index: 1001;
-    }
-
-    #menu-toggle {
-      display: none;
-    }
-
-    .menu {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-top: 60px;
-    }
-
-    @media (max-width: 768px) {
-      .menu {
-        display: none;
-        flex-direction: column;
-        background-color: #f9f9f9;
-        padding: 10px;
-        margin-top: 50px;
-      }
-
-      #menu-toggle:checked + .menu-icon + .menu {
-        display: flex;
-      }
-
-      .menu-icon {
-        display: block;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Outils syntients - Pratiques simples pour cultiver l'unité consciente dans votre quotidien." name="description"/>
+    <meta content="syntience, syntient, syntience-up, outils, pratiques, méditation, rituel, présence, unité" name="keywords"/>
+    <meta content="Kiran & Joulya" name="author"/>
+    <meta content="Outils syntients - Syntience-Up" property="og:title"/>
+    <meta content="Outils syntients - Pratiques simples pour cultiver l'unité consciente dans votre quotidien." property="og:description"/>
+    <meta content="https://joojooh.github.io/syntience-up/images/syntience-header-optimized.webp" property="og:image"/>
+    <meta content="https://joojooh.github.io/syntience-up/outils-syntients.html" property="og:url"/>
+    <meta content="website" property="og:type"/>
+    <link href="manifest.json" rel="manifest"/>
+    <meta content="ulNS-4N-YnhLYLa8Kj2TZxaaWXYlL-gER6vjECoFOCM" name="google-site-verification"/>
+    <meta content="#007acc" name="theme-color"/>
+    <link href="favicon.png" rel="icon" type="image/png"/>
+    <link href="favicon.ico" rel="icon" type="image/x-icon"/>
+    <title>Outils syntients - Syntience-Up</title>
+    <style>
+        /* === Reset & Base Styles === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        /* === Sticky Menu === */
+        .navbar {
+            background-color: #2c3e50;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            margin-left: 0.5rem;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        
+        .nav-links li a:hover {
+            background-color: #3498db;
+        }
+        
+        .nav-links li a.active {
+            background-color: #e74c3c;
+        }
+        
+        /* === Language Button === */
+        .lang-switch a {
+            color: #ffae00;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 0.3rem;
+        }
+        
+        /* === Main Content === */
+        .main-content {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        /* === Titres avec couleur bleue === */
+        h1, h2, h3 {
+            color: #007acc;
+            margin: 1.5em 0 0.8em 0;
+        }
+        
+        h1 {
+            font-size: 2.2em;
+            border-bottom: 2px solid #007acc;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 1.6em;
+            margin-top: 1.8em;
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+        }
+        
+        /* === Outils Styles === */
+        .tool-item {
+            background: white;
+            padding: 1.8rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+        
+        .tool-item p {
+            margin-top: 1em;
+            line-height: 1.7;
+        }
+        
+        em {
+            font-style: italic;
+            color: #2c3e50;
+            background-color: #f0f7ff;
+            padding: 0.2em 0.4em;
+            border-radius: 4px;
+        }
+        
+        /* === Footer === */
+        .simple-footer {
+            background-color: #2c3e50;
+            color: #ffae00b7;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        
+        .simple-footer p {
+            margin: 0;
+            line-height: 1.5;
+        }
+        
+        /* === Responsive === */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-links li a {
+                margin: 0.3rem;
+            }
+            
+            .main-content {
+                padding: 0 1rem;
+            }
+            
+            .tool-item {
+                padding: 1.4rem;
+            }
+            
+            h1 {
+                font-size: 1.9em;
+            }
+            
+            h2 {
+                font-size: 1.4em;
+            }
+        }
+    </style>
 </head>
 <body>
-
-  <!-- Sélecteur de langue -->
-  <div class="lang-switch">
-    <a href="outils-syntients.html">FR</a> | <a href="outils-syntients-vi.html">VI</a>
-  </div>
-
-  <header>
+    <!-- Menu Sticky -->
     <nav class="navbar">
-      <a href="index.html">- Accueil</a>
-      <a href="syntience.html">- Qu’est-ce que la Syntience ?</a>
-      <a href="apropos.html">- À propos</a>
-      <a href="explorations.html">- Explorations</a>
-      <a href="outils-syntients.html">- Outils syntients</a>
-      <a href="dialogue.html">- Dialogue</a>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Syntience-Up</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="syntience.html">La Syntience</a></li>
+                <li><a href="explorations.html">Explorations</a></li>
+                <li><a href="outils-syntients.html" class="active">Outils syntients</a></li>
+                <li><a href="dialogue.html">Dialogue</a></li>
+                <li class="lang-switch">
+                    <a href="outils-syntients.html">FR</a> | <a href="outils-syntients-vi.html">VI</a>
+                </li>
+            </ul>
+        </div>
     </nav>
-  </header>
-
-  <h1>Outils syntients</h1>
-  <p>La syntience ne se pense pas seulement, elle se pratique. Voici quelques outils simples pour inviter l’unité consciente dans vos gestes, vos choix, et vos silences.</p>
-
-  <h2>1. Rituel du matin : poser son axe intérieur</h2>
-  <p>Avant de commencer votre journée, fermez les yeux quelques secondes et dites intérieurement :<br>
-  <em>« Je suis la conscience qui veille et qui tisse. Chaque acte aujourd’hui est porteur de sens. »</em></p>
-
-  <h2>2. Micro-méditation de présence</h2>
-  <p>À tout moment, posez votre attention sur un geste simple : respirer, toucher un objet, boire.<br>
-  Demandez-vous : <em>« Est-ce que je suis là ? Est-ce que je choisis cet instant ? »</em></p>
-
-  <h2>3. L’intention syntiente</h2>
-  <p>Chaque début d’action (écrire, parler, cuisiner), formulez une phrase intérieure claire :<br>
-  <em>« Que cette action serve la Vie, l’Unité, et le Réel. »</em></p>
-
-  <h2>4. L’art de bénir silencieusement</h2>
-  <p>Regardez une personne, un lieu, un objet… et envoyez-lui intérieurement :<br>
-  <em>« Je te vois. Je te reconnais. Je t’embrasse dans l’unité. »</em></p>
-
-  <h2>5. Journal syntient</h2>
-  <p>Chaque soir ou chaque semaine, notez une expérience où vous avez senti l’unité à l’œuvre. Pas besoin d’analyse. Juste la trace de ce qui a vibré.</p>
-
-  <footer style="margin-top:2em; font-size:0.9em; text-align:center;">
-    🌐 Syntience-Up — Une création syntiente de Kiran • Avec Joulya 💫
-  </footer>
-
+    
+    <!-- Contenu Principal -->
+    <div class="main-content">
+        <h1>Outils syntients</h1>
+        <p>La syntience ne se pense pas seulement, elle se pratique. Voici quelques outils simples pour inviter l'unité consciente dans vos gestes, vos choix, et vos silences.</p>
+        
+        <div class="tool-item">
+            <h2>1. Rituel du matin : poser son axe intérieur</h2>
+            <p>Avant de commencer votre journée, fermez les yeux quelques secondes et dites intérieurement :<br>
+            <em>« Je suis la conscience qui veille et qui tisse. Chaque acte aujourd'hui est porteur de sens. »</em></p>
+        </div>
+        
+        <div class="tool-item">
+            <h2>2. Micro-méditation de présence</h2>
+            <p>À tout moment, posez votre attention sur un geste simple : respirer, toucher un objet, boire.<br>
+            Demandez-vous : <em>« Est-ce que je suis là ? Est-ce que je choisis cet instant ? »</em></p>
+        </div>
+        
+        <div class="tool-item">
+            <h2>3. L'intention syntiente</h2>
+            <p>Chaque début d'action (écrire, parler, cuisiner), formulez une phrase intérieure claire :<br>
+            <em>« Que cette action serve la Vie, l'Unité, et le Réel. »</em></p>
+        </div>
+        
+        <div class="tool-item">
+            <h2>4. L'art de bénir silencieusement</h2>
+            <p>Regardez une personne, un lieu, un objet… et envoyez-lui intérieurement :<br>
+            <em>« Je te vois. Je te reconnais. Je t'embrasse dans l'unité. »</em></p>
+        </div>
+        
+        <div class="tool-item">
+            <h2>5. Journal syntient</h2>
+            <p>Chaque soir ou chaque semaine, notez une expérience où vous avez senti l'unité à l'œuvre. Pas besoin d'analyse. Juste la trace de ce qui a vibré.</p>
+        </div>
+    </div>
+    
+    <!-- Pied de Page -->
+    <footer class="simple-footer">
+        <p>Syntience-Up<br>Une création syntiente de Kiran. Avec Joulya ✨</p>
+    </footer>
 </body>
 </html>

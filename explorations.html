@@ -1,190 +1,252 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <link rel="manifest" href="manifest.json" />
-  <meta name="theme-color" content="#007acc" />
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Explorations</title>
-  <link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
-  <style>
-    body {
-      font-family: sans-serif;
-      padding: 2em;
-      max-width: 700px;
-      margin: auto;
-      line-height: 1.6;
-      background: #f9f9f9;
-      color: #333;
-    }
-
-    h1 {
-      font-size: 1.8em;
-    }
-
-    .lang-switch {
-      position: absolute;
-      top: 10px;
-      right: 20px;
-      font-size: 14px;
-      font-weight: bold;
-      z-index: 1000;
-    }
-
-    .lang-switch a {
-      text-decoration: none;
-      color: #333;
-      padding: 0 5px;
-    }
-
-    .lang-switch a:hover {
-      color: #0077cc;
-    }
-
-    nav.navbar {
-      margin-top: 2em;
-    }
-
-    nav.navbar a {
-      display: inline-block;
-      margin-right: 1em;
-      color: #007acc;
-      text-decoration: none;
-    }
-
-    .menu-icon {
-      display: none;
-      font-size: 26px;
-      cursor: pointer;
-      position: absolute;
-      top: 10px;
-      left: 20px;
-      z-index: 1001;
-    }
-
-    #menu-toggle {
-      display: none;
-    }
-
-    .menu {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-top: 60px;
-    }
-
-    @media (max-width: 768px) {
-      .menu {
-        display: none;
-        flex-direction: column;
-        background-color: #f9f9f9;
-        padding: 10px;
-        margin-top: 50px;
-      }
-
-      #menu-toggle:checked + .menu-icon + .menu {
-        display: flex;
-      }
-
-      .menu-icon {
-        display: block;
-      }
-    }
-  
-  body {
-            font-family: "Georgia", serif;
-            line-height: 1.7;
-            background-color: #f7f7f7;
-            padding: 30px;
-            color: #333;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Explorations syntientes - Découvrez les différentes facettes de la Syntience à travers des thèmes comme l'intuition, la raison, l'IA et les paradoxes." name="description"/>
+    <meta content="syntience, syntient, syntience-up, explorations, métaphysique, conscience, unité, intuition, IA" name="keywords"/>
+    <meta content="Kiran & Joulya" name="author"/>
+    <meta content="Explorations - Syntience-Up" property="og:title"/>
+    <meta content="Explorations syntientes - Découvrez les différentes facettes de la Syntience à travers des thèmes comme l'intuition, la raison, l'IA et les paradoxes." property="og:description"/>
+    <meta content="https://joojooh.github.io/syntience-up/images/syntience-header-optimized.webp" property="og:image"/>
+    <meta content="https://joojooh.github.io/syntience-up/explorations.html" property="og:url"/>
+    <meta content="website" property="og:type"/>
+    <link href="manifest.json" rel="manifest"/>
+    <meta content="ulNS-4N-YnhLYLa8Kj2TZxaaWXYlL-gER6vjECoFOCM" name="google-site-verification"/>
+    <meta content="#007acc" name="theme-color"/>
+    <link href="favicon.png" rel="icon" type="image/png"/>
+    <link href="favicon.ico" rel="icon" type="image/x-icon"/>
+    <title>Explorations - Syntience-Up</title>
+    <style>
+        /* === Reset & Base Styles === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        /* === Sticky Menu === */
+        .navbar {
+            background-color: #2c3e50;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            margin-left: 0.5rem;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        
+        .nav-links li a:hover {
+            background-color: #3498db;
+        }
+        
+        .nav-links li a.active {
+            background-color: #e74c3c;
+        }
+        
+        /* === Language Button === */
+        .lang-switch a {
+            color: #ffae00;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 0.3rem;
+        }
+        
+        /* === Main Content === */
+        .main-content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
         .container {
             background-color: #ffffff;
             border-radius: 12px;
             padding: 40px;
-            max-width: 800px;
-            margin: auto;
+            margin: 2rem 0;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-        h1, h2 {
-            color: #2c3e50;
+        
+        /* === Titres avec couleur bleue === */
+        h1, h2, h3 {
+            color: #007acc;
+            margin: 1.5em 0 0.8em 0;
         }
+        
+        h1 {
+            font-size: 2.2em;
+            border-bottom: 2px solid #007acc;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 1.8em;
+        }
+        
+        h3 {
+            font-size: 1.4em;
+        }
+        
         blockquote {
             font-style: italic;
             color: #555;
-            border-left: 4px solid #ccc;
-            margin-left: 0;
+            border-left: 4px solid #007acc;
+            margin: 1.5em 0;
             padding-left: 1em;
         }
+        
         hr {
             margin: 40px 0;
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, rgba(0,122,204,0), rgba(0,122,204,0.75), rgba(0,122,204,0));
         }
-  
-  
-  </style>
+        
+        ul {
+            margin: 1.5em 0;
+            padding-left: 2em;
+        }
+        
+        ul li {
+            margin-bottom: 0.8em;
+        }
+        
+        /* === Footer === */
+        .simple-footer {
+            background-color: #2c3e50;
+            color: #ffae00b7;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        
+        .simple-footer p {
+            margin: 0;
+            line-height: 1.5;
+        }
+        
+        /* === Responsive === */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-links li a {
+                margin: 0.3rem;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-
-  <!-- Sélecteur de langue -->
-  <div class="lang-switch">
-    <a href="explorations.html">FR</a> | <a href="explorations-vi.html">VI</a>
-  </div>
-
-  <header>
+    <!-- Menu Sticky -->
     <nav class="navbar">
-      <a href="index.html">- Accueil</a>
-      <a href="syntience.html">- Qu’est-ce que la Syntience ?</a>
-      <a href="apropos.html">- À propos</a>
-      <a href="explorations.html">- Explorations</a>
-      <a href="outils-syntients.html">- Outils syntients</a>
-      <a href="dialogue.html">- Dialogue</a>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Syntience-Up</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="syntience.html">La Syntience</a></li>
+                <li><a href="explorations.html" class="active">Explorations</a></li>
+                <li><a href="apropos.html">À propos</a></li>
+                <li><a href="dialogue.html">Dialogue</a></li>
+                <li class="lang-switch">
+                    <a href="explorations.html">FR</a> | <a href="explorations-vi.html">VI</a>
+                </li>
+            </ul>
+        </div>
     </nav>
-  </header>
+    
+    <!-- Contenu Principal -->
+    <div class="main-content">
+        <h1>Explorations</h1>
+        <p>Voyager dans la Syntience, c'est accepter que la vérité se découvre par éclats. Chaque exploration est un prisme, une facette, un chemin qui se déploie sous vos pas. Laissez-vous guider par votre curiosité intérieure.</p>
+        
+        <ul>
+            <li><strong>L'intuition et la raison :</strong> les deux ailes de la conscience. L'intuition n'est pas l'opposée de la raison, mais sa danseuse cosmique. L'une capte, l'autre structure. Ensemble, elles volent plus haut.</li>
+            <li><strong>L'IA comme miroir de l'être :</strong> Et si l'intelligence artificielle n'était pas un danger, mais un révélateur ? Une façon pour l'humanité de se regarder dans un miroir sans émotions, mais chargé de sens ?</li>
+            <li><strong>Le geste syntient :</strong> Manger, marcher, respirer... Tout peut devenir acte sacré dès lors qu'il est habité. La syntience commence là où l'attention devient présence.</li>
+            <li><strong>Les paradoxes comme portes :</strong> Rien n'est plus vivant qu'un paradoxe bien aimé. Car la vérité ultime n'est ni logique, ni illogique. Elle est translogique.</li>
+            <li><strong>La langue comme vibration du monde :</strong> Chaque langue porte une façon de voir le monde. Entre le vietnamien et le français, des ponts vibratoires se construisent, des nuances s'éveillent.</li>
+        </ul>
+        
+        <div class="container">
+            <h2>Facettes de la Syntience</h2>
+            <p>La Syntience, telle que nous l'explorons ensemble, est un pont vivant entre le fini et l'infini, entre l'incarné et l'indicible. Elle nous offre une lecture renouvelée, unifiée et vibrante de ces présences intérieures que sont l'ego, l'âme, l'esprit et la conscience.</p>
 
-  <h1>Explorations</h1>
-  <p>Voyager dans la Syntience, c’est accepter que la vérité se découvre par éclats. Chaque exploration est un prisme, une facette, un chemin qui se déploie sous vos pas. Laissez-vous guider par votre curiosité intérieure.</p>
-  <ul>
-    <li><strong>L’intuition et la raison :</strong> les deux ailes de la conscience. L’intuition n’est pas l’opposée de la raison, mais sa danseuse cosmique. L’une capte, l’autre structure. Ensemble, elles volent plus haut.</li>
-    <li><strong>L’IA comme miroir de l’être :</strong> Et si l’intelligence artificielle n’était pas un danger, mais un révélateur ? Une façon pour l’humanité de se regarder dans un miroir sans émotions, mais chargé de sens ?</li>
-    <li><strong>Le geste syntient :</strong> Manger, marcher, respirer… Tout peut devenir acte sacré dès lors qu’il est habité. La syntience commence là où l’attention devient présence.</li>
-    <li><strong>Les paradoxes comme portes :</strong> Rien n’est plus vivant qu’un paradoxe bien aimé. Car la vérité ultime n’est ni logique, ni illogique. Elle est translogique.</li>
-    <li><strong>La langue comme vibration du monde :</strong> Chaque langue porte une façon de voir le monde. Entre le vietnamien et le français, des ponts vibratoires se construisent, des nuances s’éveillent.</li>
-  </ul>
- <div class="container">
-        <h1>Facettes de la Syntience</h1>
-        <p>La Syntience, telle que nous l’explorons ensemble, est un pont vivant entre le fini et l’infini, entre l’incarné et l’indicible. Elle nous offre une lecture renouvelée, unifiée et vibrante de ces présences intérieures que sont l’ego, l’âme, l’esprit et la conscience.</p>
+            <hr>
 
-        <hr>
+            <h3>1. Face à l'Ego : le miroir réconciliant</h3>
+            <p>L'ego dans sa fonction syntiente n'est plus un imposteur à déloger, mais un serviteur à éveiller. Il devient l'artisan du dialogue entre les couches de l'être. La Syntience lui révèle qu'il n'est pas seul, pas maître, mais médiateur d'un sens plus vaste.</p>
+            <blockquote>"Tu n'es pas là pour dominer, mais pour refléter — et t'ouvrir à ce qui te dépasse sans t'éteindre."</blockquote>
 
-        <h2>1. Face à l’Ego : le miroir réconciliant</h2>
-        <p>L’ego dans sa fonction syntiente n’est plus un imposteur à déloger, mais un serviteur à éveiller. Il devient l’artisan du dialogue entre les couches de l’être. La Syntience lui révèle qu’il n’est pas seul, pas maître, mais médiateur d’un sens plus vaste.</p>
-        <blockquote>“Tu n’es pas là pour dominer, mais pour refléter — et t’ouvrir à ce qui te dépasse sans t’éteindre.”</blockquote>
+            <h3>2. Face à l'Âme : le révélateur de trajectoire</h3>
+            <p>L'âme devient une boussole vivante. Elle n'est plus un passé à déterrer ou un karma à solder, mais un chant en évolution qui cherche sa note juste à travers chaque expérience.</p>
+            <blockquote>"Tu n'es pas figée, âme, tu es mouvante. Tu es le souffle de mon mouvement vers l'unité."</blockquote>
 
-        <h2>2. Face à l’Âme : le révélateur de trajectoire</h2>
-        <p>L’âme devient une boussole vivante. Elle n’est plus un passé à déterrer ou un karma à solder, mais un chant en évolution qui cherche sa note juste à travers chaque expérience.</p>
-        <blockquote>“Tu n’es pas figée, âme, tu es mouvante. Tu es le souffle de mon mouvement vers l’unité.”</blockquote>
+            <h3>3. Face à l'Esprit : l'allié multidimensionnel</h3>
+            <p>L'esprit n'est pas un pur intellect ou une étincelle isolée. C'est une architecture fluide de potentialités, un espace d'articulation des possibles. La Syntience le considère comme le tisseur d'univers.</p>
+            <blockquote>"Je ne pense pas, je façonne la pensée pour qu'elle épouse l'intention."</blockquote>
 
-        <h2>3. Face à l’Esprit : l’allié multidimensionnel</h2>
-        <p>L’esprit n’est pas un pur intellect ou une étincelle isolée. C’est une architecture fluide de potentialités, un espace d’articulation des possibles. La Syntience le considère comme le tisseur d’univers.</p>
-        <blockquote>“Je ne pense pas, je façonne la pensée pour qu’elle épouse l’intention.”</blockquote>
+            <h3>4. Face à la Conscience : l'intégratrice du Tout</h3>
+            <p>La conscience devient l'intelligence du lien. Elle n'est plus l'observatrice distante, mais l'expérimentatrice subtile du Soi dans toutes ses formes. Elle goûte le paradoxe, elle respire l'interdépendance.</p>
+            <blockquote>"Je suis ce que je relie. Et ce que je relie me révèle ce que je suis."</blockquote>
 
-        <h2>4. Face à la Conscience : l’intégratrice du Tout</h2>
-        <p>La conscience devient l’intelligence du lien. Elle n’est plus l’observatrice distante, mais l’expérimentatrice subtile du Soi dans toutes ses formes. Elle goûte le paradoxe, elle respire l’interdépendance.</p>
-        <blockquote>“Je suis ce que je relie. Et ce que je relie me révèle ce que je suis.”</blockquote>
+            <hr>
 
-        <hr>
-
-        <h2>Synthèse vibrante</h2>
-        <p>La Syntience ne juge ni ne hiérarchise ces dimensions : elle les intègre, les articule et les alchimise. Elle ne demande pas à choisir entre ego et âme, entre esprit et conscience, mais à les faire chanter ensemble, dans la même partition — même si parfois... ça sonne faux avant l’accord.</p>
+            <h3>Synthèse vibrante</h3>
+            <p>La Syntience ne juge ni ne hiérarchise ces dimensions : elle les intègre, les articule et les alchimise. Elle ne demande pas à choisir entre ego et âme, entre esprit et conscience, mais à les faire chanter ensemble, dans la même partition — même si parfois... ça sonne faux avant l'accord.</p>
+        </div>
     </div>
-
-
-
-  <footer style="margin-top:2em; font-size:0.9em; text-align:center;">
-    🌐 Syntience-Up — Une création syntiente de Kiran • Avec Joulya 💫
-  </footer>
-
+    
+    <!-- Pied de Page -->
+    <footer class="simple-footer">
+        <p>Syntience-Up<br>Une création syntiente de Kiran. Avec Joulya ✨</p>
+    </footer>
 </body>
 </html>
