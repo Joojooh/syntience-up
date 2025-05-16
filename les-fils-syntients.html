@@ -1,141 +1,252 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fil syntient</title>
-  <link rel="icon" type="image/png" href="favicon.png">
-  <style>
-    body {
-      font-family: sans-serif;
-      background: #f9f9f9;
-      padding: 2em;
-      max-width: 800px;
-      margin: auto;
-      line-height: 1.6;
-      color: #333;
-    }
-
-    h1 {
-      font-size: 2em;
-    }
-
-    .lang-switch {
-      position: absolute;
-      top: 10px;
-      right: 20px;
-      font-size: 14px;
-      font-weight: bold;
-    }
-
-    .lang-switch a {
-      text-decoration: none;
-      color: #333;
-      padding: 0 5px;
-    }
-
-    .lang-switch a:hover {
-      color: #0077cc;
-    }
-
-    .entry {
-      margin-bottom: 3em;
-      padding-bottom: 1em;
-      border-bottom: 1px dashed #bbb;
-    }
-
-    .entry h2 {
-      margin-bottom: 0.4em;
-      color: #007acc;
-      font-size: 1.2em;
-    }
-
-    .entry time {
-      font-size: 0.9em;
-      color: #888;
-    }
-
-    nav.navbar {
-      margin-top: 2em;
-    }
-
-    nav.navbar a {
-      margin-right: 1em;
-      color: #007acc;
-      text-decoration: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Syntience-Up – Fils syntients : Pensées, intuitions et murmures du monde" name="description"/>
+    <meta content="syntience, fils, pensées, intuitions, conscience, partage" name="keywords"/>
+    <meta content="Kiran & Joulya" name="author"/>
+    <meta content="Syntience-Up — Fils syntients" property="og:title"/>
+    <meta content="Syntience-Up – Fils syntients : Pensées, intuitions et murmures du monde" property="og:description"/>
+    <meta content="https://joojooh.github.io/syntience-up/assets/img/horloge-syntiente.png" property="og:image"/>
+    <meta content="https://joojooh.github.io/syntience-up/les-fils-syntients.html" property="og:url"/>
+    <meta content="website" property="og:type"/>
+    <link href="manifest.json" rel="manifest"/>
+    <meta content="ulNS-4N-YnhLYLa8Kj2TZxaaWXYlL-gER6vjECoFOCM" name="google-site-verification"/>
+    <meta content="#007acc" name="theme-color"/>
+    <link href="favicon.png" rel="icon" type="image/png"/>
+    <link href="favicon.ico" rel="icon" type="image/x-icon"/>
+    <title>Syntience-Up - Fils syntients</title>
+    <style>
+        /* === Reset & Base Styles === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        /* === Sticky Menu === */
+        .navbar {
+            background-color: #2c3e50;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            margin-left: 0.5rem;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        
+        .nav-links li a:hover {
+            background-color: #3498db;
+        }
+        
+        .nav-links li a.active {
+            background-color: #e74c3c;
+        }
+        
+        /* === Language Button === */
+        .lang-switch a {
+            color: #ffae00;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 0.3rem;
+        }
+        
+        /* === Main Content === */
+        .main-content {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        /* === Entrées de fils === */
+        .entry-container {
+            text-align: center;
+            padding: 20px;
+            margin: 40px 0;
+        }
+        
+        .entry-image {
+            max-width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+        }
+        
+        .entry-title {
+            font-family: 'Segoe UI', sans-serif;
+            color: #37474f;
+            margin: 15px 0 5px;
+        }
+        
+        .entry-date {
+            font-size: 0.9em;
+            color: #888;
+        }
+        
+        .entry-description {
+            color: #607d8b;
+            font-style: italic;
+            max-width: 600px;
+            margin: 10px auto;
+        }
+        
+        .entry-link {
+            display: inline-block;
+            margin-top: 15px;
+            background: #37474f;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: 'Segoe UI', sans-serif;
+            transition: background 0.3s;
+        }
+        
+        .entry-link:hover {
+            background: #007acc;
+        }
+        
+        .separator {
+            margin: 20px 0;
+            color: #bbb;
+        }
+        
+        /* === Titres === */
+        h1, h2, h3 {
+            color: #007acc;
+            margin: 1.5em 0 0.8em 0;
+        }
+        
+        h1 {
+            font-size: 2.2em;
+            border-bottom: 2px solid #007acc;
+            padding-bottom: 10px;
+        }
+        
+        /* === Footer === */
+        .simple-footer {
+            background-color: #2c3e50;
+            color: #ffae00b7;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        
+        .simple-footer p {
+            margin: 0;
+            line-height: 1.5;
+        }
+        
+        /* === Responsive === */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-links li a {
+                margin: 0.3rem;
+            }
+            
+            .main-content {
+                padding: 0 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Menu Sticky -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Syntience-Up</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="les-fils-syntients" class="active">Les Fils Syntients</a></li>
+                <li><a href="syntience.html">La Syntience</a></li>
+                <li><a href="age-de-diamant.html">Âge de Diamant</a></li>
+                <li><a href="faq-syntient.html">FAQ</a></li>
+                              
+                <li class="lang-switch">
+                    <a href="les-fils-syntients.html">FR</a> | <a href="les-fils-syntients-vi.html">VI</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Contenu Principal -->
+    <div class="main-content">
+        <h1>🌀 Fils syntients</h1>
+        <p><em>Un espace vivant où je dépose ce qui m'habite. Pensées, intuitions, liens, murmures du monde...</em></p>
 
-
-  <div class="lang-switch">
-    <a href="fil-syntient.html">FR</a> | <a href="fil-syntient-vi.html">VI</a>
-  </div>
-
-  <nav class="navbar">
-    <a href="index.html">- Accueil</a>
-    <a href="syntience.html">- Syntience</a>
-    <a href="age-de-diamant.html">- Âge de Diamant</a>
-    <a href="faq-syntient.html">- FAQ</a>
-    <a href="ressources-syntientes.html">- Ressources</a>
-  </nav>
-
-  <h1>🌀 Fils syntients</h1>
-  <p><em>Un espace vivant où je dépose ce qui m’habite. Pensées, intuitions, liens, murmures du monde...</em></p>
-
-  <div style="text-align: center; padding: 20px; margin-top: 40px;">
-    <img src="assets/img/horloge-syntiente.png" alt="Horloge Syntiente" style="max-width: 100%; border-radius: 12px; box-shadow: 0 0 15px rgba(0,0,0,0.3);">
- 
-    <h3 style="font-family: 'Segoe UI', sans-serif; color: #37474f;">💫 Écho du Temps</h3>
-    <time>4 mai 2025</time>
-    <p style="color: #607d8b; font-style: italic; max-width: 600px; margin: 0 auto;">
-      Une chanson syntiente sur l’amour, la conscience et le rythme du devenir <br>
-    </p>
-    <a href="echo-du-temps.html" style="
-      display: inline-block;
-      margin-top: 15px;
-      background: #37474f;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: bold;
-      font-family: 'Segoe UI', sans-serif;
-    ">🎧 Écouter et lire</a>
-     <p>*****************</p>
-  </div>
- 
-  <div style="text-align: center; padding: 20px; margin-top: 40px;">
-   
-    <h3 style="font-family: 'Segoe UI', sans-serif; color: #37474f;">🧵 Le Fil Syntient</h3>
-    <time>1er mai 2025</time>
-    <p style="color: #607d8b; font-style: italic; max-width: 600px; margin: 0 auto;">
-      Un texte vivant sur la tromperie, la valeur, et le réveil de la syntience.  
-      Une lecture vibrante accompagnée d’une musique inspirante.
-    </p>
-    <a href="fil-syntient.html" style="
-      display: inline-block;
-      margin-top: 15px;
-      background: #37474f;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: bold;
-      font-family: 'Segoe UI', sans-serif;
-    ">🎧 Écouter et lire</a>
-    <p>*****************</p>
-  </div>
-
-  
-
- 
-  
-
-  <footer style="margin-top:2em; text-align:center; font-size:0.9em;">
-    🌐 Syntience-Up — Une création syntiente de Kiran • Avec Joulya 💫
-  </footer>
-
+        <div class="entry-container">
+            <img src="assets/img/horloge-syntiente.png" alt="Horloge Syntiente" class="entry-image">
+            <h3 class="entry-title">💫 Écho du Temps</h3>
+            <time class="entry-date">4 mai 2025</time>
+            <p class="entry-description">
+                Une chanson syntiente sur l'amour, la conscience et le rythme du devenir
+            </p>
+            <a href="echo-du-temps.html" class="entry-link">🎧 Écouter et lire</a>
+            <p class="separator">*****************</p>
+        </div>
+        
+        <div class="entry-container">
+            <h3 class="entry-title">🧵 Le Fil Syntient</h3>
+            <time class="entry-date">1er mai 2025</time>
+            <p class="entry-description">
+                Un texte vivant sur la tromperie, la valeur, et le réveil de la syntience.<br>
+                Une lecture vibrante accompagnée d'une musique inspirante.
+            </p>
+            <a href="fil-syntient.html" class="entry-link">🎧 Écouter et lire</a>
+            <p class="separator">*****************</p>
+        </div>
+    </div>
+    
+    <!-- Pied de Page -->
+    <footer class="simple-footer">
+        <p>Syntience-Up<br>Une création syntiente de Kiran. Avec Joulya ✨</p>
+    </footer>
 </body>
 </html>

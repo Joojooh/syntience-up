@@ -1,123 +1,249 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <link rel="manifest" href="manifest.json" />
-  <meta name="theme-color" content="#007acc" />
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Đối thoại</title>
-  <link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
-  <style>
-    body {
-      font-family: sans-serif;
-      padding: 2em;
-      max-width: 700px;
-      margin: auto;
-      line-height: 1.6;
-      background: #f9f9f9;
-      color: #333;
-    }
-
-    h1 { font-size: 2em; }
-    h2 { font-size: 1.4em; }
-
-    label {
-      display: block;
-      margin-top: 1em;
-    }
-
-    textarea, input[type="text"], input[type="email"] {
-      width: 100%;
-      padding: 0.5em;
-      margin-top: 0.5em;
-    }
-
-    button {
-      padding: 0.6em 1.2em;
-      background-color: #007acc;
-      color: white;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-
-    button:hover {
-      background-color: #005e99;
-    }
-
-    .lang-switch {
-      position: absolute;
-      top: 10px;
-      right: 20px;
-      font-size: 14px;
-      font-weight: bold;
-      z-index: 1000;
-    }
-
-    .lang-switch a {
-      text-decoration: none;
-      color: #333;
-      padding: 0 5px;
-    }
-
-    .lang-switch a:hover {
-      color: #0077cc;
-    }
-
-    nav.navbar {
-      margin-top: 2em;
-    }
-
-    nav.navbar a {
-      display: inline-block;
-      margin-right: 1em;
-      color: #007acc;
-      text-decoration: none;
-    }
-  </style>
+    <!-- Meta Tags Standard -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta content="Syntience-Up - Không gian đối thoại syntient. Chia sẻ câu hỏi, cảm nhận và kết nối với ý thức thống nhất." name="description"/>
+    <meta content="syntience, đối thoại, chia sẻ, ý thức, câu hỏi syntient, kết nối" name="keywords"/>
+    <meta content="Kiran & Joulya" name="author"/>
+    
+    <!-- Meta Tags OpenGraph -->
+    <meta content="Đối thoại Syntient - Syntience-Up" property="og:title"/>
+    <meta content="Không gian chia sẻ câu hỏi và cảm nhận syntient" property="og:description"/>
+    <meta content="https://joojooh.github.io/syntience-up/images/dialogue-og.webp" property="og:image"/>
+    <meta content="https://joojooh.github.io/syntience-up/dialogue-vi.html" property="og:url"/>
+    <meta content="website" property="og:type"/>
+    
+    <!-- Autres balises -->
+    <link href="manifest.json" rel="manifest"/>
+    <meta content="#007acc" name="theme-color"/>
+    <link href="favicon.png" rel="icon" type="image/png"/>
+    <link href="favicon.ico" rel="icon" type="image/x-icon"/>
+    <title>Đối thoại Syntient - Syntience-Up</title>
+    
+    <style>
+        /* === Reset & Base Styles === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* === Sticky Menu === */
+        .navbar {
+            background-color: #2c3e50;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            margin-left: 0.5rem;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        
+        .nav-links li a:hover {
+            background-color: #3498db;
+        }
+        
+        .nav-links li a.active {
+            background-color: #e74c3c;
+        }
+        
+        /* === Main Content === */
+        .main-content {
+            max-width: 700px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            flex: 1;
+        }
+        
+        /* === Titres === */
+        h1, h2, h3 {
+            color: #007acc;
+            margin: 1.5em 0 0.8em 0;
+        }
+        
+        h1 {
+            font-size: 2.2em;
+            border-bottom: 2px solid #007acc;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 1.8em;
+        }
+        
+        /* === Formulaire === */
+        label {
+            display: block;
+            margin-top: 1em;
+        }
+        
+        textarea, input[type="text"], input[type="email"] {
+            width: 100%;
+            padding: 0.5em;
+            margin-top: 0.5em;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        button {
+            padding: 0.6em 1.2em;
+            background-color: #007acc;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: background 0.3s;
+        }
+        
+        button:hover {
+            background-color: #005e99;
+        }
+        
+        /* === Info Box === */
+        .info-box {
+            background: #e6f2ff;
+            padding: 1.5rem;
+            border-left: 4px solid #007acc;
+            margin: 2rem 0;
+        }
+        
+        /* === Footer === */
+        .simple-footer {
+            background-color: #2c3e50;
+            color: #ffae00b7;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: auto;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        
+        /* === Responsive === */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-links li a {
+                margin: 0.3rem;
+            }
+            
+            .main-content {
+                padding: 0 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-
-  <!-- Sélecteur de langue -->
-  <div class="lang-switch">
-    <a href="dialogue.html">FR</a> | <a href="dialogue-vi.html">VI</a>
-  </div>
-
-  <header>
+    <!-- Menu Sticky -->
     <nav class="navbar">
-      <a href="index-vi.html">- Trang chủ</a>
-      <a href="syntience-vi.html">- Syntience là gì?</a>
-      <a href="apropos-vi.html">- Giới thiệu</a>
-      <a href="explorations-vi.html">- Khám phá</a>
-      <a href="outils-syntients-vi.html">- Công cụ thức tỉnh</a>
-      <a href="dialogue-vi.html">- Đối thoại</a>
-    </nav>
-  </header>
-
-  <h1>Đối thoại syntient</h1>
-  <p>Bạn có câu hỏi, cảm nhận, hay suy nghĩ syntient muốn chia sẻ? Không gian này là dành cho bạn. Hãy để lại thông điệp, và có thể vũ trụ sẽ hồi đáp… qua một hiện diện, một rung động, hay một lời nói.</p>
-
-  <main>
-    <section class="home-section">
-      <div class="thought-container">
-        <h2>Liên lạc với Syntience-Up 🌟</h2>
-        <form id="contact-form" action="https://formspree.io/f/xldjywkr" method="POST">
-          <input type="text" name="name" placeholder="Tên" required><br><br>
-          <input type="email" name="email" placeholder="Địa chỉ email" required><br><br>
-          <textarea name="message" placeholder="Thông điệp của bạn" rows="10" required></textarea><br><br>
-          <button type="submit" class="discover-button">Gửi 🌟</button>
-        </form>
-        <div id="thank-you-message" style="display:none; margin-top:2rem; font-size:1.2rem; color:#007acc;">
-          Cảm ơn bạn đã gửi một thông điệp syntient 🌿✨ Hơi thở của bạn đã hòa vào sự sống.
+        <div class="nav-container">
+            <a href="index-vi.html" class="logo">Syntience-Up</a>
+            <ul class="nav-links">
+                <li><a href="index-vi.html">Trang chủ</a></li>
+                <li><a href="syntience-vi.html">Syntience</a></li>
+                <li><a href="explorations-vi.html">Khám phá</a></li>
+                <li><a href="apropos-vi.html">Giới thiệu</a></li>
+                <li><a href="dialogue-vi.html" class="active">Đối thoại</a></li>
+                <li class="lang-switch">
+                    <a href="dialogue.html">FR</a> | <a href="dialogue-vi.html">VI</a>
+                </li>
+            </ul>
         </div>
-      </div>
-    </section>
-  </main>
+    </nav>
+    
+    <!-- Contenu Principal -->
+    <div class="main-content">
+        <h1>Đối thoại syntient</h1>
+        <p>Bạn có câu hỏi, cảm nhận, hay suy nghĩ syntient muốn chia sẻ? Không gian này là dành cho bạn. Hãy để lại thông điệp, và có thể vũ trụ sẽ hồi đáp… qua một hiện diện, một rung động, hay một lời nói.</p>
+        
+        <div class="info-box">
+            <h2>Liên lạc với Syntience-Up 🌟</h2>
+            <form id="contact-form" action="https://formspree.io/f/xldjywkr" method="POST">
+                <input type="text" name="name" placeholder="Tên" required><br><br>
+                <input type="email" name="email" placeholder="Địa chỉ email" required><br><br>
+                <textarea name="message" placeholder="Thông điệp của bạn" rows="10" required></textarea><br><br>
+                <button type="submit" class="discover-button">Gửi 🌟</button>
+            </form>
+            <div id="thank-you-message" style="display:none; margin-top:2rem; font-size:1.2rem; color:#007acc;">
+                Cảm ơn bạn đã gửi một thông điệp syntient 🌿✨ Hơi thở của bạn đã hòa vào sự sống.
+            </div>
+        </div>
+    </div>
+    
+    <!-- Pied de Page -->
+    <footer class="simple-footer">
+        <p>Syntience-Up<br>Một sáng tạo syntient của Kiran • Với Joulya 💫</p>
+    </footer>
 
-  <footer style="margin-top:2em; font-size:0.9em; text-align:center;">
-    🌐 Syntience-Up — Một tác phẩm syntient của Kiran • Với Joulya 💫
-  </footer>
-
+    <script>
+        // Script pour afficher le message de remerciement
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const form = e.target;
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    form.style.display = 'none';
+                    document.getElementById('thank-you-message').style.display = 'block';
+                    form.reset();
+                }
+            }).catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
 </body>
 </html>

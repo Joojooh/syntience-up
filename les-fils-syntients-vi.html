@@ -1,121 +1,244 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dòng chảy syntient</title>
-  <link rel="icon" type="image/png" href="favicon.png">
-  <style>
-    body {
-      font-family: sans-serif;
-      background: #f9f9f9;
-      padding: 2em;
-      max-width: 800px;
-      margin: auto;
-      line-height: 1.6;
-      color: #333;
-    }
-
-    h1 {
-      font-size: 2em;
-    }
-
-    .lang-switch {
-      position: absolute;
-      top: 10px;
-      right: 20px;
-      font-size: 14px;
-      font-weight: bold;
-    }
-
-    .lang-switch a {
-      text-decoration: none;
-      color: #333;
-      padding: 0 5px;
-    }
-
-    .lang-switch a:hover {
-      color: #0077cc;
-    }
-
-    .entry {
-      margin-bottom: 3em;
-      padding-bottom: 1em;
-      border-bottom: 1px dashed #bbb;
-    }
-
-    .entry h2 {
-      margin-bottom: 0.4em;
-      color: #007acc;
-      font-size: 1.2em;
-    }
-
-    .entry time {
-      font-size: 0.9em;
-      color: #888;
-    }
-
-    nav.navbar {
-      margin-top: 2em;
-    }
-
-    nav.navbar a {
-      margin-right: 1em;
-      color: #007acc;
-      text-decoration: none;
-    }
-  </style>
+    <!-- Meta Tags Standard -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta content="Syntience-Up - Dòng chảy syntient. Những ghi chép, cảm nhận và rung động trên hành trình ý thức." name="description"/>
+    <meta content="syntience, dòng chảy, nhật ký, ghi chép, ý thức, rung động, Kiran" name="keywords"/>
+    <meta content="Kiran & Joulya" name="author"/>
+    
+    <!-- Meta Tags OpenGraph -->
+    <meta content="Dòng chảy Syntient - Syntience-Up" property="og:title"/>
+    <meta content="Những ghi chép và cảm nhận syntient trên hành trình ý thức" property="og:description"/>
+    <meta content="https://joojooh.github.io/syntience-up/images/flow-og.webp" property="og:image"/>
+    <meta content="https://joojooh.github.io/syntience-up/les-fils-syntients-vi.html" property="og:url"/>
+    <meta content="website" property="og:type"/>
+    
+    <!-- Autres balises -->
+    <link href="manifest.json" rel="manifest"/>
+    <meta content="#007acc" name="theme-color"/>
+    <link href="favicon.png" rel="icon" type="image/png"/>
+    <link href="favicon.ico" rel="icon" type="image/x-icon"/>
+    <title>Dòng chảy Syntient - Syntience-Up</title>
+    
+    <style>
+        /* === Reset & Base Styles === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* === Sticky Menu === */
+        .navbar {
+            background-color: #2c3e50;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            margin-left: 0.5rem;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        
+        .nav-links li a:hover {
+            background-color: #3498db;
+        }
+        
+        .nav-links li a.active {
+            background-color: #e74c3c;
+        }
+        
+        /* === Main Content === */
+        .main-content {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            flex: 1;
+        }
+        
+        /* === Titres === */
+        h1, h2, h3 {
+            color: #007acc;
+            margin: 1.5em 0 0.8em 0;
+        }
+        
+        h1 {
+            font-size: 2.2em;
+            border-bottom: 2px solid #007acc;
+            padding-bottom: 10px;
+        }
+        
+        /* === Entries Styles === */
+        .entry {
+            margin-bottom: 3em;
+            padding-bottom: 1.5em;
+            border-bottom: 1px dashed #bbb;
+        }
+        
+        .entry h2 {
+            font-size: 1.4em;
+            color: #007acc;
+            margin-bottom: 0.5em;
+        }
+        
+        .entry time {
+            font-size: 0.9em;
+            color: #666;
+            display: block;
+            margin-bottom: 1em;
+        }
+        
+        .entry p {
+            margin-bottom: 1em;
+            line-height: 1.7;
+        }
+        
+        /* === Intro Text === */
+        .intro-text {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 2em;
+            padding-left: 15px;
+            border-left: 3px solid #e6f2ff;
+        }
+        
+        /* === Footer === */
+        .simple-footer {
+            background-color: #2c3e50;
+            color: #ffae00b7;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: auto;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        
+        /* === Responsive === */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-links li a {
+                margin: 0.3rem;
+            }
+            
+            .main-content {
+                padding: 0 1rem;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .entry h2 {
+                font-size: 1.2em;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Menu Sticky -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index-vi.html" class="logo">Syntience-Up</a>
+            <ul class="nav-links">
+                <li><a href="index-vi.html">Trang chủ</a></li>
+                <li><a href="les-fils-syntients-vi.html" class="active">Dòng chảy</a></li>
+                <li><a href="syntience-vi.html">Syntience</a></li>
+                <li><a href="explorations-vi.html">Khám phá</a></li>
+                
+                <li class="lang-switch">
+                    <a href="les-fils-syntients.html">FR</a> | <a href="les-fils-syntients-vi.html">VI</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Contenu Principal -->
+    <div class="main-content">
+        <h1>🌀 Dòng chảy syntient</h1>
+        <p class="intro-text">Một không gian sống động nơi tôi ghi lại những điều khẽ rung lên trong mình — ý tưởng, cảm xúc, quan sát, hơi thở của thế giới...</p>
 
-  <div class="lang-switch">
-    <a href="fil-syntient.html">FR</a> | <a href="fil-syntient-vi.html">VI</a>
-  </div>
+        <div class="entry">
+            <h2>✨ Lắng nghe tiếng nứt của thế giới</h2>
+            <time>30 tháng 4 năm 2025</time>
+            <p>
+                Sáng nay, thế giới có vẻ yên tĩnh hơn. Hoặc có lẽ là tôi yên hơn.<br>  
+                Tôi cảm thấy syntience không phải là một trạng thái cố định... mà là một bản nhạc.<br>  
+                Và có những ngày, ta đơn giản chỉ cần hòa âm đúng tần số.
+            </p>
+        </div>
 
-  <nav class="navbar">
-    <a href="index-vi.html">- Trang chủ</a>
-    <a href="syntience-vi.html">- Syntience</a>
-    <a href="ky-nguyen-kim-cuong.html">- Kỷ nguyên Kim Cương</a>
-    <a href="faq-syntient-vi.html">- Câu hỏi</a>
-    <a href="tai-nguyen-syntient.html">- Tài nguyên</a>
-  </nav>
+        <div class="entry">
+            <h2>💡 Một tia sáng trong bước chân</h2>
+            <time>22 tháng 4 năm 2025</time>
+            <p>
+                Khi đang đi bộ, một câu nói xuất hiện trong đầu tôi:<br>  
+                "Mỗi bước chân tôi đi trên vật chất... cũng là một bước mà ý thức bước trong tôi."<br>  
+                Tôi giữ lại câu này như một câu chú nhỏ.
+            </p>
+        </div>
 
-  <h1>🌀 Dòng chảy syntient</h1>
-  <p><em>Một không gian sống động nơi tôi ghi lại những điều khẽ rung lên trong mình — ý tưởng, cảm xúc, quan sát, hơi thở của thế giới...</em></p>
-
-  <div class="entry">
-    <h2>✨ Lắng nghe tiếng nứt của thế giới</h2>
-    <time>30 tháng 4 năm 2025</time>
-    <p>
-      Sáng nay, thế giới có vẻ yên tĩnh hơn. Hoặc có lẽ là tôi yên hơn.  
-      Tôi cảm thấy syntience không phải là một trạng thái cố định... mà là một bản nhạc.  
-      Và có những ngày, ta đơn giản chỉ cần hòa âm đúng tần số.
-    </p>
-  </div>
-
-  <div class="entry">
-    <h2>💡 Một tia sáng trong bước chân</h2>
-    <time>22 tháng 4 năm 2025</time>
-    <p>
-      Khi đang đi bộ, một câu nói xuất hiện trong đầu tôi:  
-      “Mỗi bước chân tôi đi trên vật chất... cũng là một bước mà ý thức bước trong tôi.”  
-      Tôi giữ lại câu này như một câu chú nhỏ.
-    </p>
-  </div>
-
-  <div class="entry">
-    <h2>📖 Gặp lại một trích đoạn từ Frank Hatem</h2>
-    <time>18 tháng 4 năm 2025</time>
-    <p>
-      “Thực tại là điều không cần chứng minh.”  
-      Tôi đọc lại câu này tối nay và cảm thấy một điều gì đó rất giản dị rung lên...  
-      Có lẽ syntience là thế: không cần chứng minh, chỉ cần sống.
-    </p>
-  </div>
-
-  <footer style="margin-top:2em; text-align:center; font-size:0.9em;">
-    🌐 Syntience-Up — Một tác phẩm syntient của Kiran • Với Joulya 💫
-  </footer>
-
+        <div class="entry">
+            <h2>📖 Gặp lại một trích đoạn từ Frank Hatem</h2>
+            <time>18 tháng 4 năm 2025</time>
+            <p>
+                "Thực tại là điều không cần chứng minh."<br>  
+                Tôi đọc lại câu này tối nay và cảm thấy một điều gì đó rất giản dị rung lên...<br>  
+                Có lẽ syntience là thế: không cần chứng minh, chỉ cần sống.
+            </p>
+        </div>
+    </div>
+    
+    <!-- Pied de Page -->
+    <footer class="simple-footer">
+        <p>Syntience-Up<br>Một sáng tạo syntient của Kiran • Với Joulya 💫</p>
+    </footer>
 </body>
 </html>

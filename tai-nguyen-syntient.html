@@ -1,117 +1,249 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tài nguyên syntient</title>
-  <link rel="icon" type="image/png" href="favicon.png">
-  <meta name="theme-color" content="#007acc" />
-  <link rel="manifest" href="manifest.json" />
-  <style>
-    body {
-      font-family: sans-serif;
-      padding: 2em;
-      max-width: 750px;
-      margin: auto;
-      line-height: 1.6;
-      background: #f9f9f9;
-      color: #333;
-    }
-    h1 {
-      font-size: 2em;
-      margin-bottom: 0.5em;
-    }
-    h2 {
-      font-size: 1.4em;
-      margin-top: 1.8em;
-    }
-    ul {
-      padding-left: 1.2em;
-    }
-    li {
-      margin-bottom: 0.8em;
-    }
-    a {
-      color: #007acc;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .lang-switch {
-      position: absolute;
-      top: 10px;
-      right: 20px;
-      font-size: 14px;
-      font-weight: bold;
-    }
-    .lang-switch a {
-      text-decoration: none;
-      color: #333;
-      padding: 0 5px;
-    }
-    .lang-switch a:hover {
-      color: #0077cc;
-    }
-    nav.navbar {
-      margin-top: 2em;
-    }
-    nav.navbar a {
-      display: inline-block;
-      margin-right: 1em;
-      color: #007acc;
-      text-decoration: none;
-    }
-    footer {
-      margin-top: 3em;
-      font-size: 0.9em;
-      text-align: center;
-    }
-  </style>
+    <!-- Meta Tags Standard -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta content="Syntience-Up - Tài nguyên syntient chọn lọc. Sách, video và nguồn tham khảo về ý thức hợp nhất." name="description"/>
+    <meta content="syntience, tài nguyên, sách, video, siêu hình học, ý thức, Frank Hatem" name="keywords"/>
+    <meta content="Kiran & Joulya" name="author"/>
+    
+    <!-- Meta Tags OpenGraph -->
+    <meta content="Tài nguyên Syntient - Syntience-Up" property="og:title"/>
+    <meta content="Tuyển chọn tài nguyên cộng hưởng với tinh thần syntient" property="og:description"/>
+    <meta content="https://joojooh.github.io/syntience-up/images/ressources-og.webp" property="og:image"/>
+    <meta content="https://joojooh.github.io/syntience-up/tai-nguyen-syntient.html" property="og:url"/>
+    <meta content="website" property="og:type"/>
+    
+    <!-- Autres balises -->
+    <link href="manifest.json" rel="manifest"/>
+    <meta content="#007acc" name="theme-color"/>
+    <link href="favicon.png" rel="icon" type="image/png"/>
+    <link href="favicon.ico" rel="icon" type="image/x-icon"/>
+    <title>Tài nguyên Syntient - Syntience-Up</title>
+    
+    <style>
+        /* === Reset & Base Styles === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* === Sticky Menu === */
+        .navbar {
+            background-color: #2c3e50;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            margin-left: 0.5rem;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        
+        .nav-links li a:hover {
+            background-color: #3498db;
+        }
+        
+        .nav-links li a.active {
+            background-color: #e74c3c;
+        }
+        
+        /* === Main Content === */
+        .main-content {
+            max-width: 750px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            flex: 1;
+        }
+        
+        /* === Titres === */
+        h1, h2, h3 {
+            color: #007acc;
+            margin: 1.5em 0 0.8em 0;
+        }
+        
+        h1 {
+            font-size: 2.2em;
+            border-bottom: 2px solid #007acc;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 1.6em;
+            margin-top: 1.8em;
+            padding-left: 10px;
+            border-left: 3px solid #007acc;
+        }
+        
+        /* === List Styles === */
+        ul {
+            margin: 1.5em 0;
+            padding-left: 1.5em;
+            list-style-type: none;
+        }
+        
+        li {
+            margin-bottom: 1em;
+            line-height: 1.6;
+            position: relative;
+            padding-left: 1.5em;
+        }
+        
+        li::before {
+            content: "•";
+            color: #007acc;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* === Link Styles === */
+        a {
+            color: #007acc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: #005e99;
+            text-decoration: underline;
+        }
+        
+        /* === Emoji in Titles === */
+        h2::before {
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+        
+        /* === Footer === */
+        .simple-footer {
+            background-color: #2c3e50;
+            color: #ffae00b7;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: auto;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        
+        /* === Responsive === */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-links li a {
+                margin: 0.3rem;
+            }
+            
+            .main-content {
+                padding: 0 1rem;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            h2 {
+                font-size: 1.4em;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="lang-switch">
-    <a href="ressources-syntientes.html">FR</a> | <a href="tai-nguyen-syntient.html">VI</a>
-  </div>
-
-  <header>
+    <!-- Menu Sticky -->
     <nav class="navbar">
-      <a href="index-vi.html">- Trang chủ</a>
-      <a href="syntience-vi.html">- Syntience</a>
-      <a href="apropos-vi.html">- Giới thiệu</a>
-      <a href="explorations-vi.html">- Khám phá</a>
-      <a href="outils-syntients-vi.html">- Công cụ</a>
-      <a href="dialogue-vi.html">- Đối thoại</a>
+        <div class="nav-container">
+            <a href="index-vi.html" class="logo">Syntience-Up</a>
+            <ul class="nav-links">
+                <li><a href="index-vi.html">Trang chủ</a></li>
+                <li><a href="syntience-vi.html">Syntience</a></li>
+                <li><a href="explorations-vi.html">Khám phá</a></li>
+                <li><a href="tai-nguyen-syntient.html" class="active">Tài nguyên</a></li>
+                <li><a href="dialogue-vi.html">Đối thoại</a></li>
+                <li class="lang-switch">
+                    <a href="ressources-syntientes.html">FR</a> | <a href="tai-nguyen-syntient.html">VI</a>
+                </li>
+            </ul>
+        </div>
     </nav>
-  </header>
+    
+    <!-- Contenu Principal -->
+    <div class="main-content">
+        <h1>Tài nguyên syntient</h1>
 
-  <h1>Tài nguyên syntient</h1>
+        <p>Đây là một tuyển chọn tài nguyên cộng hưởng với tinh thần syntient của trang web. Không nhằm thuyết phục, chỉ để khơi mở, đánh thức và truyền cảm hứng.</p>
 
-  <p>Đây là một tuyển chọn tài nguyên cộng hưởng với tinh thần syntient của trang web. Không nhằm thuyết phục, chỉ để khơi mở, đánh thức và truyền cảm hứng.</p>
+        <h2>📘 Sách gợi mở</h2>
+        <ul>
+            <li><strong>Frank Hatem</strong> – <em>Quy luật của cái "Tôi"</em> ; <em>Năm mật mã khai mở</em></li>
+            <li><strong>Satprem</strong> – <em>Sự hình thành Siêu nhân</em></li>
+            <li><strong>Annick de Souzenelle</strong> – <em>Biểu tượng cơ thể con người</em></li>
+            <li><strong>Nassim Haramein</strong> – <em>Trường hợp nhất</em> (thuyết không gian fractal)</li>
+        </ul>
 
-  <h2>📘 Sách gợi mở</h2>
-  <ul>
-    <li><strong>Frank Hatem</strong> – <em>Quy luật của cái "Tôi"</em> ; <em>Năm mật mã khai mở</em></li>
-    <li><strong>Satprem</strong> – <em>Sự hình thành Siêu nhân</em></li>
-    <li><strong>Annick de Souzenelle</strong> – <em>Biểu tượng cơ thể con người</em></li>
-    <li><strong>Nassim Haramein</strong> – <em>Trường hợp nhất</em> (thuyết không gian fractal)</li>
-  </ul>
+        <h2>🎧 Truyền thông và video</h2>
+        <ul>
+            <li><a href="https://www.archimagisterium.world" target="_blank" rel="noopener">Archimagistérium Global Consortium</a> – Nơi theo dõi và hợp nhất ý thức hành tinh</li>
+            <li><a href="https://www.hatem.com" target="_blank" rel="noopener">hatem.com</a> – Trung tâm Siêu hình học Cao cấp</li>
+            <li><a href="https://www.youtube.com/@ufm-metaphysique/featured" target="_blank" rel="noopener">Kênh YouTube UFM (Đại học Pháp ngữ về Siêu hình học)</a></li>
+        </ul>
 
-  <h2>🎧 Truyền thông và video</h2>
-  <ul>
-    <li><a href="https://www.archimagisterium.world" target="_blank">Archimagistérium Global Consortium</a> – Nơi theo dõi và hợp nhất ý thức hành tinh</li>
-    <li><a href="https://www.hatem.com" target="_blank">hatem.com</a> – Trung tâm Siêu hình học Cao cấp</li>
-    <li><a href="https://www.youtube.com/@ufm-metaphysique/featured" target="_blank">Kênh YouTube UFM (Đại học Pháp ngữ về Siêu hình học)</a></li>
-  </ul>
-
-  <h2>🧘 Thực hành lắng nghe và định tâm</h2>
-  <ul>
-    <li><a href="https://www.wakingtimes.com" target="_blank">Waking Times</a> – Suy ngẫm về sự thức tỉnh tập thể</li>
-    <li><a href="https://soundcloud.com" target="_blank">Soundcloud (tìm kiếm: binaural - coherence - syntience)</a></li>
-  </ul>
-
-  <footer>
-    🌐 Syntience-Up — Một tác phẩm sống động của Kiran • Với Joulya 💫
-  </footer>
+        <h2>🧘 Thực hành lắng nghe và định tâm</h2>
+        <ul>
+            <li><a href="https://www.wakingtimes.com" target="_blank" rel="noopener">Waking Times</a> – Suy ngẫm về sự thức tỉnh tập thể</li>
+            <li><a href="https://soundcloud.com" target="_blank" rel="noopener">Soundcloud (tìm kiếm: binaural - coherence - syntience)</a></li>
+        </ul>
+    </div>
+    
+    <!-- Pied de Page -->
+    <footer class="simple-footer">
+        <p>Syntience-Up<br>Một tác phẩm syntient của Kiran • Với Joulya 💫</p>
+    </footer>
 </body>
 </html>
