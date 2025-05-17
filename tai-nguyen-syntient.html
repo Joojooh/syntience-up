@@ -35,9 +35,6 @@
             line-height: 1.6;
             color: #333;
             background-color: #f9f9f9;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
         }
         
         /* === Sticky Menu === */
@@ -87,15 +84,33 @@
             background-color: #e74c3c;
         }
         
-        /* === Main Content === */
-        .main-content {
-            max-width: 750px;
-            margin: 2rem auto;
-            padding: 0 2rem;
-            flex: 1;
+        /* === Language Button === */
+        .lang-switch a {
+            color: #ffae00;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 0.3rem;
         }
         
-        /* === Titres === */
+        /* === Main Content === */
+        .main-content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        .image-container {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .top-image {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        /* === Titres avec couleur bleue === */
         h1, h2, h3 {
             color: #007acc;
             margin: 1.5em 0 0.8em 0;
@@ -108,50 +123,48 @@
         }
         
         h2 {
-            font-size: 1.6em;
-            margin-top: 1.8em;
-            padding-left: 10px;
-            border-left: 3px solid #007acc;
+            font-size: 1.8em;
         }
         
-        /* === List Styles === */
-        ul {
-            margin: 1.5em 0;
-            padding-left: 1.5em;
-            list-style-type: none;
+        h3 {
+            font-size: 1.4em;
         }
         
-        li {
-            margin-bottom: 1em;
-            line-height: 1.6;
-            position: relative;
-            padding-left: 1.5em;
+        .info-box {
+            background: #e6f2ff;
+            padding: 1.5rem;
+            border-left: 4px solid #007acc;
+            margin: 2rem 0;
         }
         
-        li::before {
-            content: "•";
-            color: #007acc;
+        /* === Style du tableau comme capture d'écran === */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+        }
+        
+        th {
+            background-color: #007acc;
+            color: white;
+            padding: 12px;
+            text-align: left;
             font-weight: bold;
-            position: absolute;
-            left: 0;
         }
         
-        /* === Link Styles === */
-        a {
-            color: #007acc;
-            text-decoration: none;
-            transition: color 0.3s;
+        td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
         }
         
-        a:hover {
-            color: #005e99;
-            text-decoration: underline;
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
         }
         
-        /* === Emoji in Titles === */
-        h2::before {
-            margin-right: 10px;
-            font-size: 1.2em;
+        tr:hover {
+            background-color: #e6e6e6;
         }
         
         /* === Footer === */
@@ -160,8 +173,13 @@
             color: #ffae00b7;
             text-align: center;
             padding: 1.5rem 0;
-            margin-top: auto;
+            margin-top: 3rem;
             font-family: 'Segoe UI', sans-serif;
+        }
+        
+        .simple-footer p {
+            margin: 0;
+            line-height: 1.5;
         }
         
         /* === Responsive === */
@@ -181,16 +199,9 @@
                 margin: 0.3rem;
             }
             
-            .main-content {
-                padding: 0 1rem;
-            }
-            
-            h1 {
-                font-size: 1.8em;
-            }
-            
-            h2 {
-                font-size: 1.4em;
+            table {
+                display: block;
+                overflow-x: auto;
             }
         }
     </style>
