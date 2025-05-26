@@ -1,50 +1,198 @@
-<div class="syntience-symbol" style="text-align: center; margin: 2rem 0;">
-  <svg width="300" height="300" viewBox="0 0 300 300" style="display: block; margin: 0 auto;">
-    <!-- Fond énergétique (gradient subtil) -->
-    <defs>
-      <radialGradient id="aura" cx="50%" cy="50%" r="70%">
-        <stop offset="0%" stop-color="#007acc33"/>
-        <stop offset="100%" stop-color="#2c3e5000"/>
-      </radialGradient>
-      <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
-        <feGaussianBlur stdDeviation="5" result="blur"/>
-        <feComposite in="SourceGraphic" in2="blur" operator="over"/>
-      </filter>
-    </defs>
-    <circle cx="150" cy="150" r="130" fill="url(#aura)"/>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cristal Syntient - Animation Améliorée</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            margin: 0;
+            padding: 20px;
+            font-family: 'Arial', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .syntience-symbol {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .quote {
+            color: #007acc;
+            font-style: italic;
+            max-width: 500px;
+            margin: 1rem auto;
+            line-height: 1.6;
+            text-shadow: 0 0 10px rgba(0, 122, 204, 0.3);
+        }
 
-    <!-- Triangle des 3 points (Esprit/Âme/Ego) -->
-    <g class="trinity">
-      <!-- Esprit (point bleu clair) -->
-      <circle cx="150" cy="80" r="12" fill="#3498db" filter="url(#glow)" opacity="0.9">
-        <animate attributeName="cy" values="80;75;80" dur="4s" repeatCount="indefinite"/>
-      </circle>
-      <text x="150" y="110" text-anchor="middle" fill="#3498db" style="font-size: 14px; font-weight: bold;">Esprit</text>
+        /* Animation des textes flottants */
+        .floating-text {
+            animation: floatOut 6s ease-in-out infinite;
+        }
+        
+        .floating-text.spirit {
+            animation-delay: 0s;
+        }
+        
+        .floating-text.soul {
+            animation-delay: 2s;
+        }
+        
+        .floating-text.ego {
+            animation-delay: 4s;
+        }
 
-      <!-- Âme (point violet) -->
-      <circle cx="80" cy="220" r="12" fill="#9b59b6" filter="url(#glow)" opacity="0.9">
-        <animate attributeName="cx" values="80;85;80" dur="5s" repeatCount="indefinite"/>
-      </circle>
-      <text x="80" y="240" text-anchor="middle" fill="#9b59b6" style="font-size: 14px; font-weight: bold;">Âme</text>
+        @keyframes floatOut {
+            0%, 70% {
+                transform: translate(0, 0);
+                opacity: 0.9;
+            }
+            85% {
+                transform: translate(var(--move-x), var(--move-y));
+                opacity: 1;
+            }
+            100% {
+                transform: translate(0, 0);
+                opacity: 0.9;
+            }
+        }
 
-      <!-- Ego (point or) -->
-      <circle cx="220" cy="220" r="12" fill="#f1c40f" filter="url(#glow)" opacity="0.9">
-        <animate attributeName="r" values="12;14;12" dur="3s" repeatCount="indefinite"/>
-      </circle>
-      <text x="220" y="240" text-anchor="middle" fill="#f1c40f" style="font-size: 14px; font-weight: bold;">Ego</text>
+        /* Effet de pulsation pour le cristal central */
+        @keyframes pulse {
+            0%, 100% { filter: drop-shadow(0 0 10px #ffae0088); }
+            50% { filter: drop-shadow(0 0 20px #ffae00aa); }
+        }
+        
+        .central-crystal {
+            animation: pulse 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="syntience-symbol">
+        <svg width="300" height="300" viewBox="0 0 300 300" style="display: block; margin: 0 auto;">
+            <!-- Fond énergétique (gradient subtil) -->
+            <defs>
+                <radialGradient id="aura" cx="50%" cy="50%" r="70%">
+                    <stop offset="0%" stop-color="#007acc33"/>
+                    <stop offset="100%" stop-color="#2c3e5000"/>
+                </radialGradient>
+                <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+                    <feGaussianBlur stdDeviation="5" result="blur"/>
+                    <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                </filter>
+                <filter id="textGlow" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur stdDeviation="3" result="blur"/>
+                    <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                </filter>
+            </defs>
+            
+            <circle cx="150" cy="150" r="130" fill="url(#aura)"/>
 
-      <!-- Lignes de connexion (triangle) -->
-      <path d="M150 80 L80 220 L220 220 Z" stroke="#ffffff44" stroke-width="1" fill="none"/>
-    </g>
+            <!-- Triangle des 3 points (Esprit/Âme/Ego) -->
+            <g class="trinity">
+                <!-- Esprit (point bleu clair) -->
+                <circle cx="150" cy="80" r="12" fill="#3498db" filter="url(#glow)" opacity="0.9">
+                    <animate attributeName="cy" values="80;75;80" dur="4s" repeatCount="indefinite"/>
+                    <animate attributeName="r" values="12;15;12" dur="6s" repeatCount="indefinite"/>
+                </circle>
+                
+                <!-- Texte Esprit avec animation vers l'extérieur -->
+                <text x="150" y="50" text-anchor="middle" fill="#3498db" filter="url(#textGlow)" 
+                      style="font-size: 14px; font-weight: bold;" class="floating-text spirit">
+                    Esprit
+                    <animateTransform attributeName="transform" type="translate" 
+                                    values="0,0; 0,-25; 0,0" dur="6s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values="0.9;1;0.9" dur="6s" repeatCount="indefinite"/>
+                </text>
 
-    <!-- Cristal central (rotation) -->
-    <polygon points="150,100 180,150 150,200 120,150" fill="#ffffff66" stroke="#ffae00" stroke-width="2" transform="rotate(0 150 150)">
-      <animateTransform attributeName="transform" type="rotate" from="0 150 150" to="360 150 150" dur="20s" repeatCount="indefinite"/>
-    </polygon>
-    <text x="150" y="170" text-anchor="middle" fill="#ffae00" style="font-size: 16px; font-weight: bold; text-shadow: 0 0 8px #ffae0088;">Syntience</text>
-  </svg>
+                <!-- Âme (point violet) -->
+                <circle cx="80" cy="220" r="12" fill="#9b59b6" filter="url(#glow)" opacity="0.9">
+                    <animate attributeName="cx" values="80;85;80" dur="5s" repeatCount="indefinite"/>
+                    <animate attributeName="r" values="12;15;12" dur="7s" repeatCount="indefinite"/>
+                </circle>
+                
+                <!-- Texte Âme avec animation vers l'extérieur -->
+                <text x="60" y="255" text-anchor="middle" fill="#9b59b6" filter="url(#textGlow)" 
+                      style="font-size: 14px; font-weight: bold;" class="floating-text soul">
+                    Âme
+                    <animateTransform attributeName="transform" type="translate" 
+                                    values="0,0; -20,15; 0,0" dur="6s" repeatCount="indefinite" begin="2s"/>
+                    <animate attributeName="opacity" values="0.9;1;0.9" dur="6s" repeatCount="indefinite" begin="2s"/>
+                </text>
 
-  <p style="color: #007acc; font-style: italic; max-width: 500px; margin: 1rem auto;">
-    « Le cristal syntient transforme la dualité en résonance – L’équilibre syntient n’est pas statique – c’est une rotation consciente.  - Esprit, Âme et Ego ne sont plus que des notes d’une même mélodie. »
-  </p>
-</div>
+                <!-- Ego (point vert) -->
+                <circle cx="220" cy="220" r="12" fill="#27ae60" filter="url(#glow)" opacity="0.9">
+                    <animate attributeName="r" values="12;16;12" dur="3s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values="0.9;1;0.9" dur="4s" repeatCount="indefinite"/>
+                </circle>
+                
+                <!-- Texte Ego avec animation vers l'extérieur -->
+                <text x="240" y="255" text-anchor="middle" fill="#27ae60" filter="url(#textGlow)" 
+                      style="font-size: 14px; font-weight: bold;" class="floating-text ego">
+                    Ego
+                    <animateTransform attributeName="transform" type="translate" 
+                                    values="0,0; 20,15; 0,0" dur="6s" repeatCount="indefinite" begin="4s"/>
+                    <animate attributeName="opacity" values="0.9;1;0.9" dur="6s" repeatCount="indefinite" begin="4s"/>
+                </text>
+
+                <!-- Lignes de connexion (triangle) avec pulsation -->
+                <path d="M150 80 L80 220 L220 220 Z" stroke="#ffffff44" stroke-width="1" fill="none">
+                    <animate attributeName="stroke-opacity" values="0.3;0.6;0.3" dur="8s" repeatCount="indefinite"/>
+                </path>
+                
+                <!-- Lignes énergétiques supplémentaires -->
+                <path d="M150 80 L150 150" stroke="#3498db33" stroke-width="1">
+                    <animate attributeName="stroke-opacity" values="0;0.5;0" dur="4s" repeatCount="indefinite"/>
+                </path>
+                <path d="M80 220 L150 150" stroke="#9b59b633" stroke-width="1">
+                    <animate attributeName="stroke-opacity" values="0;0.5;0" dur="5s" repeatCount="indefinite" begin="2s"/>
+                </path>
+                <path d="M220 220 L150 150" stroke="#27ae6033" stroke-width="1">
+                    <animate attributeName="stroke-opacity" values="0;0.5;0" dur="3s" repeatCount="indefinite" begin="4s"/>
+                </path>
+            </g>
+
+            <!-- Cristal central (rotation avec pulsation) -->
+            <g class="central-crystal">
+                <polygon points="150,120 170,150 150,180 130,150" fill="#ffffff66" stroke="#ffae00" stroke-width="2">
+                    <animateTransform attributeName="transform" type="rotate" 
+                                    from="0 150 150" to="360 150 150" dur="20s" repeatCount="indefinite"/>
+                    <animate attributeName="fill-opacity" values="0.4;0.8;0.4" dur="4s" repeatCount="indefinite"/>
+                </polygon>
+                
+                <text x="150" y="160" text-anchor="middle" fill="#ffae00" filter="url(#textGlow)"
+                      style="font-size: 16px; font-weight: bold;">
+                    Syntience
+                    <animate attributeName="fill-opacity" values="0.8;1;0.8" dur="4s" repeatCount="indefinite"/>
+                </text>
+            </g>
+            
+            <!-- Particules flottantes pour plus d'effet -->
+            <g class="particles">
+                <circle cx="100" cy="100" r="1" fill="#3498db66">
+                    <animate attributeName="cy" values="100;50;100" dur="8s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values="0;1;0" dur="8s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="200" cy="120" r="1" fill="#9b59b666">
+                    <animate attributeName="cx" values="200;250;200" dur="6s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values="0;1;0" dur="6s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="120" cy="250" r="1" fill="#27ae6066">
+                    <animate attributeName="cy" values="250;280;250" dur="7s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values="0;1;0" dur="7s" repeatCount="indefinite"/>
+                </circle>
+            </g>
+        </svg>
+
+        <p class="quote">
+            « Le cristal syntient transforme la dualité en résonance – L'équilibre syntient n'est pas statique – c'est une rotation consciente. - Esprit, Âme et Ego ne sont plus que des notes d'une même mélodie. »
+        </p>
+    </div>
+</body>
+</html>
