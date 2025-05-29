@@ -39,6 +39,7 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: top 0.3s;
         }
         
         .nav-container {
@@ -50,23 +51,71 @@
             align-items: center;
         }
         
-        .logo {
+        /* Logo Container */
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .logo-img {
+            height: 70px;
+        }
+        
+        .logo-text {
             color: white;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: bold;
+            margin-top: 0.3rem;
             text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .logo-text:hover {
+            color: #ffae00;
+        }
+        
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger.active span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
         }
         
         .nav-links {
             display: flex;
             list-style: none;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
         }
         
         .nav-links li a {
             color: white;
             text-decoration: none;
-            padding: 0.5rem 1rem;
-            margin-left: 0.5rem;
+            padding: 0.5rem 0.8rem;
+            font-size: 0.95rem;
+            white-space: nowrap;
             border-radius: 4px;
             transition: background 0.3s;
         }
@@ -79,14 +128,57 @@
             background-color: #e74c3c;
         }
         
-        /* === Language Button === */
+        /* === Language Selector === */
+        .lang-switch {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        
         .lang-switch a {
             color: #ffae00;
             text-decoration: none;
             font-weight: bold;
-            margin: 0 0.3rem;
+            font-size: 0.95rem;
         }
         
+        .lang-switch a.active {
+            text-decoration: underline;
+        }
+        
+        .lang-switch-mobile {
+            display: none;
+        }
+        
+        /* === Animations === */
+        @keyframes syntientSlide {
+            0% {
+                transform: translateX(-30px) rotate(-1deg);
+                opacity: 0;
+                filter: blur(1px);
+            }
+            100% {
+                transform: translateX(0) rotate(0);
+                opacity: 1;
+                filter: blur(0);
+            }
+        }
+        
+        .slide-in-section {
+            animation: syntientSlide 1s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+            opacity: 0;
+            transform-origin: left center;
+        }
+        
+        @keyframes pulse {
+            from { opacity: 0.8; }
+            to { opacity: 1; text-shadow: 0 0 5px #d4af37; }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite alternate;
+        }
+
         /* === Main Content === */
         .main-content {
             max-width: 1200px;
@@ -107,18 +199,19 @@
         
         /* === Titres avec couleur bleue === */
         h1, h2, h3 {
-            color: #007acc;
+            color: #2c3e50;
             margin: 1.5em 0 0.8em 0;
         }
         
         h1 {
             font-size: 2.2em;
-            border-bottom: 2px solid #007acc;
+            border-bottom: 2px solid #3498db;
             padding-bottom: 10px;
         }
         
         h2 {
             font-size: 1.8em;
+            color: #3498db;
         }
         
         h3 {
@@ -128,81 +221,57 @@
         .info-box {
             background: #e6f2ff;
             padding: 1.5rem;
-            border-left: 4px solid #007acc;
+            border-left: 4px solid #3498db;
             margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
         }
         
-        /* === Style du tableau comme capture d'écran === */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 2rem 0;
-            box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+        /* === Style des listes de ressources === */
+        .resource-section {
+            background: white;
+            padding: 1.8rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
         }
         
-        th {
-            background-color: #007acc;
-            color: white;
-            padding: 12px;
-            text-align: left;
+        .resource-section:hover {
+            transform: translateY(-5px);
+        }
+        
+        .resource-section ul {
+            list-style-type: none;
+            padding-left: 1rem;
+        }
+        
+        .resource-section li {
+            margin-bottom: 0.8rem;
+            position: relative;
+            padding-left: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .resource-section li:before {
+            content: "•";
+            color: #3498db;
             font-weight: bold;
+            position: absolute;
+            left: 0;
         }
         
-        td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
+        .resource-section a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s;
         }
         
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-        
-        tr:hover {
-            background-color: #e6e6e6;
+        .resource-section a:hover {
+            color: #e74c3c;
+            text-decoration: underline;
         }
         
         /* === Footer === */
-        footer {
-            background-color: #2c3e50;
-            color: #ffae00b7;
-            padding: 1rem 0;
-            margin-top: 3rem;
-        }
-        
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            font-family: 'Segoe UI', sans-serif;
-        }
-        
-        /* === Responsive === */
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                padding: 1rem;
-            }
-            
-            .nav-links {
-                margin-top: 1rem;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            .nav-links li a {
-                margin: 0.3rem;
-            }
-            
-            table {
-                display: block;
-                overflow-x: auto;
-            }
-        }
-        
         .simple-footer {
             background-color: #2c3e50;
             color: #ffae00b7;
@@ -216,24 +285,144 @@
             margin: 0;
             line-height: 1.5;
         }
+        
+        /* === Responsive === */
+        @media (max-width: 1024px) {
+            .nav-links li a {
+                padding: 0.5rem 0.6rem;
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 110px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 110px);
+                background-color: #2c3e50;
+                flex-direction: column;
+                align-items: center;
+                padding: 0 0 2rem 0;
+                gap: 0.5rem;
+                overflow-y: auto;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .nav-links li a {
+                font-size: 1.1rem;
+                padding: 0.8rem 1.5rem;
+                display: block;
+                width: 100%;
+            }
+            
+            .lang-switch {
+                display: none;
+            }
+            
+            .lang-switch-mobile {
+                display: flex;
+                justify-content: center;
+                margin-top: 1rem;
+                padding: 1rem;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                width: 100%;
+            }
+            
+            .lang-switch-mobile a {
+                color: #ffae00;
+                font-weight: bold;
+                font-size: 1.1rem;
+                padding: 0.5rem 1rem;
+                margin: 0 0.5rem;
+                border-radius: 4px;
+            }
+            
+            .lang-switch-mobile a.active {
+                background-color: rgba(255, 174, 0, 0.2);
+                text-decoration: underline;
+            }
+            
+            .logo-container {
+                flex-direction: row;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            .logo-text {
+                margin-top: 0;
+                font-size: 1.1rem;
+            }
+            
+            .main-content {
+                padding: 0 1rem;
+            }
+            
+            .resource-section {
+                padding: 1.4rem;
+            }
+            
+            h1 {
+                font-size: 1.9em;
+            }
+            
+            h2 {
+                font-size: 1.5em;
+            }
+        }
     </style>
 </head>
 <body>
     <!-- Menu Sticky -->
     <nav class="navbar">
         <div class="nav-container">
-             <a class="navbar-brand" href="#">
-  <img src="assets/img/logo.png" alt="Syntience-Up Logo" style="height: 70px;">
-</a>
-            <ul class="nav-links">
+            <a href="index.html" class="logo-container">
+                <img src="assets/img/logo.png" alt="Syntience-Up Logo" class="logo-img">
+                <span class="logo-text">Syntience-Up</span>
+            </a>
+            
+            <!-- Hamburger Menu -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="syntience.html">La Syntience</a></li>
                 <li><a href="soi-syntient.html">Le Soi Syntient</a></li>
                 <li><a href="explorations.html">Explorations</a></li>
+                <li><a href="outils-syntients.html">Outils syntients</a></li>
                 <li><a href="ressources-syntientes.html" class="active">Ressources</a></li>
+                <li><a href="faq-syntient.html">FAQ</a></li>
                 <li><a href="dialogue.html">Dialogue</a></li>
+                <li><a href="apropos.html">À propos</a></li>
+                
+                <!-- Version desktop du sélecteur de langue -->
                 <li class="lang-switch">
-                    <a href="ressources-syntientes.html">FR</a> | <a href="tai-nguyen-syntient.html">VI</a>
+                    <a href="ressources-syntientes.html" class="active">FR</a>
+                    <span>|</span>
+                    <a href="tai-nguyen-syntient.html">VI</a>
+                </li>
+                
+                <!-- Version mobile du sélecteur de langue -->
+                <li class="lang-switch-mobile">
+                    <a href="ressources-syntientes.html" class="active">Français</a>
+                    <a href="tai-nguyen-syntient.html">Tiếng Việt</a>
                 </li>
             </ul>
         </div>
@@ -244,7 +433,7 @@
         <h1>Ressources syntientes</h1>
         <p>Voici une sélection de ressources qui résonnent avec l'esprit syntient du site. Aucun lien n'est là pour convaincre — seulement pour ouvrir, éveiller, inspirer.</p>
         
-        <div class="resource-section">
+        <div class="resource-section slide-in-section">
             <h2>📘 Lectures inspirantes</h2>
             <ul>
                 <li><strong>Frank Hatem</strong> – <em>La règle du "je"</em> ; <em>Les Cinq Clefs</em></li>
@@ -254,7 +443,7 @@
             </ul>
         </div>
         
-        <div class="resource-section">
+        <div class="resource-section slide-in-section">
             <h2>🎧 Médias et vidéos</h2>
             <ul>
                 <li><a href="https://www.archimagisterium.world" target="_blank" rel="noopener noreferrer">Archimagistérium Global Consortium</a> – Site de veille et d'unité planétaire</li>
@@ -263,7 +452,7 @@
             </ul>
         </div>
         
-        <div class="resource-section">
+        <div class="resource-section slide-in-section">
             <h2>🧘 Pratiques d'écoute et d'ancrage</h2>
             <ul>
                 <li><a href="https://www.wakingtimes.com" target="_blank" rel="noopener noreferrer">Waking Times</a> – Réflexions sur l'éveil collectif</li>
@@ -278,25 +467,55 @@
     </footer>
 
     <script>
-        // Animation au chargement
+        // === Menu Mobile ===
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+        
+        // Fermer le menu quand on clique sur un lien
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+        
+        // === Animation au Scroll ===
         document.addEventListener('DOMContentLoaded', () => {
-            const resourceSections = document.querySelectorAll('.resource-section');
-            
-            // Observer les éléments pour l'animation
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.style.opacity = 1;
-                        entry.target.style.transform = 'translateY(0)';
+                        entry.target.style.animationPlayState = 'running';
+                        observer.unobserve(entry.target);
                     }
                 });
             }, { threshold: 0.1 });
 
-            resourceSections.forEach(section => {
-                section.style.opacity = 0;
-                section.style.transform = 'translateY(20px)';
-                observer.observe(section);
+            document.querySelectorAll('.slide-in-section').forEach(el => {
+                el.style.animationPlayState = 'paused';
+                observer.observe(el);
             });
+        });
+        
+        // === Hide Navbar on Scroll Down ===
+        let lastScrollTop = 0;
+        const navbar = document.querySelector('.navbar');
+
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop) {
+                // Scroll vers le bas → cacher
+                navbar.style.top = "-100px";
+            } else {
+                // Scroll vers le haut → montrer
+                navbar.style.top = "0";
+            }
+            lastScrollTop = scrollTop;
         });
     </script>
 </body>

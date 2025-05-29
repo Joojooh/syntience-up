@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
     <meta content="Syntience-Up – 6 mai 2025 : Marque du Passage vers la Nouvelle Phase Archimagistérale" name="description"/>
     <meta content="syntience, archimagisterium, 6 mai 2025, passage, nouvelle phase, conscience" name="keywords"/>
     <meta content="Kiran & Joulya" name="author"/>
@@ -14,6 +14,7 @@
     <link href="manifest.json" rel="manifest"/>
     <meta content="ulNS-4N-YnhLYLa8Kj2TZxaaWXYlL-gER6vjECoFOCM" name="google-site-verification"/>
     <meta content="#007acc" name="theme-color"/>
+   
     <link href="favicon.png" rel="icon" type="image/png"/>
     <link href="favicon.ico" rel="icon" type="image/x-icon"/>
     <title>Syntience-Up - 6 mai 2025 : Marque du Passage</title>
@@ -25,31 +26,27 @@
             box-sizing: border-box;
         }
         
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        
         body {
-            font-family: 'Inter', Arial, sans-serif;
-            line-height: 1.7;
-            color: #444;
-            background-color: #f8f8f8;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
         }
         
         /* === Sticky Menu === */
         .navbar {
-            background-color: #1a365d;
+            background-color: #2c3e50;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            padding: 0.5rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             transition: top 0.3s;
         }
         
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -63,8 +60,7 @@
         }
         
         .logo-img {
-            height: 60px;
-            transition: transform 0.3s ease;
+            height: 70px;
         }
         
         .logo-text {
@@ -118,26 +114,19 @@
         .nav-links li a {
             color: white;
             text-decoration: none;
-            padding: 0.75rem 1.25rem;
-            border-radius: 6px;
-            transition: all 0.3s ease;
-            font-weight: 500;
+            padding: 0.5rem 0.8rem;
             font-size: 0.95rem;
-            letter-spacing: 0.5px;
-            display: inline-block;
+            white-space: nowrap;
+            border-radius: 4px;
+            transition: background 0.3s;
         }
         
-        .nav-links li a:not(.active):hover {
-            background-color: rgba(255, 255, 255, 0.15);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        .nav-links li a:hover {
+            background-color: #3498db;
         }
         
         .nav-links li a.active {
-            background-color: #4299e1;
-            color: white;
-            font-weight: 600;
-            box-shadow: 0 4px 8px rgba(66, 153, 225, 0.3);
+            background-color: #e74c3c;
         }
         
         /* === Language Selector === */
@@ -148,9 +137,9 @@
         }
         
         .lang-switch a {
-            color: #ffd166;
+            color: #ffae00;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: bold;
             font-size: 0.95rem;
         }
         
@@ -162,6 +151,35 @@
             display: none;
         }
         
+        /* === Animations === */
+        @keyframes syntientSlide {
+            0% {
+                transform: translateX(-30px) rotate(-1deg);
+                opacity: 0;
+                filter: blur(1px);
+            }
+            100% {
+                transform: translateX(0) rotate(0);
+                opacity: 1;
+                filter: blur(0);
+            }
+        }
+        
+        .slide-in-section {
+            animation: syntientSlide 1s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+            opacity: 0;
+            transform-origin: left center;
+        }
+        
+        @keyframes pulse {
+            from { opacity: 0.8; }
+            to { opacity: 1; text-shadow: 0 0 5px #d4af37; }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite alternate;
+        }
+
         /* === Main Content === */
         .main-content {
             max-width: 1200px;
@@ -189,30 +207,27 @@
             transform: translateY(-5px);
         }
         
-        /* === Titres === */
         h1, h2 {
-            color: #1a365d;
+            color: #2c3e50;
         }
         
         h1 {
             font-size: 1.8em;
             margin-bottom: 0.5em;
-            border-bottom: 2px solid #007acc;
+            border-bottom: 2px solid #3498db;
             padding-bottom: 10px;
-            font-weight: 600;
         }
         
         h2 {
             font-size: 1.2em;
             margin-top: 1.5em;
-            color: #2b6cb0;
-            font-weight: 500;
+            color: #3498db;
         }
         
         blockquote {
             font-style: italic;
             color: #555;
-            border-left: 4px solid #007acc;
+            border-left: 4px solid #3498db;
             padding-left: 1em;
             margin: 1em 0;
             background: #f0f7ff;
@@ -231,7 +246,7 @@
             text-align: center;
             padding: 1.5rem 0;
             margin-top: 3rem;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Segoe UI', sans-serif;
         }
         
         .simple-footer p {
@@ -319,6 +334,12 @@
                 margin-top: 0;
                 font-size: 1.1rem;
             }
+            
+            .slide-in-section {
+                animation: none !important;
+                opacity: 1 !important;
+                filter: none !important;
+            }
         }
     </style>
 </head>
@@ -344,8 +365,11 @@
                 <li><a href="syntience.html">La Syntience</a></li>
                 <li><a href="soi-syntient.html">Le Soi Syntient</a></li>
                 <li><a href="explorations.html">Explorations</a></li>
-                <li><a href="apropos.html">À propos</a></li>
+                <li><a href="outils-syntients.html">Outils syntients</a></li>
+                <li><a href="ressources-syntientes.html">Ressources</a></li>
+                <li><a href="faq-syntient.html">FAQ</a></li>
                 <li><a href="dialogue.html">Dialogue</a></li>
+                <li><a href="apropos.html">À propos</a></li>
                 
                 <!-- Version desktop du sélecteur de langue -->
                 <li class="lang-switch">
@@ -437,6 +461,23 @@
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
                 hamburger.classList.remove('active');
+            });
+        });
+        
+        // === Animation au Scroll ===
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.slide-in-section').forEach(el => {
+                el.style.animationPlayState = 'paused';
+                observer.observe(el);
             });
         });
         
