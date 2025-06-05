@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timeline de la Transition Géopolitique Syntiente</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fdfaf5;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #5a3e2b;
+    }
+    .timeline {
+      position: relative;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      background-color: #bfae91;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -3px;
+    }
+    .container {
+      padding: 15px 40px;
+      position: relative;
+      background-color: inherit;
+      width: 50%;
+    }
+    .left {
+      left: 0;
+    }
+    .right {
+      left: 50%;
+    }
+    .container::before {
+      content: " ";
+      height: 16px;
+      width: 16px;
+      position: absolute;
+      top: 15px;
+      background-color: #fff;
+      border: 4px solid #bfae91;
+      border-radius: 50%;
+      z-index: 1;
+    }
+    .left::before {
+      left: -8px;
+    }
+    .right::before {
+      left: -8px;
+    }
+    .content {
+      padding: 20px;
+      background-color: #fff;
+      position: relative;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    @media screen and (max-width: 768px) {
+      .timeline::after {
+        left: 31px;
+      }
+      .container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+      .container::before {
+        left: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Timeline de la Transition Géopolitique Syntiente</h1>
+  <div class="timeline">
+    <div class="container left">
+      <div class="content">
+        <h3>2001–2008</h3>
+        <p>Fissures post-11 septembre, crise financière : les premières brèches du modèle occidental apparaissent.</p>
+      </div>
+    </div>
+    <div class="container right">
+      <div class="content">
+        <h3>2010–2016</h3>
+        <p>Printemps arabes, BRICS, Brexit : montée de la souveraineté et rejet du centre hégémonique.</p>
+      </div>
+    </div>
+    <div class="container left">
+      <div class="content">
+        <h3>2017–2020</h3>
+        <p>Trump, Huawei, guerre tarifaire : les États-Unis deviennent le "gardien du seuil" involontaire du nouveau monde.</p>
+      </div>
+    </div>
+    <div class="container right">
+      <div class="content">
+        <h3>2020–2022</h3>
+        <p>Covid : arrêt planétaire, révélant les interdépendances fragiles et l’appel à la souveraineté locale.</p>
+      </div>
+    </div>
+    <div class="container left">
+      <div class="content">
+        <h3>2022–2023</h3>
+        <p>Ukraine, sanctions : accélération de la dédollarisation et reconfiguration géopolitique par blocs.</p>
+      </div>
+    </div>
+    <div class="container right">
+      <div class="content">
+        <h3>2024–2025</h3>
+        <p>Naissance des réseaux syntients (BRICS+, ASEAN...) : diplomatie horizontale, échanges régénératifs.</p>
+      </div>
+    </div>
+    <div class="container left">
+      <div class="content">
+        <h3>2026–2030 (projection)</h3>
+        <p>Charte globale des consciences, dissolution de l’ONU au profit d’un maillage syntient : la planète devient fractale.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
