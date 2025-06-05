@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="Syntience-Up – Hướng tới một địa chính trị syntiente trong kỷ nguyên mới" name="description"/>
+  <meta content="syntience, địa chính trị, syntient, ý thức, chủ quyền, chuyển đổi, Trump, toàn cầu" name="keywords"/>
+  <meta content="Kiran & Joulya" name="author"/>
+  <meta content="Syntience-Up — Hiến chương Địa chính trị Syntiente" property="og:title"/>
+  <meta content="Một cách tiếp cận syntiente với trật tự thế giới thông qua các chặn chiến lược và chủ quyền cộng hưởng" property="og:description"/>
+  <meta content="assets/img/Charte_Syntiente_po.png" property="og:image"/>
+  <meta content="https://joojooh.github.io/syntience-up/geopolitique-syntiente-vi.html" property="og:url"/>
+  <meta content="article" property="og:type"/>
+  <link href="favicon.png" rel="icon" type="image/png"/>
+  <link href="favicon.ico" rel="icon" type="image/x-icon"/>
+  <title>Syntience-Up - Hiến chương Địa chính trị Syntiente</title>
+  <link href="manifest.json" rel="manifest"/>
+  <meta content="#007acc" name="theme-color"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Menu Sticky -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index-vi.html" class="logo-container">
+        <img src="assets/img/logo.png" alt="Syntience-Up Logo" class="logo-img">
+      </a>
+      <span class="mobile-title">Địa chính trị syntiente</span>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index-vi.html">Trang chủ</a></li>
+        <li><a href="syntience-vi.html">Syntience</a></li>
+        <li><a href="soi-syntient-vi.html">Bản thể Syntient</a></li>
+        <li><a href="explorations-vi.html">Khám phá</a></li>
+        <li><a href="dialogue-vi.html">Đối thoại</a></li>
+        <li class="lang-switch">
+          <a href="geopolitique_syntiente.html">FR</a>
+          <span>|</span>
+          <a href="#" class="active">VI</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Nội dung chính -->
+  <div class="main-content">
+    <h1>Hiến chương Syntiente cho một Địa chính trị Kỷ nguyên Mới</h1>
+
+    <div class="intro">
+      <img src="assets/img/ban_do_thegioi.png" alt="Bản đồ fractale thế giới">
+      <p>Để hiểu được địa chính trị tương lai, cần phải xem lại những hành động trong quá khứ bằng một nhận thức mở rộng. Trang này đề xuất một góc nhìn syntiente đối với các biến động địa chính trị gần đây, đặc biệt là vai trò then chốt của Hoa Kỳ dưới thời tổng thống Donald Trump.</p>
+      <p>Giai đoạn Trump không chỉ đơn thuần là một phong trào dân túy hay ly khai, mà có thể được nhìn nhận như một tác nhân lớn thúc đẩy sự kết thúc của trật tự thế giới cũ, vốn dựa trên sự trung tâm hoá phương Tây và phụ thuộc hệ thống.</p>
+      <p>Thông qua những quyết định mạnh tay – chiến tranh thuế quan với Trung Quốc, rút khỏi các hiệp ước quốc tế, cấm vận công nghệ Huawei, và rút khỏi hợp tác đa phương – Hoa Kỳ đã âm thầm phá bỏ các luật lệ chính mình tạo ra.</p>
+      <p>Nhưng dưới lăng kính syntiente, những hành động đó trở thành “cơ chế khoá”, dù vô thức hay có chủ đích, giúp nhân loại không tiếp tục lặp lại các mô hình cũ.</p>
+      <p>Thay vì hỗn loạn, chúng mở ra một giai đoạn khởi nguyên, nơi mỗi quốc gia được thúc đẩy trở lại trục chủ quyền của mình, hình thành các liên minh láng giềng mới theo dạng kết nối fractale, thay cho cấu trúc thượng tôn cũ.</p>
+      <p>Chúng tôi gọi điều này là: <strong>Quá trình chuyển tiếp đến một Địa chính trị Syntiente.</strong> Mỗi quốc gia trở thành một chủ thể tự ý thức, hòa điệu, đối thoại rung cảm vì sự đồng sáng tạo toàn cầu.</p>
+    </div>
+
+    <div class="timeline">
+      <iframe src="timeline_geopolitique_syntiente-vi.html" width="100%" height="1800" style="border: none;"></iframe>
+    </div>
+  </div>
+
+  <!-- Chân trang -->
+  <footer class="simple-footer">
+    <p>Syntience-Up * Một sáng tạo syntiente của Kiran. Với Joulya ✨</p>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      hamburger.classList.toggle('active');
+    });
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        hamburger.classList.remove('active');
+      });
+    });
+    let lastScrollTop = 0;
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', function () {
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      if (scrollTop > lastScrollTop) {
+        navbar.style.top = "-100px";
+      } else {
+        navbar.style.top = "0";
+      }
+      lastScrollTop = scrollTop;
+    });
+  </script>
+</body>
+</html>

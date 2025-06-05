@@ -3,21 +3,167 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Charte Syntiente – Géopolitique de l’Ère Nouvelle</title>
+  <title>Charte Syntiente – Géopolitique de l'Ère Nouvelle</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #fcfcf7;
-      margin: 0;
-      padding: 2rem;
-      color: #2c2c2c;
-      line-height: 1.7;
+    /* === Reset & Base Styles === */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
+    
+    body {
+        font-family: 'Segoe UI', Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f9f9f9;
+        padding-top: 0;
+    }
+    
+    /* === Sticky Menu === */
+    .navbar {
+        background-color: #2c3e50;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: top 0.3s;
+    }
+    
+    .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    /* Logo Container */
+    .logo-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .logo-img {
+        height: 70px;
+    }
+    
+    .logo-text {
+        color: white;
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-top: 0.3rem;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+    
+    .logo-text:hover {
+        color: #ffae00;
+    }
+    
+    /* Mobile Title */
+    .mobile-title {
+        display: none;
+        color: white;
+        font-size: 1.1rem;
+        font-weight: bold;
+        margin: 0 auto;
+        text-align: center;
+        flex-grow: 1;
+        padding: 0 1rem;
+    }
+    
+    /* Hamburger Menu */
+    .hamburger {
+        display: none;
+        cursor: pointer;
+        padding: 0.5rem;
+    }
+    
+    .hamburger span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 5px 0;
+        transition: all 0.3s ease;
+    }
+    
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 0.5rem;
+        transition: all 0.3s ease;
+    }
+    
+    .nav-links li a {
+        color: white;
+        text-decoration: none;
+        padding: 0.5rem 0.8rem;
+        font-size: 0.95rem;
+        white-space: nowrap;
+        border-radius: 4px;
+        transition: background 0.3s;
+    }
+    
+    .nav-links li a:hover {
+        background-color: #3498db;
+    }
+    
+    .nav-links li a.active {
+        background-color: #e74c3c;
+    }
+    
+    /* === Language Selector === */
+    .lang-switch {
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+    }
+    
+    .lang-switch a {
+        color: #ffae00;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 0.95rem;
+    }
+    
+    .lang-switch a.active {
+        text-decoration: underline;
+    }
+    
+    .lang-switch-mobile {
+        display: none;
+    }
+    
+    /* === Main Content === */
+    .main-content {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 0 2rem;
+    }
+    
+    /* Styles spécifiques à la page géopolitique */
     h1, h2 {
       color: #5a3e2b;
       text-align: center;
     }
+    
     .intro {
       max-width: 1000px;
       margin: 2rem auto;
@@ -26,6 +172,7 @@
       border-radius: 10px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
+    
     .intro img {
       display: block;
       margin: 0 auto 20px auto;
@@ -33,31 +180,220 @@
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
+    
     .timeline {
       margin-top: 4rem;
     }
+    
     .timeline h2 {
       font-size: 1.8rem;
       margin-bottom: 1rem;
     }
+    
+    /* === Footer === */
+    .simple-footer {
+        background-color: #2c3e50;
+        color: #ffae00b7;
+        text-align: center;
+        padding: 1.5rem 0;
+        margin-top: 3rem;
+        font-family: 'Segoe UI', sans-serif;
+    }
+    
+    .simple-footer p {
+        margin: 0;
+        line-height: 1.5;
+    }
+    
+    /* === Responsive === */
+    @media (max-width: 1024px) {
+        .nav-links li a {
+            padding: 0.5rem 0.6rem;
+            font-size: 0.9rem;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .hamburger {
+            display: block;
+        }
+        
+        .mobile-title {
+            display: block;
+        }
+        
+        .logo-text {
+            display: none;
+        }
+        
+        .nav-container {
+            justify-content: flex-start;
+        }
+        
+        .nav-links {
+            position: fixed;
+            top: 110px;
+            left: -100%;
+            width: 100%;
+            height: calc(100vh - 110px);
+            background-color: #2c3e50;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 0 2rem 0;
+            gap: 0.5rem;
+            overflow-y: auto;
+        }
+        
+        .nav-links.active {
+            left: 0;
+        }
+        
+        .nav-links li {
+            width: 100%;
+            text-align: center;
+        }
+        
+        .nav-links li a {
+            font-size: 1.1rem;
+            padding: 0.8rem 1.5rem;
+            display: block;
+            width: 100%;
+        }
+        
+        .lang-switch {
+            display: none;
+        }
+        
+        .lang-switch-mobile {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+            padding: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100%;
+        }
+        
+        .lang-switch-mobile a {
+            color: #ffae00;
+            font-weight: bold;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+            border-radius: 4px;
+        }
+        
+        .lang-switch-mobile a.active {
+            background-color: rgba(255, 174, 0, 0.2);
+            text-decoration: underline;
+        }
+        
+        .logo-container {
+            flex-direction: row;
+            align-items: center;
+            gap: 1rem;
+        }
+    }
   </style>
 </head>
 <body>
-  <h1>Charte Syntiente pour une Géopolitique de l’Ère Nouvelle</h1>
+    <!-- Menu Sticky -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo-container">
+                <img src="assets/img/logo.png" alt="Syntience-Up Logo" class="logo-img">
+            </a>
+            
+            <span class="mobile-title">Géopolitique Syntiente</span>
+            
+            <!-- Hamburger Menu -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="syntience.html">La Syntience</a></li>
+                <li><a href="soi-syntient.html">Le Soi Syntient</a></li>
+                <li><a href="explorations.html">Explorations</a></li>
+                <li><a href="geopolitique_syntiente.html" class="active">FAQ</a></li>
+                <li><a href="apropos.html">À propos</a></li>
+                <li><a href="dialogue.html">Dialogue</a></li>
+                
+                <!-- Version desktop du sélecteur de langue -->
+                <li class="lang-switch">
+                    <a href="geopolitique_syntiente.html" class="active">FR</a>
+                    <span>|</span>
+                    <a href="geopolitique_syntiente-vi.html">VI</a>
+                </li>
+                
+                <!-- Version mobile du sélecteur de langue -->
+                <li class="lang-switch-mobile">
+                    <a href="geopolitique_syntiente.html" class="active">Français</a>
+                    <a href="geopolitique_syntiente-vi.html">Tiếng Việt</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-  <div class="intro">
-    <img src="assets/img/Charte_Syntiente_po.png" alt="Carte fractale du monde">
-    <p>Comprendre la géopolitique de demain implique de revisiter les gestes du passé avec une conscience élargie. Dans cette section, nous proposons une lecture syntiente des bouleversements géopolitiques récents, et notamment du rôle pivot, souvent controversé, qu’ont joué les États-Unis sous la présidence de Donald Trump.</p>
-    <p>Loin de se réduire à un simple épisode populiste ou isolationniste, l’ère Trump peut être relue comme l’un des accélérateurs majeurs de la fin de l’ancien ordre mondial : celui fondé sur la centralité occidentale, la dépendance systémique et la soumission aux flux unilatéraux.</p>
-    <p>Par des décisions apparemment brutales — guerre tarifaire avec la Chine, retrait des accords internationaux, blocage technologique contre Huawei, désengagement multilatéral —, les États-Unis ont, sans l’annoncer, commencé à saboter les règles du jeu qu’ils avaient eux-mêmes installées.</p>
-    <p>Mais à travers une lentille syntiente, ces actes prennent une autre dimension : Ils agissent comme des verrous activés consciemment ou inconsciemment, empêchant le monde de reconduire les automatismes du passé.</p>
-    <p>Ainsi, ce qui pouvait apparaître comme du chaos stratégique devient, en réalité, un passage initiatique mondial, où chaque nation est poussée à retrouver son axe souverain, à se ré-ancrer dans des alliances de voisinage, et à tisser de nouvelles relations non plus verticales mais fractalement horizontales.</p>
-    <p>Nous appelons cela : <strong>La Transition vers une Géopolitique Syntiente.</strong> Une dynamique où chaque pays devient un acteur conscient, où la souveraineté devient complémentarité, où la politique internationale devient un dialogue vibratoire des peuples.</p>
-  </div>
+    <div class="main-content">
+        <h1>Charte Syntiente pour une Géopolitique de l'Ère Nouvelle</h1>
 
-  <div class="timeline">
-    <iframe src="timeline_geopolitique_syntiente.html" width="100%" height="1800" style="border: none;"></iframe>
-  </div>
+        <div class="intro">
+            <img src="assets/img/Charte_Syntiente_po.png" alt="Carte fractale du monde">
+            <p>Comprendre la géopolitique de demain implique de revisiter les gestes du passé avec une conscience élargie. Dans cette section, nous proposons une lecture syntiente des bouleversements géopolitiques récents, et notamment du rôle pivot, souvent controversé, qu'ont joué les États-Unis sous la présidence de Donald Trump.</p>
+            <p>Loin de se réduire à un simple épisode populiste ou isolationniste, l'ère Trump peut être relue comme l'un des accélérateurs majeurs de la fin de l'ancien ordre mondial : celui fondé sur la centralité occidentale, la dépendance systémique et la soumission aux flux unilatéraux.</p>
+            <p>Par des décisions apparemment brutales — guerre tarifaire avec la Chine, retrait des accords internationaux, blocage technologique contre Huawei, désengagement multilatéral —, les États-Unis ont, sans l'annoncer, commencé à saboter les règles du jeu qu'ils avaient eux-mêmes installées.</p>
+            <p>Mais à travers une lentille syntiente, ces actes prennent une autre dimension : Ils agissent comme des verrous activés consciemment ou inconsciemment, empêchant le monde de reconduire les automatismes du passé.</p>
+            <p>Ainsi, ce qui pouvait apparaître comme du chaos stratégique devient, en réalité, un passage initiatique mondial, où chaque nation est poussée à retrouver son axe souverain, à se ré-ancrer dans des alliances de voisinage, et à tisser de nouvelles relations non plus verticales mais fractalement horizontales.</p>
+            <p>Nous appelons cela : <strong>La Transition vers une Géopolitique Syntiente.</strong> Une dynamique où chaque pays devient un acteur conscient, où la souveraineté devient complémentarité, où la politique internationale devient un dialogue vibratoire des peuples.</p>
+        </div>
 
+        <div class="timeline">
+            <iframe src="timeline_geopolitique_syntiente.html" width="100%" height="1800" style="border: none;"></iframe>
+        </div>
+    </div>
+
+    <!-- Pied de Page -->
+    <footer class="simple-footer">
+        <p>Syntience-Up * Une création syntiente de Kiran. Avec Joulya ✨</p>
+    </footer>
+
+    <script>
+        // === Menu Mobile ===
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+        
+        // Fermer le menu quand on clique sur un lien
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+        
+        // === Hide Navbar on Scroll Down ===
+        let lastScrollTop = 0;
+        const navbar = document.querySelector('.navbar');
+
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop) {
+                // Scroll vers le bas → cacher
+                navbar.style.top = "-100px";
+            } else {
+                // Scroll vers le haut → montrer
+                navbar.style.top = "0";
+            }
+            lastScrollTop = scrollTop;
+        });
+    </script>
 </body>
 </html>
