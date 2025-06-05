@@ -54,7 +54,6 @@
         /* Logo Container */
         .logo-container {
             display: flex;
-            flex-direction: column;
             align-items: center;
         }
         
@@ -62,17 +61,15 @@
             height: 70px;
         }
         
-        .logo-text {
+        /* Page Title in Navbar - Mobile only */
+        .nav-page-title-mobile {
+            display: none;
             color: white;
             font-size: 1.2rem;
             font-weight: bold;
-            margin-top: 0.3rem;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .logo-text:hover {
-            color: #ffae00;
+            margin: 0 auto;
+            padding: 0 1rem;
+            text-align: center;
         }
         
         /* Hamburger Menu */
@@ -273,6 +270,12 @@
                 display: block;
             }
             
+            .nav-page-title-mobile {
+                display: block;
+                flex-grow: 1;
+                text-align: center;
+            }
+            
             .nav-links {
                 position: fixed;
                 top: 110px;
@@ -330,17 +333,6 @@
                 text-decoration: underline;
             }
             
-            .logo-container {
-                flex-direction: row;
-                align-items: center;
-                gap: 1rem;
-            }
-            
-            .logo-text {
-                margin-top: 0;
-                font-size: 1.1rem;
-            }
-            
             .main-content {
                 padding: 0 1rem;
             }
@@ -357,8 +349,10 @@
         <div class="nav-container">
             <a href="index.html" class="logo-container">
                 <img src="assets/img/logo.png" alt="Syntience-Up Logo" class="logo-img">
-                <span class="logo-text">Syntience-Up</span>
             </a>
+            
+            <!-- Page Title - Mobile only -->
+            <div class="nav-page-title-mobile">Dialogue</div>
             
             <!-- Hamburger Menu -->
             <div class="hamburger" id="hamburger">
