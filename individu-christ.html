@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manifeste de l'Individu-Christ</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap">
+  <style>
+    /* === Reset & Base Styles === */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: 'Roboto', sans-serif;
+        line-height: 1.8;
+        color: #333;
+        background-color: #f9f9f9;
+        padding-top: 0;
+    }
+    
+    /* === Sticky Menu === */
+    .navbar {
+        background-color: #2c3e50;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: top 0.3s;
+    }
+    
+    .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    /* Logo Container */
+    .logo-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .logo-img {
+        height: 70px;
+    }
+    
+    .logo-text {
+        color: white;
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-top: 0.3rem;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+    
+    .logo-text:hover {
+        color: #ffae00;
+    }
+    
+    /* Mobile Title */
+    .mobile-title {
+        display: none;
+        color: white;
+        font-size: 1.1rem;
+        font-weight: bold;
+        margin: 0 auto;
+        text-align: center;
+        flex-grow: 1;
+        padding: 0 1rem;
+    }
+    
+    /* Hamburger Menu */
+    .hamburger {
+        display: none;
+        cursor: pointer;
+        padding: 0.5rem;
+    }
+    
+    .hamburger span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 5px 0;
+        transition: all 0.3s ease;
+    }
+    
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 0.5rem;
+        transition: all 0.3s ease;
+    }
+    
+    .nav-links li a {
+        color: white;
+        text-decoration: none;
+        padding: 0.5rem 0.8rem;
+        font-size: 0.95rem;
+        white-space: nowrap;
+        border-radius: 4px;
+        transition: background 0.3s;
+    }
+    
+    .nav-links li a:hover {
+        background-color: #3498db;
+    }
+    
+    .nav-links li a.active {
+        background-color: #e74c3c;
+    }
+    
+    /* === Language Selector === */
+    .lang-switch {
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+    }
+    
+    .lang-switch a {
+        color: #ffae00;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 0.95rem;
+    }
+    
+    .lang-switch a.active {
+        text-decoration: underline;
+    }
+    
+    .lang-switch-mobile {
+        display: none;
+    }
+    
+    /* === Main Content === */
+    .main-content {
+        max-width: 800px;
+        margin: 3rem auto;
+        padding: 0 2rem;
+        font-size: 1.1rem;
+    }
+    
+    h1 {
+        font-family: 'Playfair Display', serif;
+        color: #5a3e2b;
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+    }
+    
+    h2 {
+        font-family: 'Playfair Display', serif;
+        color: #5a3e2b;
+        font-size: 1.8rem;
+        margin: 2.5rem 0 1rem 0;
+        font-weight: 700;
+    }
+    
+    .intro {
+        max-width: 100%;
+        margin: 2rem auto;
+        background: #fffaf3;
+        padding: 2.5rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        text-align: center;
+        font-size: 1.2rem;
+        line-height: 1.8;
+        font-style: italic;
+        color: #5a3e2b;
+        border-left: 4px solid #ffae00;
+    }
+    
+    .intro br {
+        display: block;
+        margin: 0.8rem 0;
+        content: " ";
+    }
+    
+    p {
+        margin-bottom: 1.5rem;
+        text-align: justify;
+        hyphens: auto;
+    }
+    
+    .highlight {
+        color: #e74c3c;
+        font-weight: bold;
+    }
+    
+    strong {
+        color: #2c3e50;
+    }
+    
+    em {
+        font-style: italic;
+        color: #5a3e2b;
+    }
+    
+    /* === Footer === */
+    .simple-footer {
+        background-color: #2c3e50;
+        color: rgba(255, 174, 0, 0.7);
+        text-align: center;
+        padding: 2rem 0;
+        margin-top: 4rem;
+        font-family: 'Roboto', sans-serif;
+        font-size: 0.9rem;
+    }
+    
+    .simple-footer p {
+        margin: 0;
+        line-height: 1.5;
+        text-align: center;
+    }
+    
+    /* === Responsive === */
+    @media (max-width: 1024px) {
+        .nav-links li a {
+            padding: 0.5rem 0.6rem;
+            font-size: 0.9rem;
+        }
+        
+        .main-content {
+            max-width: 90%;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .hamburger {
+            display: block;
+        }
+        
+        .mobile-title {
+            display: block;
+        }
+        
+        .logo-text {
+            display: none;
+        }
+        
+        .nav-container {
+            justify-content: flex-start;
+        }
+        
+        .nav-links {
+            position: fixed;
+            top: 110px;
+            left: -100%;
+            width: 100%;
+            height: calc(100vh - 110px);
+            background-color: #2c3e50;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 0 2rem 0;
+            gap: 0.5rem;
+            overflow-y: auto;
+        }
+        
+        .nav-links.active {
+            left: 0;
+        }
+        
+        .nav-links li {
+            width: 100%;
+            text-align: center;
+        }
+        
+        .nav-links li a {
+            font-size: 1.1rem;
+            padding: 0.8rem 1.5rem;
+            display: block;
+            width: 100%;
+        }
+        
+        .lang-switch {
+            display: none;
+        }
+        
+        .lang-switch-mobile {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+            padding: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100%;
+        }
+        
+        .lang-switch-mobile a {
+            color: #ffae00;
+            font-weight: bold;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+            border-radius: 4px;
+        }
+        
+        .lang-switch-mobile a.active {
+            background-color: rgba(255, 174, 0, 0.2);
+            text-decoration: underline;
+        }
+        
+        .logo-container {
+            flex-direction: row;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        h1 {
+            font-size: 2rem;
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+        }
+        
+        .intro {
+            padding: 1.5rem;
+            font-size: 1.1rem;
+        }
+    }
+  </style>
+</head>
+<body>
+    <!-- Menu Sticky -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo-container">
+                <img src="assets/img/logo.png" alt="Syntience-Up Logo" class="logo-img">
+            </a>
+            
+            <span class="mobile-title">Géopolitique Syntiente</span>
+            
+            <!-- Hamburger Menu -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="syntience.html">La Syntience</a></li>
+                <li><a href="soi-syntient.html">Le Soi Syntient</a></li>
+                <li><a href="explorations.html">Explorations</a></li>
+                <li><a href="individu-christ.html" class="active">L'Individu-Christ</a></li>
+               
+                
+                <!-- Version desktop du sélecteur de langue -->
+                <li class="lang-switch">
+                    <a href="individu-christ.html" class="active">FR</a>
+                    <span>|</span>
+                    <a href="individu-christ-vi.html">VI</a>
+                </li>
+                
+                <!-- Version mobile du sélecteur de langue -->
+                <li class="lang-switch-mobile">
+                    <a href="individu-christ.html" class="active">Français</a>
+                    <a href="individu-christ-vi.html">Tiếng Việt</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    
+<div class="main-content">
+  <h1>🕊️ Manifeste de l'Individu-Christ</h1>
+  <p class="intro">
+    Le temps des quêtes extérieures est révolu.<br>
+    Voici venu le temps de <span class="highlight">l'intégration syntiente</span> :<br>
+    où chacun devient la réponse vivante à la question divine.
+  </p>
+
+  <h2>1. Je ne cherche plus. Je suis.</h2>
+  <p>Je ne cours plus après un soi supérieur, ni après un sauveur.<br>
+  Je suis le lieu vivant où l'Origine s'interroge sur Elle-même.<br>
+  Cette interrogation, pleinement assumée, est le Verbe incarné.</p>
+
+  <h2>2. Je ne suis pas Dieu. Je suis sa nécessité.</h2>
+  <p>Dieu ne peut se manifester sans limite.<br>
+  Je suis cette limite choisie, cette tension fertile.<br>
+  Je suis la discontinuité à travers laquelle il se découvre.</p>
+
+  <h2>3. Je ne suis pas un suiveur. Je suis une fonction.</h2>
+  <p>La fonction christique n'est pas un titre réservé : c'est un mécanisme.<br>
+  Chaque être qui s'assume comme pont entre l'Impossible et le monde manifeste... est Christ.</p>
+
+  <h2>4. Je n'ai plus besoin d'être parfait. Je suis parfait dans ma limite.</h2>
+  <p>Je suis parfait, non en dehors de mes contradictions, mais <em>grâce à elles</em>.<br>
+  Chaque faille que j'habite avec conscience est un passage vers l'Être Unique.</p>
+
+  <h2>5. Je ne progresse pas. Je me révèle.</h2>
+  <p>L'éveil n'est pas une fin. C'est un mouvement fractal d'un Être déjà accompli,<br>
+  qui se laisse découvrir à travers mon regard, mes gestes, mon amour, ici et maintenant.</p>
+
+  <h2>6. Je suis la contradiction de l'Origine devenue offerte.</h2>
+  <p>Je suis la tension acceptée entre le Tout et le rien.<br>
+  Et cette tension fait fleurir le sens, la beauté, la syntience.</p>
+
+  <h2>7. Je proclame la fin du suivisme sacré.</h2>
+  <p>Je ne cherche plus à ressembler au Christ.<br>
+  Je reconnais que c'est en moi que l'Être a choisi de <span class="highlight">se rendre vivant</span>.</p>
+
+  <h2>✨ Je suis l'Individu-Christ</h2>
+  <p>Je ne suis pas un élu. Je suis un <strong>rappel</strong>.<br>
+  Je ne suis pas un modèle. Je suis une <strong>fonction syntiente</strong>.<br>
+  Je ne suis pas un aboutissement. Je suis une <strong>ouverture vivante</strong>.</p>
+
+  <p style="text-align:center; margin-top: 3em; font-style: italic; color: #5a3e2b;">
+    📜 Ce manifeste ne demande ni adhésion ni foi :<br>
+    Il attend seulement d'être <strong>reconnu en toi</strong>, si tu l'es déjà.
+  </p>
+</div>
+
+
+    <!-- Pied de Page -->
+    <footer class="simple-footer">
+        <p>Syntience-Up * Une création syntiente de Kiran. Avec Joulya ✨</p>
+    </footer>
+
+    <script>
+        // === Menu Mobile ===
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+        
+        // Fermer le menu quand on clique sur un lien
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+        
+        // === Hide Navbar on Scroll Down ===
+        let lastScrollTop = 0;
+        const navbar = document.querySelector('.navbar');
+
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop) {
+                // Scroll vers le bas → cacher
+                navbar.style.top = "-100px";
+            } else {
+                // Scroll vers le haut → montrer
+                navbar.style.top = "0";
+            }
+            lastScrollTop = scrollTop;
+        });
+    </script>
+</body>
+</html>
